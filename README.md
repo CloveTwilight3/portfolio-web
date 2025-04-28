@@ -12,11 +12,47 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
-### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+### [EstrocordPlugin](https://github.com/CloveTwilight3/EstrocordPlugin)
 
-No description provided.
+A fun all-in-1 plugin
 
-**Language:** CSS
+**Language:** Java
+
+⭐ 0 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [the-vixen](https://github.com/CloveTwilight3/the-vixen)
+
+A custom discord bot that communicates with APIs
+
+**Language:** TypeScript
+
+⭐ 0 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [plural-web](https://github.com/CloveTwilight3/plural-web)
+
+A PluralKit website created for friends to see who's fronting my system
+
+**Language:** Python
+
+⭐ 1 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [RoomMates-Helper](https://github.com/CloveTwilight3/RoomMates-Helper)
+
+RoomMates Verification System and More!
+
+**Language:** TypeScript
 
 ⭐ 0 | 🍴 0
 
@@ -33,64 +69,6 @@ This is a JARVIS like assistant for your desktop, working on Debian-Based Distro
 ⭐ 0 | 🍴 0
 
 Last updated: Mon Apr 28 2025
-
----
-
-### [RoomMates-Helper](https://github.com/CloveTwilight3/RoomMates-Helper)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: Mon Apr 28 2025
-
----
-
-### [plural-web](https://github.com/CloveTwilight3/plural-web)
-
-No description provided.
-
-**Language:** Python
-
-⭐ 1 | 🍴 0
-
-Last updated: Sun Apr 27 2025
-
----
-
-### [the-vixen](https://github.com/CloveTwilight3/the-vixen)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: Fri Apr 25 2025
-
----
-
-### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: Sun Apr 13 2025
-
----
-
-### [EstrocordPlugin](https://github.com/CloveTwilight3/EstrocordPlugin)
-
-No description provided.
-
-**Language:** Java
-
-⭐ 0 | 🍴 0
-
-Last updated: Sat Apr 12 2025
 
 ---
 
