@@ -42,12 +42,13 @@ async function fetchRepositories(octokit) {
       direction: 'desc'
     });
     
-    // Filter out forks
-    const originalRepos = repos.filter(repo => !repo.fork);
+    // Filter out forks and specific repositories to ignore
+    const reposToIgnore = ['clovetwilight3', 'clovetwilight3.github.io'];
+    const filteredRepos = repos.filter(repo => !repo.fork && !reposToIgnore.includes(repo.name));
     
-    console.log(`Found ${originalRepos.length} original repositories`);
+    console.log(`Found ${filteredRepos.length} original repositories (excluding ignored repos)`);
     
-    return originalRepos;
+    return filteredRepos;
   } catch (error) {
     console.error('Error fetching repositories:', error);
     return [];
@@ -56,7 +57,7 @@ async function fetchRepositories(octokit) {
 
 function generateProjectsMarkdown(repos) {
   if (repos.length === 0) {
-    return '## Projects\n\nNo original projects found.';
+    return '## Projects\n\nNo original projects found (excluding ignored repositories).';
   }
   
   let markdown = '## Projects\n\n';
