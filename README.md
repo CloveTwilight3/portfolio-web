@@ -32,7 +32,7 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Repository Setup
 
-This portfolio is automatically generated from my GitHub repositories. It only displays original projects (not forks) and updates whenever I push new changes.
+This portfolio is automatically generated from my GitHub repositories. It only displays original projects (not forks) and updates whenever I push new changes to them.
 
 ### Technical Implementation
 
