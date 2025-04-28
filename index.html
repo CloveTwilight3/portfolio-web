@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clove Twilight's Portfolio</title>
+    <meta name="description" content="Clove Twilight's Developer Portfolio - Minecraft Modder, Java/TypeScript Developer, and Linux Enthusiast">
+    <meta name="keywords" content="developer, portfolio, minecraft, java, typescript, discord bot, linux">
+    <meta name="author" content="Clove Twilight">
+    <title>Clove Twilight - Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Add favicons -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -21,9 +24,11 @@
             <nav>
                 <ul>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#stats">Stats</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="/resume.pdf" class="resume-btn" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,13 +36,24 @@
 
     <section class="hero">
         <div class="container">
-            <h2>👋 Hi, I'm Clove Twilight!</h2>
-            <p>🧠 Developer • Linux Nerd • Minecraft Modder</p>
-            <div class="discord-badge">
-                <img src="https://discord-readme-badge.vercel.app/api?id=1025770042245251122" alt="My Discord">
-            </div>
-            <div class="discord-server">
-                <p>Join my Discord Server: <a href="https://discord.gg/ZPDjhfcvQe" target="_blank">discord.gg/ZPDjhfcvQe</a></p>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>👋 Hi, I'm <span class="highlight">Clove Twilight</span></h2>
+                    <h3 class="subtitle">Developer • Linux Enthusiast • Minecraft Modder</h3>
+                    <p class="hero-description">Building creative solutions with code, from Discord bots to Minecraft plugins. Passionate about open-source and Linux.</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="cta-btn primary"><i class="fas fa-code"></i> View My Work</a>
+                        <a href="#contact" class="cta-btn secondary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="discord-badge">
+                        <img src="https://discord-readme-badge.vercel.app/api?id=1025770042245251122" alt="My Discord">
+                    </div>
+                    <div class="discord-server">
+                        <p>Join my Discord Server: <a href="https://discord.gg/ZPDjhfcvQe" target="_blank">discord.gg/ZPDjhfcvQe</a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -45,7 +61,17 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2>🔗 My Projects</h2>
-            <p class="subtitle">These are my original GitHub projects (excluding forks and profile repositories)</p>
+            <p class="subtitle">A collection of my work - from Discord bots to Minecraft plugins</p>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="java">Java</button>
+                <button class="filter-btn" data-filter="typescript">TypeScript</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="minecraft">Minecraft</button>
+                <button class="filter-btn" data-filter="discord">Discord</button>
+            </div>
             
             <div id="projects-container">
                 <!-- Projects will be loaded here via JavaScript -->
@@ -54,9 +80,87 @@
         </div>
     </section>
 
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>🧠 Skills & Technologies</h2>
+            <p class="subtitle">My technical toolkit for solving problems</p>
+            
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">TypeScript</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">Kotlin</div>
+                        <div class="skill-item">Rust</div>
+                        <div class="skill-item">Bash</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">Express</div>
+                        <div class="skill-item">Flask</div>
+                        <div class="skill-item">REST APIs</div>
+                        <div class="skill-item">MongoDB</div>
+                        <div class="skill-item">SQL</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-desktop"></i> Frontend</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">HTML5</div>
+                        <div class="skill-item">CSS3</div>
+                        <div class="skill-item">React</div>
+                        <div class="skill-item">Vue.js</div>
+                        <div class="skill-item">Responsive Design</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fab fa-discord"></i> Discord</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Discord.js</div>
+                        <div class="skill-item">Bot Development</div>
+                        <div class="skill-item">Slash Commands</div>
+                        <div class="skill-item">API Integration</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-cubes"></i> Minecraft</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Spigot/Bukkit</div>
+                        <div class="skill-item">Plugin Development</div>
+                        <div class="skill-item">Forge Modding</div>
+                        <div class="skill-item">Resource Packs</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> DevOps</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Git/GitHub</div>
+                        <div class="skill-item">GitHub Actions</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">Linux Administration</div>
+                        <div class="skill-item">CI/CD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="stats" class="stats">
         <div class="container">
             <h2>📊 GitHub Stats</h2>
+            <p class="subtitle">A glimpse into my coding activity</p>
+            
             <div class="stats-cards">
                 <div class="stats-card">
                     <img src="https://github-readme-stats.vercel.app/api?username=clovetwilight3&theme=synthwave&show_icons=true" alt="CloveTwilight3's GitHub Stats">
@@ -65,6 +169,12 @@
                     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=clovetwilight3&layout=compact&theme=synthwave&hide_border=true" alt="Top Languages">
                 </div>
             </div>
+            
+            <!-- GitHub contributions calendar -->
+            <div class="github-calendar">
+                <img src="https://ghchart.rshah.org/clovetwilight3" alt="GitHub Contributions" class="contributions-chart">
+            </div>
+            
             <div class="profile-views">
                 <img src="https://komarev.com/ghpvc/?username=clovetwilight3&label=Profile%20views&color=0e75b6&style=flat" alt="clovetwilight3">
             </div>
@@ -103,9 +213,10 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am Clove Twilight, a developer with a passion for Minecraft modding and Linux.</p>
+                    <p>I am Clove Twilight, a passionate developer focusing on creating useful applications, from Discord bots to Minecraft plugins and web applications.</p>
                     <p>I am also a plural system, so see <a href="https://friends.clovetwilight3.co.uk/" target="_blank">friends.clovetwilight3.co.uk</a> (In dev)</p>
-                    <p>This portfolio site automatically syncs with my GitHub repositories, showing only my original work (not forks).</p>
+                    <p>With a background in both frontend and backend technologies, I enjoy solving complex problems and building tools that help others. I'm particularly interested in gaming-related development and automation.</p>
+                    <p>When I'm not coding, you can find me exploring Linux systems, contributing to open-source projects, or experimenting with new programming languages and frameworks.</p>
                 </div>
             </div>
         </div>
@@ -114,18 +225,39 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>🌐 Get In Touch</h2>
+            <p class="subtitle">Interested in working together? Reach out through any of these platforms</p>
             <div class="contact-links">
                 <a href="https://github.com/clovetwilight3" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://www.clovetwilight3.co.uk" target="_blank"><i class="fas fa-globe"></i> Personal Website</a>
                 <a href="mailto:admin@clovetwilight3.co.uk"><i class="fas fa-envelope"></i> Email Me</a>
                 <a href="https://discord.gg/ZPDjhfcvQe" target="_blank"><i class="fab fa-discord"></i> Discord: CloveTwilight3</a>
             </div>
+            
+            <div class="hire-me">
+                <h3>Looking to hire?</h3>
+                <p>I'm currently available for freelance work and open to job opportunities in software development.</p>
+                <a href="mailto:admin@clovetwilight3.co.uk?subject=Job Opportunity" class="cta-btn primary">Let's Talk <i class="fas fa-arrow-right"></i></a>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Clove Twilight | <a href="https://github.com/clovetwilight3">GitHub</a> | <a href="https://clovetwilight3.co.uk">clovetwilight3.co.uk</a></p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="favicon.png" alt="Clove Twilight Logo" class="footer-logo">
+                    <p>&copy; 2025 Clove Twilight</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/clovetwilight3">GitHub</a>
+                    <a href="https://clovetwilight3.co.uk">Website</a>
+                    <a href="/resume.pdf">Resume</a>
+                    <a href="#projects">Projects</a>
+                </div>
+            </div>
+            <div class="footer-note">
+                <p>This portfolio is automatically updated every 10 minutes with my latest GitHub projects.</p>
+            </div>
         </div>
     </footer>
 
