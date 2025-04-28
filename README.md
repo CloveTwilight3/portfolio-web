@@ -12,13 +12,13 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
-### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+### [Minecraft-Whitelist-Discord-Bot](https://github.com/CloveTwilight3/Minecraft-Whitelist-Discord-Bot)
 
-A simple Paper plugin that adds functionality for sponges to absorb lava.
+a simple and efficient plugin for a Discord bot for managing the Minecraft server whitelist
 
 **Language:** Java
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
@@ -30,7 +30,19 @@ My personal 1.21.4 Resource Pack
 
 **Language:** Python
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+
+A simple Paper plugin that adds functionality for sponges to absorb lava.
+
+**Language:** Java
+
+⭐ 1 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
@@ -42,7 +54,7 @@ A Valorant Info Bot (Basic)
 
 **Language:** TypeScript
 
-⭐ 1 | 🍴 0
+⭐ 2 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
@@ -54,7 +66,7 @@ A Simple Plugin for Plural Systems
 
 **Language:** Java
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
@@ -66,7 +78,7 @@ A Fabric Mod for Systems
 
 **Language:** Java
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
@@ -78,7 +90,7 @@ A simple jail plugin
 
 **Language:** Java
 
-⭐ 0 | 🍴 1
+⭐ 1 | 🍴 1
 
 Last updated: Mon Apr 28 2025
 
@@ -88,19 +100,7 @@ Last updated: Mon Apr 28 2025
 
 A basic Library Plugin for Plugins
 
-⭐ 0 | 🍴 0
-
-Last updated: Mon Apr 28 2025
-
----
-
-### [Minecraft-Whitelist-Discord-Bot](https://github.com/CloveTwilight3/Minecraft-Whitelist-Discord-Bot)
-
-a simple and efficient plugin for a Discord bot for managing the Minecraft server whitelist
-
-**Language:** Java
-
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
@@ -112,7 +112,7 @@ A fun all-in-1 plugin
 
 **Language:** Java
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
@@ -124,17 +124,17 @@ A custom discord bot that communicates with APIs
 
 **Language:** TypeScript
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
 ---
 
-### [plural-web](https://github.com/CloveTwilight3/plural-web)
+### [EMIS](https://github.com/CloveTwilight3/EMIS)
 
-A PluralKit website created for friends to see who's fronting my system
+This is a JARVIS like assistant for your desktop, working on Debian-Based Distros, Mac and Windows
 
-**Language:** Python
+**Language:** JavaScript
 
 ⭐ 1 | 🍴 0
 
@@ -148,19 +148,19 @@ RoomMates Verification System and More!
 
 **Language:** TypeScript
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
 ---
 
-### [EMIS](https://github.com/CloveTwilight3/EMIS)
+### [plural-web](https://github.com/CloveTwilight3/plural-web)
 
-This is a JARVIS like assistant for your desktop, working on Debian-Based Distros, Mac and Windows
+A PluralKit website created for friends to see who's fronting my system
 
-**Language:** JavaScript
+**Language:** Python
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
 Last updated: Mon Apr 28 2025
 
