@@ -40,6 +40,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
+      - name: Generate resume
+        run: |
+          node .github/scripts/generate-resume.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Commit and push if changed
         run: |
           git config --global user.name 'GitHub Action'
