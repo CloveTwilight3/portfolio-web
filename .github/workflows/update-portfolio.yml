@@ -34,6 +34,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
+      - name: Fetch GitHub avatar for favicon
+        run: |
+          node .github/scripts/fetch-favicon.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Commit and push if changed
         run: |
           git config --global user.name 'GitHub Action'
