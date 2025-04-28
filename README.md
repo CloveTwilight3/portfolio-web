@@ -12,7 +12,7 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
-### [portfolio](https://github.com/CloveTwilight3/portfolio)
+### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 No description provided.
 
@@ -152,66 +152,6 @@ Last updated: Tue Mar 18 2025
 
 ---
 
-### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: Mon Mar 10 2025
-
----
-
-### [rules](https://github.com/CloveTwilight3/rules)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: Mon Mar 10 2025
-
----
-
-### [vanilla](https://github.com/CloveTwilight3/vanilla)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: Sun Mar 09 2025
-
----
-
-### [curseforge](https://github.com/CloveTwilight3/curseforge)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: Sun Mar 09 2025
-
----
-
-### [prism](https://github.com/CloveTwilight3/prism)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: Sun Mar 09 2025
-
----
-
-### [modrinth](https://github.com/CloveTwilight3/modrinth)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: Sun Mar 09 2025
-
----
-
 ### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
 No description provided.
@@ -245,18 +185,6 @@ No description provided.
 ⭐ 0 | 🍴 0
 
 Last updated: Sun Feb 02 2025
-
----
-
-### [hardcore-season2-resourcepack](https://github.com/CloveTwilight3/hardcore-season2-resourcepack)
-
-No description provided.
-
-**Language:** GLSL
-
-⭐ 0 | 🍴 0
-
-Last updated: Tue Jan 21 2025
 
 ---
 
