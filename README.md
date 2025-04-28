@@ -12,6 +12,100 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
+### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+
+A simple Paper plugin that adds functionality for sponges to absorb lava.
+
+**Language:** Java
+
+⭐ 0 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
+
+My personal 1.21.4 Resource Pack 
+
+**Language:** Python
+
+⭐ 0 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [ValoPeaks](https://github.com/CloveTwilight3/ValoPeaks)
+
+A Valorant Info Bot (Basic)
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [Cloves-PluralCraft-Spigot](https://github.com/CloveTwilight3/Cloves-PluralCraft-Spigot)
+
+A Simple Plugin for Plural Systems
+
+**Language:** Java
+
+⭐ 0 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [Cloves-PluralCraft](https://github.com/CloveTwilight3/Cloves-PluralCraft)
+
+A Fabric Mod for Systems
+
+**Language:** Java
+
+⭐ 0 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [JailPlugin](https://github.com/CloveTwilight3/JailPlugin)
+
+A simple jail plugin
+
+**Language:** Java
+
+⭐ 0 | 🍴 1
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [CloveLib](https://github.com/CloveTwilight3/CloveLib)
+
+A basic Library Plugin for Plugins
+
+⭐ 0 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
+### [Minecraft-Whitelist-Discord-Bot](https://github.com/CloveTwilight3/Minecraft-Whitelist-Discord-Bot)
+
+a simple and efficient plugin for a Discord bot for managing the Minecraft server whitelist
+
+**Language:** Java
+
+⭐ 0 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
 ### [EstrocordPlugin](https://github.com/CloveTwilight3/EstrocordPlugin)
 
 A fun all-in-1 plugin
@@ -69,100 +163,6 @@ This is a JARVIS like assistant for your desktop, working on Debian-Based Distro
 ⭐ 0 | 🍴 0
 
 Last updated: Mon Apr 28 2025
-
----
-
-### [CloveLib](https://github.com/CloveTwilight3/CloveLib)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: Sat Apr 12 2025
-
----
-
-### [JailPlugin](https://github.com/CloveTwilight3/JailPlugin)
-
-No description provided.
-
-**Language:** Java
-
-⭐ 0 | 🍴 1
-
-Last updated: Wed Apr 02 2025
-
----
-
-### [Cloves-PluralCraft](https://github.com/CloveTwilight3/Cloves-PluralCraft)
-
-No description provided.
-
-**Language:** Java
-
-⭐ 0 | 🍴 0
-
-Last updated: Tue Apr 01 2025
-
----
-
-### [Cloves-PluralCraft-Spigot](https://github.com/CloveTwilight3/Cloves-PluralCraft-Spigot)
-
-No description provided.
-
-**Language:** Java
-
-⭐ 0 | 🍴 0
-
-Last updated: Sun Mar 30 2025
-
----
-
-### [ValoPeaks](https://github.com/CloveTwilight3/ValoPeaks)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: Tue Mar 18 2025
-
----
-
-### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
-
-No description provided.
-
-**Language:** Python
-
-⭐ 0 | 🍴 0
-
-Last updated: Thu Feb 13 2025
-
----
-
-### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
-
-No description provided.
-
-**Language:** Java
-
-⭐ 0 | 🍴 0
-
-Last updated: Sun Feb 02 2025
-
----
-
-### [Minecraft-Whitelist-Discord-Bot](https://github.com/CloveTwilight3/Minecraft-Whitelist-Discord-Bot)
-
-No description provided.
-
-**Language:** Java
-
-⭐ 0 | 🍴 0
-
-Last updated: Sun Feb 02 2025
 
 ---
 
