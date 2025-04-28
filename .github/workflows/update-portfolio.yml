@@ -1,9 +1,9 @@
 name: Update Portfolio
 
 on:
-  # Run this workflow on a schedule (once a day)
+  # Run this workflow on a schedule (every 10 minutes)
   schedule:
-    - cron: '0 0 * * *'  # Runs at midnight every day
+    - cron: '*/10 * * * *'  # Runs every 10 minutes
   
   # Run this workflow when you push to the main branch
   push:
