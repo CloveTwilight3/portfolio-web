@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Load projects from the generated markdown file
     fetchProjects();
+    
+    // Set up project filtering once projects are loaded
+    setupProjectFilters();
 });
 
 async function fetchProjects() {
@@ -84,6 +87,9 @@ function parseAndDisplayProjects(markdown) {
     if (projectCount === 0) {
         displayNoProjectsMessage();
     }
+    
+    // Set up project filtering
+    setupProjectFilters();
 }
 
 function displayProjects(repos) {
@@ -115,6 +121,9 @@ function displayProjects(repos) {
         
         projectGrid.appendChild(projectCard);
     });
+    
+    // Set up project filtering
+    setupProjectFilters();
 }
 
 function createProjectCard(project) {
@@ -138,12 +147,47 @@ function createProjectCard(project) {
     description.className = 'project-description';
     description.textContent = project.description;
     
-    // Language tag if available
-    let languageTag = '';
+    // Technical stack badges
+    const techStack = document.createElement('div');
+    techStack.className = 'tech-stack';
+    
+    // Add tech badges based on language and other cues in the project name/description
     if (project.language) {
-        languageTag = document.createElement('span');
-        languageTag.className = 'language-tag';
-        languageTag.textContent = project.language;
+        addTechBadge(techStack, project.language);
+        
+        // Add related tech badges based on language
+        if (project.language === 'JavaScript') {
+            if (project.name.toLowerCase().includes('react') || 
+                project.description.toLowerCase().includes('react')) {
+                addTechBadge(techStack, 'React');
+            }
+            if (project.name.toLowerCase().includes('node') || 
+                project.description.toLowerCase().includes('node')) {
+                addTechBadge(techStack, 'Node.js');
+            }
+        } else if (project.language === 'TypeScript') {
+            addTechBadge(techStack, 'TypeScript');
+            if (project.name.toLowerCase().includes('discord') || 
+                project.description.toLowerCase().includes('discord')) {
+                addTechBadge(techStack, 'Discord.js');
+            }
+        } else if (project.language === 'Java') {
+            if (project.name.toLowerCase().includes('minecraft') || 
+                project.description.toLowerCase().includes('minecraft') ||
+                project.name.toLowerCase().includes('plugin') || 
+                project.description.toLowerCase().includes('plugin')) {
+                addTechBadge(techStack, 'Spigot/Bukkit');
+            }
+        } else if (project.language === 'Python') {
+            if (project.name.toLowerCase().includes('flask') || 
+                project.description.toLowerCase().includes('flask')) {
+                addTechBadge(techStack, 'Flask');
+            }
+            if (project.name.toLowerCase().includes('web') || 
+                project.description.toLowerCase().includes('web')) {
+                addTechBadge(techStack, 'Web');
+            }
+        }
     }
     
     // Project meta information
@@ -151,27 +195,92 @@ function createProjectCard(project) {
     meta.className = 'project-meta';
     
     const stats = document.createElement('div');
+    stats.className = 'project-stats';
     stats.innerHTML = `<span><i class="fas fa-star"></i> ${project.stars}</span> <span><i class="fas fa-code-branch"></i> ${project.forks}</span>`;
     
     const updated = document.createElement('div');
     updated.textContent = project.lastUpdated ? `Updated: ${project.lastUpdated.split(' ').slice(1, 3).join(' ')}` : '';
     
-    // Add a small Synthwave-style detail
-    stats.classList.add('project-stats');
+    // Add action buttons
+    const actions = document.createElement('div');
+    actions.className = 'project-actions';
     
-    meta.appendChild(stats);
-    meta.appendChild(updated);
+    // GitHub repo button
+    const githubButton = document.createElement('a');
+    githubButton.href = project.url;
+    githubButton.target = '_blank';
+    githubButton.className = 'project-btn github-btn';
+    githubButton.innerHTML = '<i class="fab fa-github"></i> View Code';
+    
+    // Live demo button (for certain projects)
+    if (isWebProject(project)) {
+        const demoButton = document.createElement('a');
+        demoButton.href = `https://clovetwilight3.github.io/demo/${project.name}`;
+        demoButton.target = '_blank';
+        demoButton.className = 'project-btn demo-btn';
+        demoButton.innerHTML = '<i class="fas fa-external-link-alt"></i> Live Demo';
+        actions.appendChild(demoButton);
+    }
+    
+    actions.appendChild(githubButton);
     
     // Add elements to card
     content.appendChild(title);
     content.appendChild(description);
-    if (languageTag) {
-        content.appendChild(languageTag);
-    }
+    content.appendChild(techStack);
     content.appendChild(meta);
+    meta.appendChild(stats);
+    meta.appendChild(updated);
+    content.appendChild(actions);
     card.appendChild(content);
     
     return card;
+}
+
+function addTechBadge(container, tech) {
+    const badge = document.createElement('span');
+    badge.className = 'tech-badge';
+    badge.textContent = tech;
+    
+    // Add custom colors based on technology
+    if (tech === 'JavaScript') {
+        badge.classList.add('javascript');
+    } else if (tech === 'React') {
+        badge.classList.add('react');
+    } else if (tech === 'TypeScript') {
+        badge.classList.add('typescript');
+    } else if (tech === 'Node.js') {
+        badge.classList.add('nodejs');
+    } else if (tech === 'Python') {
+        badge.classList.add('python');
+    } else if (tech === 'Java') {
+        badge.classList.add('java');
+    } else if (tech === 'Spigot/Bukkit') {
+        badge.classList.add('minecraft');
+    } else if (tech === 'Flask') {
+        badge.classList.add('flask');
+    } else if (tech === 'Web') {
+        badge.classList.add('web');
+    } else if (tech === 'Discord.js') {
+        badge.classList.add('discord');
+    }
+    
+    container.appendChild(badge);
+}
+
+function isWebProject(project) {
+    // Determine if a project is likely a web project that could have a demo
+    const webKeywords = ['web', 'site', 'app', 'frontend', 'ui', 'dashboard', 'portfolio'];
+    const webTechs = ['javascript', 'typescript', 'html', 'css', 'react', 'vue', 'angular'];
+    
+    // Check project name and description for web keywords
+    const nameAndDesc = (project.name + ' ' + project.description).toLowerCase();
+    const isWebByKeyword = webKeywords.some(keyword => nameAndDesc.includes(keyword));
+    
+    // Check if the project uses web technologies
+    const isWebByTech = project.language && webTechs.includes(project.language.toLowerCase());
+    
+    return isWebByKeyword || isWebByTech;
 }
 
 function displayNoProjectsMessage() {
@@ -190,4 +299,77 @@ function displayErrorMessage() {
             <p>Unable to load projects. Please try again later.</p>
         </div>
     `;
+}
+
+// Project filtering functionality
+function setupProjectFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    if (!filterButtons.length) return;
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get the filter value
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Apply filtering
+            filterProjects(filterValue);
+        });
+    });
+}
+
+function filterProjects(filter) {
+    const projectGrid = document.querySelector('.project-grid');
+    if (!projectGrid) return;
+    
+    // Add filtering class to trigger animation
+    projectGrid.classList.add('filtering');
+    
+    // Get all project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    setTimeout(() => {
+        // Apply filtering logic
+        projectCards.forEach(card => {
+            if (filter === 'all') {
+                card.style.display = 'flex';
+            } else {
+                // Check if card has matching tech-badge or language
+                const techBadges = card.querySelectorAll('.tech-badge');
+                const techTexts = Array.from(techBadges).map(badge => badge.textContent.toLowerCase());
+                
+                // Also check project title and description
+                const title = card.querySelector('.project-title').textContent.toLowerCase();
+                const description = card.querySelector('.project-description').textContent.toLowerCase();
+                
+                if (filter === 'minecraft' && 
+                    (techTexts.includes('spigot/bukkit') || 
+                     title.includes('minecraft') || 
+                     description.includes('minecraft') ||
+                     title.includes('plugin') || 
+                     description.includes('plugin'))) {
+                    card.style.display = 'flex';
+                } else if (filter === 'discord' && 
+                          (techTexts.includes('discord.js') || 
+                           title.includes('discord') || 
+                           description.includes('discord') ||
+                           title.includes('bot') || 
+                           description.includes('bot'))) {
+                    card.style.display = 'flex';
+                } else if (techTexts.includes(filter.toLowerCase())) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+        
+        // Remove filtering class to finish animation
+        projectGrid.classList.remove('filtering');
+    }, 300); // Match this with the CSS transition time
 }
