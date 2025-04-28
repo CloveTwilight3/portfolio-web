@@ -166,9 +166,10 @@ function createProjectCard(project) {
                 addTechBadge(techStack, 'Node.js');
             }
         } else if (project.language === 'TypeScript') {
-            addTechBadge(techStack, 'TypeScript');
+            // TypeScript badge already added above, so we don't add it twice
             if (project.name.toLowerCase().includes('discord') || 
-                project.description.toLowerCase().includes('discord')) {
+                project.description.toLowerCase().includes('discord') ||
+                project.name.toLowerCase() === 'roommates-helper') {
                 addTechBadge(techStack, 'Discord.js');
             }
         } else if (project.language === 'Java') {
@@ -215,7 +216,8 @@ function createProjectCard(project) {
     // Live demo button (for certain projects)
     if (isWebProject(project)) {
         const demoButton = document.createElement('a');
-        demoButton.href = `https://clovetwilight3.github.io/demo/${project.name}`;
+        // Only plural-web has a demo at friends.clovetwilight3.co.uk
+        demoButton.href = `https://friends.clovetwilight3.co.uk`;
         demoButton.target = '_blank';
         demoButton.className = 'project-btn demo-btn';
         demoButton.innerHTML = '<i class="fas fa-external-link-alt"></i> Live Demo';
@@ -269,18 +271,13 @@ function addTechBadge(container, tech) {
 }
 
 function isWebProject(project) {
-    // Determine if a project is likely a web project that could have a demo
-    const webKeywords = ['web', 'site', 'app', 'frontend', 'ui', 'dashboard', 'portfolio'];
-    const webTechs = ['javascript', 'typescript', 'html', 'css', 'react', 'vue', 'angular'];
+    // Currently only the plural-web repo has a live demo
+    if (project.name.toLowerCase() === 'plural-web') {
+        return true;
+    }
     
-    // Check project name and description for web keywords
-    const nameAndDesc = (project.name + ' ' + project.description).toLowerCase();
-    const isWebByKeyword = webKeywords.some(keyword => nameAndDesc.includes(keyword));
-    
-    // Check if the project uses web technologies
-    const isWebByTech = project.language && webTechs.includes(project.language.toLowerCase());
-    
-    return isWebByKeyword || isWebByTech;
+    // For all other projects, return false as they don't have live demos
+    return false;
 }
 
 function displayNoProjectsMessage() {
@@ -359,7 +356,8 @@ function filterProjects(filter) {
                            title.includes('discord') || 
                            description.includes('discord') ||
                            title.includes('bot') || 
-                           description.includes('bot'))) {
+                           description.includes('bot') ||
+                           title.toLowerCase().includes('roommates-helper'))) {
                     card.style.display = 'flex';
                 } else if (techTexts.includes(filter.toLowerCase())) {
                     card.style.display = 'flex';
