@@ -12,6 +12,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
+### [plural-web](https://github.com/CloveTwilight3/plural-web)
+
+A PluralKit website created for friends to see who's fronting my system
+
+**Language:** Python
+
+⭐ 1 | 🍴 0
+
+Last updated: Mon Apr 28 2025
+
+---
+
 ### [Minecraft-Whitelist-Discord-Bot](https://github.com/CloveTwilight3/Minecraft-Whitelist-Discord-Bot)
 
 a simple and efficient plugin for a Discord bot for managing the Minecraft server whitelist
@@ -147,18 +159,6 @@ Last updated: Mon Apr 28 2025
 RoomMates Verification System and More!
 
 **Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: Mon Apr 28 2025
-
----
-
-### [plural-web](https://github.com/CloveTwilight3/plural-web)
-
-A PluralKit website created for friends to see who's fronting my system
-
-**Language:** Python
 
 ⭐ 1 | 🍴 0
 
