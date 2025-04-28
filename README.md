@@ -186,13 +186,13 @@ Last updated: Mon Apr 28 2025
 - 📨 [Email Me](mailto:admin@clovetwilight3.co.uk)  
 - 💬 Discord: `CloveTwilight3`
 
-## Repository Setup
+# Repository Setup
 
-This portfolio is automatically generated from my GitHub repositories. It only displays original projects (not forks) and updates whenever I push new changes.
+This portfolio is automatically generated from my GitHub repositories. It only displays original projects (not forks) and updates every 10 minutes via GitHub Actions. This ensures the most up-to-date showcase of my work.
 
 ### Technical Implementation
 
-This site is built using GitHub Pages and syncs with my original repositories through GitHub Actions. The workflow filters out any repositories that are forks to ensure only my original work is showcased.
+This site is built using GitHub Pages and syncs with my original repositories through GitHub Actions. The workflow runs every 10 minutes to check for updates to any repositories, filters out any repositories that are forks, and updates the portfolio accordingly.
 
 ---
 
