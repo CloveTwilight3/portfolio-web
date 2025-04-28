@@ -1,16 +1,38 @@
 const fs = require('fs');
 const path = require('path');
-const { Octokit } = require('@octokit/rest');
-
-// Initialize Octokit with GitHub token from environment
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN
-});
 
 // Your GitHub username - replace with your actual username
 const username = 'clovetwilight3';
 
-async function fetchRepositories() {
+async function main() {
+  try {
+    // Import Octokit using dynamic import
+    const { Octokit } = await import('@octokit/rest');
+    
+    // Initialize Octokit with GitHub token from environment
+    const octokit = new Octokit({
+      auth: process.env.GITHUB_TOKEN
+    });
+    
+    // Fetch repositories (excluding forks)
+    const repos = await fetchRepositories(octokit);
+    
+    // Generate markdown content for projects
+    const projectsContent = generateProjectsMarkdown(repos);
+    
+    // Update README.md
+    await updateReadme(projectsContent);
+    
+    // Create a dedicated projects page
+    await updateProjectsPage(projectsContent);
+    
+  } catch (error) {
+    console.error('Error in main function:', error);
+    process.exit(1);
+  }
+}
+
+async function fetchRepositories(octokit) {
   try {
     // Fetch all public repositories for the user
     const { data: repos } = await octokit.repos.listForUser({
@@ -72,7 +94,21 @@ async function updateReadme(projectsContent) {
       
       // Replace the projects section
       const projectsSectionRegex = /(## 🔗 Featured Projects\n\n)[\s\S]*?(## 📊 GitHub Stats)/m;
-      readmeContent = readmeContent.replace(projectsSectionRegex, `$1${projectsContent}\n\n$2`);
+      
+      if (projectsSectionRegex.test(readmeContent)) {
+        readmeContent = readmeContent.replace(projectsSectionRegex, `$1${projectsContent}\n\n$2`);
+      } else {
+        console.log('Could not find the Featured Projects section in README.md. Section headers may have changed.');
+        // Try simpler regex pattern as fallback
+        const simplifiedRegex = /(## Featured Projects\n\n)[\s\S]*?(## )/m;
+        if (simplifiedRegex.test(readmeContent)) {
+          readmeContent = readmeContent.replace(simplifiedRegex, `$1${projectsContent}\n\n$2`);
+        } else {
+          console.log('Could not find any project section. Creating a new section.');
+          // Just append the content before the last section
+          readmeContent = readmeContent.replace(/(## .*?\n\n)$/, `${projectsContent}\n\n$1`);
+        }
+      }
     } else {
       // Create a new README if it doesn't exist
       readmeContent = `# ${username}'s Portfolio\n\n${projectsContent}\n\n## About Me\n\nAdd your personal information here.\n`;
@@ -97,18 +133,5 @@ async function updateProjectsPage(projectsContent) {
   }
 }
 
-async function main() {
-  // Fetch repositories (excluding forks)
-  const repos = await fetchRepositories();
-  
-  // Generate markdown content for projects
-  const projectsContent = generateProjectsMarkdown(repos);
-  
-  // Update README.md
-  await updateReadme(projectsContent);
-  
-  // Create a dedicated projects page
-  await updateProjectsPage(projectsContent);
-}
-
+// Run the main function
 main();
