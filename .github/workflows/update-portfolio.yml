@@ -1,0 +1,42 @@
+name: Update Portfolio
+
+on:
+  # Run this workflow on a schedule (once a day)
+  schedule:
+    - cron: '0 0 * * *'  # Runs at midnight every day
+  
+  # Run this workflow when you push to the main branch
+  push:
+    branches: [ main ]
+  
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  update-portfolio:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm install @octokit/rest
+        
+      - name: Fetch and filter repositories
+        run: |
+          node .github/scripts/update-projects.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add -A
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update portfolio with latest projects" && git push)
