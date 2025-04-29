@@ -10,7 +10,7 @@ A PluralKit website created for friends to see who's fronting my system
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 18:59
 
 ---
 
@@ -22,7 +22,7 @@ a simple and efficient plugin for a Discord bot for managing the Minecraft serve
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -34,7 +34,7 @@ My personal 1.21.4 Resource Pack
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -46,7 +46,7 @@ A simple Paper plugin that adds functionality for sponges to absorb lava.
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -58,7 +58,7 @@ A Valorant Info Bot (Basic)
 
 ⭐ 2 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -70,7 +70,7 @@ A Simple Plugin for Plural Systems
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -82,7 +82,7 @@ A Fabric Mod for Systems
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -94,7 +94,7 @@ A simple jail plugin
 
 ⭐ 1 | 🍴 1
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -104,7 +104,7 @@ A basic Library Plugin for Plugins
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -116,7 +116,7 @@ A fun all-in-1 plugin
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -128,7 +128,7 @@ A custom discord bot that communicates with APIs
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -140,7 +140,7 @@ This is a JARVIS like assistant for your desktop, working on Debian-Based Distro
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
@@ -152,7 +152,7 @@ RoomMates Verification System and More!
 
 ⭐ 1 | 🍴 0
 
-Last updated: Mon Apr 28 2025
+Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
