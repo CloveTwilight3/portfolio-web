@@ -12,6 +12,16 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
+### [RoomMates-Beta](https://github.com/CloveTwilight3/RoomMates-Beta)
+
+Public Beta files for RoomMates Helper
+
+⭐ 0 | 🍴 0
+
+Last updated: Tue Apr 29 2025 at 09:23
+
+---
+
 ### [plural-web](https://github.com/CloveTwilight3/plural-web)
 
 A PluralKit website created for friends to see who's fronting my system
