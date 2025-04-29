@@ -55,6 +55,20 @@ async function fetchRepositories(octokit) {
   }
 }
 
+function formatDateTime(dateString) {
+  const date = new Date(dateString);
+  
+  // Format date as "Day Month Year"
+  const formattedDate = date.toDateString();
+  
+  // Format time as "HH:MM"
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const formattedTime = `${hours}:${minutes}`;
+  
+  return `${formattedDate} at ${formattedTime}`;
+}
+
 function generateProjectsMarkdown(repos) {
   if (repos.length === 0) {
     return '## Projects\n\nNo original projects found (excluding ignored repositories).';
@@ -74,8 +88,8 @@ function generateProjectsMarkdown(repos) {
     // Add stars and forks count
     markdown += `⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}\n\n`;
     
-    // Add last update date
-    const lastUpdated = new Date(repo.updated_at).toDateString();
+    // Add last update date WITH time
+    const lastUpdated = formatDateTime(repo.updated_at);
     markdown += `Last updated: ${lastUpdated}\n\n`;
     
     markdown += '---\n\n';
