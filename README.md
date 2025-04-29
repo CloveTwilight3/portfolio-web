@@ -16,9 +16,11 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 Public Beta files for RoomMates Helper
 
+**Language:** TypeScript
+
 ⭐ 0 | 🍴 0
 
-Last updated: Tue Apr 29 2025 at 09:23
+Last updated: Tue Apr 29 2025 at 09:24
 
 ---
 
