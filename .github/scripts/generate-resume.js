@@ -4,8 +4,58 @@ const path = require('path');
 // Your GitHub username
 const username = 'clovetwilight3';
 
+// Format date and time
+function formatDateTime(dateString) {
+  const date = new Date(dateString);
+  
+  // Format date as "Day Month Year"
+  const day = date.getDate();
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                      'July', 'August', 'September', 'October', 'November', 'December'];
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+  
+  // Format time as "HH:MM"
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  
+  return `${hours}:${minutes} ${day} ${month}, ${year}`;
+}
+
 async function generateResume() {
   try {
+    // First, check if a custom resume.pdf exists
+    const customPdfPath = path.join(process.cwd(), 'custom_resume.pdf');
+    const resumePdfPath = path.join(process.cwd(), 'resume.pdf');
+
+    if (fs.existsSync(customPdfPath)) {
+      // If a custom resume exists, copy it to the standard location
+      fs.copyFileSync(customPdfPath, resumePdfPath);
+      console.log('Using custom resume.pdf found in repository.');
+      
+      // Generate a simple HTML page that forwards to the PDF
+      const htmlForwarder = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="refresh" content="0; url=resume.pdf">
+          <title>Clove Twilight - Resume</title>
+      </head>
+      <body>
+          <p>Redirecting to resume... If you are not redirected automatically, <a href="resume.pdf">click here</a>.</p>
+      </body>
+      </html>
+      `;
+      
+      fs.writeFileSync(path.join(process.cwd(), 'resume.html'), htmlForwarder);
+      console.log('Created HTML redirect to custom PDF resume.');
+      return;
+    }
+    
+    console.log('No custom resume.pdf found. Generating HTML resume...');
+    
     // Import Octokit using dynamic import
     const { Octokit } = await import('@octokit/rest');
     
@@ -106,6 +156,11 @@ async function generateResume() {
                 font-weight: bold;
                 color: #6c5ce7;
             }
+            .update-time {
+                color: #666;
+                font-size: 12px;
+                margin-top: 5px;
+            }
         </style>
     </head>
     <body>
@@ -164,6 +219,7 @@ async function generateResume() {
                     <p>${repo.description || 'No description provided.'}</p>
                     <p><strong>Technologies:</strong> ${repo.language || 'Not specified'}</p>
                     <p><strong>GitHub:</strong> <a href="${repo.html_url}">${repo.html_url}</a></p>
+                    <p class="update-time">Last updated: ${formatDateTime(repo.updated_at)}</p>
                 </div>
             `).join('')}
         </section>
@@ -190,6 +246,7 @@ async function generateResume() {
             <h2>Additional Information</h2>
             <p>This resume was automatically generated from my GitHub profile. For the most up-to-date information, 
             please visit my portfolio at <a href="https://clovetwilight3.co.uk">clovetwilight3.co.uk</a>.</p>
+            <p>Last updated: ${formatDateTime(new Date())}</p>
         </section>
     </body>
     </html>
@@ -199,8 +256,7 @@ async function generateResume() {
     fs.writeFileSync(path.join(process.cwd(), 'resume.html'), html);
     console.log('Resume HTML generated successfully!');
     
-    // Since GitHub Pages can serve HTML directly, we don't necessarily need a PDF
-    // We'll create a simple redirect file that will allow /resume.pdf to work
+    // Create a simple redirect file for resume.pdf if no custom PDF exists
     const pdfRedirect = `
     <!DOCTYPE html>
     <html>
