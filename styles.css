@@ -860,3 +860,40 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-color);
 }
+
+.project-updated {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+.project-updated i {
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+/* Make sure the project metadata layout works well with the new timestamp */
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.project-stats {
+    display: flex;
+    gap: 15px;
+}
+
+.update-time {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: var(--light-text);
+    font-style: italic;
+}
