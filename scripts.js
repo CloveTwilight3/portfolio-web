@@ -61,6 +61,7 @@ function parseAndDisplayProjects(markdown) {
     projectsContainer.appendChild(projectGrid);
     
     // Regular expression to extract project information from markdown
+    // Updated regex to match the new datetime format
     const projectRegex = /### \[(.*?)\]\((.*?)\)\n\n([\s\S]*?)(?:\n\n\*\*Language:\*\* (.*?)\n\n)?⭐ (\d+) \| 🍴 (\d+)\n\n(?:Last updated: (.*?)\n\n)?---/g;
     
     let match;
@@ -116,7 +117,7 @@ function displayProjects(repos) {
             language: repo.language,
             stars: repo.stargazers_count,
             forks: repo.forks_count,
-            lastUpdated: new Date(repo.updated_at).toDateString()
+            lastUpdated: formatDateTime(repo.updated_at)
         });
         
         projectGrid.appendChild(projectCard);
@@ -124,6 +125,23 @@ function displayProjects(repos) {
     
     // Set up project filtering
     setupProjectFilters();
+}
+
+// Format date and time in a more detailed way
+function formatDateTime(isoString) {
+    const date = new Date(isoString);
+    
+    // Get hours and minutes with leading zeros
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    
+    // Get day and month
+    const day = date.getDate();
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+    const month = monthNames[date.getMonth()];
+    
+    return `${hours}:${minutes} ${day} ${month}`;
 }
 
 function createProjectCard(project) {
@@ -200,7 +218,8 @@ function createProjectCard(project) {
     stats.innerHTML = `<span><i class="fas fa-star"></i> ${project.stars}</span> <span><i class="fas fa-code-branch"></i> ${project.forks}</span>`;
     
     const updated = document.createElement('div');
-    updated.textContent = project.lastUpdated ? `Updated: ${project.lastUpdated.split(' ').slice(1, 3).join(' ')}` : '';
+    updated.className = 'project-updated';
+    updated.innerHTML = project.lastUpdated ? `<i class="fas fa-clock"></i> ${project.lastUpdated}` : '';
     
     // Add action buttons
     const actions = document.createElement('div');
