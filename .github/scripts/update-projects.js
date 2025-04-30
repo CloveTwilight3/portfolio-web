@@ -48,6 +48,15 @@ async function fetchRepositories(octokit) {
     
     console.log(`Found ${filteredRepos.length} original repositories (excluding ignored repos)`);
     
+    // For each repository, check if it's an archive
+    for (const repo of filteredRepos) {
+      // Check if repository is an archive based on description or name
+      if (repo.name === 'TransGamers' || 
+          (repo.description && repo.description.toLowerCase().includes('archive'))) {
+        repo.isArchive = true;
+      }
+    }
+    
     return filteredRepos;
   } catch (error) {
     console.error('Error fetching repositories:', error);
@@ -77,8 +86,21 @@ function generateProjectsMarkdown(repos) {
   let markdown = '## Projects\n\n';
   
   repos.forEach(repo => {
-    markdown += `### [${repo.name}](${repo.html_url})\n\n`;
-    markdown += repo.description ? `${repo.description}\n\n` : 'No description provided.\n\n';
+    let projectTitle = `### [${repo.name}](${repo.html_url})`;
+    
+    // Add archive marker if it's an archive
+    if (repo.isArchive) {
+      projectTitle += ' [ARCHIVE]';
+    }
+    
+    markdown += `${projectTitle}\n\n`;
+    
+    // For TransGamers specifically, enhance the description
+    if (repo.name === 'TransGamers') {
+      markdown += 'A public archive of a Discord Bot I have helped towards. This repository is maintained as an archive for reference purposes.\n\n';
+    } else {
+      markdown += repo.description ? `${repo.description}\n\n` : 'No description provided.\n\n';
+    }
     
     // Add language info if available
     if (repo.language) {
