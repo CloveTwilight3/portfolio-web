@@ -14,7 +14,7 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### [TransGamers](https://github.com/CloveTwilight3/TransGamers)
 
-No description provided.
+A public archive of a Discord Bot I have helped towards
 
 **Language:** JavaScript
 
