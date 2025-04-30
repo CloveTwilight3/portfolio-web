@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '*/10 * * * *'  # Runs every 10 minutes
   
-  # Run this workflow when you push to the main branch
+  # Run this workflow when you push anything to the main branch
   push:
     branches: [ main ]
   
