@@ -12,18 +12,6 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
-### [RoomMates-Helper](https://github.com/CloveTwilight3/RoomMates-Helper)
-
-RoomMates Verification System and More!
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: Tue Apr 29 2025 at 17:22
-
----
-
 ### [RoomMates-Beta](https://github.com/CloveTwilight3/RoomMates-Beta)
 
 Public Beta files for RoomMates Helper
