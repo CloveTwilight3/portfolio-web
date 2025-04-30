@@ -61,14 +61,14 @@ function parseAndDisplayProjects(markdown) {
     projectsContainer.appendChild(projectGrid);
     
     // Regular expression to extract project information from markdown
-    // Updated regex to match the new datetime format
-    const projectRegex = /### \[(.*?)\]\((.*?)\)\n\n([\s\S]*?)(?:\n\n\*\*Language:\*\* (.*?)\n\n)?⭐ (\d+) \| 🍴 (\d+)\n\n(?:Last updated: (.*?)\n\n)?---/g;
+    // Updated regex to match the new datetime format and look for [ARCHIVE] marker
+    const projectRegex = /### \[(.*?)\]\((.*?)\)(\s*\[ARCHIVE\])?\n\n([\s\S]*?)(?:\n\n\*\*Language:\*\* (.*?)\n\n)?⭐ (\d+) \| 🍴 (\d+)\n\n(?:Last updated: (.*?)\n\n)?---/g;
     
     let match;
     let projectCount = 0;
     
     while ((match = projectRegex.exec(markdown)) !== null) {
-        const [, name, url, description, language, stars, forks, lastUpdated] = match;
+        const [, name, url, archiveMarker, description, language, stars, forks, lastUpdated] = match;
         
         // Create project card
         const projectCard = createProjectCard({
@@ -78,7 +78,9 @@ function parseAndDisplayProjects(markdown) {
             language,
             stars,
             forks,
-            lastUpdated
+            lastUpdated,
+            // Check if this project is an archive based on the marker or description or name
+            isArchive: !!archiveMarker || isArchiveProject(name, description.trim())
         });
         
         projectGrid.appendChild(projectCard);
@@ -117,7 +119,9 @@ function displayProjects(repos) {
             language: repo.language,
             stars: repo.stargazers_count,
             forks: repo.forks_count,
-            lastUpdated: formatDateTime(repo.updated_at)
+            lastUpdated: formatDateTime(repo.updated_at),
+            // Check if this project is an archive based on name or description
+            isArchive: isArchiveProject(repo.name, repo.description || '')
         });
         
         projectGrid.appendChild(projectCard);
@@ -125,6 +129,20 @@ function displayProjects(repos) {
     
     // Set up project filtering
     setupProjectFilters();
+}
+
+// Function to check if a project is an archive
+function isArchiveProject(name, description) {
+    // Check if the project name is "TransGamers" or contains archive-related keywords
+    if (name === 'TransGamers') {
+        return true;
+    }
+    
+    // Check if the description contains archive-related keywords
+    const archiveKeywords = ['public archive', 'archived', 'archive of'];
+    return archiveKeywords.some(keyword => 
+        description.toLowerCase().includes(keyword)
+    );
 }
 
 // Format date and time in a more detailed way
@@ -154,11 +172,26 @@ function createProjectCard(project) {
     // Project title with link
     const title = document.createElement('h3');
     title.className = 'project-title';
+    
+    // Create title container to hold the title and archive badge if needed
+    const titleContainer = document.createElement('div');
+    titleContainer.className = 'title-container';
+    
     const titleLink = document.createElement('a');
     titleLink.href = project.url;
     titleLink.target = '_blank';
     titleLink.textContent = project.name;
-    title.appendChild(titleLink);
+    titleContainer.appendChild(titleLink);
+    
+    // Add archive badge if the project is an archive
+    if (project.isArchive) {
+        const archiveBadge = document.createElement('span');
+        archiveBadge.className = 'archive-badge';
+        archiveBadge.textContent = 'Archive';
+        titleContainer.appendChild(archiveBadge);
+    }
+    
+    title.appendChild(titleContainer);
     
     // Project description
     const description = document.createElement('p');
@@ -182,6 +215,10 @@ function createProjectCard(project) {
             if (project.name.toLowerCase().includes('node') || 
                 project.description.toLowerCase().includes('node')) {
                 addTechBadge(techStack, 'Node.js');
+            }
+            if (project.name.toLowerCase().includes('discord') || 
+                project.description.toLowerCase().includes('discord')) {
+                addTechBadge(techStack, 'Discord.js');
             }
         } else if (project.language === 'TypeScript') {
             // TypeScript badge already added above, so we don't add it twice
@@ -354,6 +391,13 @@ function filterProjects(filter) {
         projectCards.forEach(card => {
             if (filter === 'all') {
                 card.style.display = 'flex';
+            } else if (filter === 'archive') {
+                // Show only archived projects
+                if (card.querySelector('.archive-badge')) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
             } else {
                 // Check if card has matching tech-badge or language
                 const techBadges = card.querySelectorAll('.tech-badge');
