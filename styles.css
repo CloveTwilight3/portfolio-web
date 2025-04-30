@@ -897,3 +897,45 @@ footer {
     color: var(--light-text);
     font-style: italic;
 }
+
+/* Project Title Container (to hold title and archive badge) */
+.title-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Archive Badge */
+.archive-badge {
+    display: inline-block;
+    background-color: #ff9800;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+/* Make the archive badge animate on hover */
+.project-card:hover .archive-badge {
+    background-color: #e65100;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+/* Adjust the project filters to include the archive filter */
+.filter-btn[data-filter="archive"] {
+    background-color: #ff9800;
+    color: white;
+    border-color: #ff9800;
+}
+
+.filter-btn[data-filter="archive"]:hover,
+.filter-btn[data-filter="archive"].active {
+    background-color: #e65100;
+    border-color: #e65100;
+}
