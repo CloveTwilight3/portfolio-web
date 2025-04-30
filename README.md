@@ -142,18 +142,6 @@ Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
-### [the-vixen](https://github.com/CloveTwilight3/the-vixen)
-
-A custom discord bot that communicates with APIs
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: Mon Apr 28 2025 at 17:44
-
----
-
 ### [EMIS](https://github.com/CloveTwilight3/EMIS)
 
 This is a JARVIS like assistant for your desktop, working on Debian-Based Distros, Mac and Windows
