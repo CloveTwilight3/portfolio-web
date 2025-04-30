@@ -2,9 +2,9 @@
 
 ## Projects
 
-### [TransGamers](https://github.com/CloveTwilight3/TransGamers)
+### [TransGamers](https://github.com/CloveTwilight3/TransGamers) [ARCHIVE]
 
-A public archive of a Discord Bot I have helped towards
+A public archive of a Discord Bot I have helped towards. This repository is maintained as an archive for reference purposes.
 
 **Language:** JavaScript
 
@@ -50,11 +50,11 @@ Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
-### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
-A simple Paper plugin that adds functionality for sponges to absorb lava.
+My personal 1.21.4 Resource Pack 
 
-**Language:** Java
+**Language:** Python
 
 ⭐ 1 | 🍴 0
 
@@ -62,11 +62,11 @@ Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
-### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
+### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
 
-My personal 1.21.4 Resource Pack 
+A simple Paper plugin that adds functionality for sponges to absorb lava.
 
-**Language:** Python
+**Language:** Java
 
 ⭐ 1 | 🍴 0
 
