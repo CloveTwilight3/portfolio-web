@@ -1,24 +1,26 @@
+/* Main theme variables */
 :root {
-  /* Main colors */
-  --background: #211821;          /* Deep warm purple-black */
-  --card-bg: #2a1f2a;             /* Slightly lighter background */
-  --primary-color: #e8a9cb;       /* Soft pink */
-  --secondary-color: #b18cd3;     /* Lavender */
-  --accent-color: #f5c78d;        /* Warm gold/orange */
+  /* Main colors - Standard Lesbian Flag colors */
+  --background: #2C0E11;          /* Dark brown/red */
+  --card-bg: #3F1217;             /* Slightly lighter background */
+  --primary-color: #D62900;       /* Dark orange/red */
+  --secondary-color: #FF9B55;     /* Orange */
+  --accent-color: #D461A6;        /* Pink */
   
   /* Text colors */
-  --text-color: #e6d9ef;          /* Soft off-white */
-  --light-text: #c7b5cd;          /* Lighter pastel purple */
+  --text-color: #FFFFFF;          /* White */
+  --light-text: #FFDBBD;          /* Light orange/peach */
   
   /* UI elements */
-  --border-color: #3d2e3d;        /* Subtle border color */
-  --hover-color: #40324d;         /* Highlight on hover */
+  --border-color: #672235;        /* Subtle border color */
+  --hover-color: #8C2332;         /* Highlight on hover */
   
   /* Gradients */
-  --gradient-start: #e8a9cb;      /* Pink */
-  --gradient-end: #b18cd3;        /* Lavender */
+  --gradient-start: #FF9B55;      /* Orange */
+  --gradient-end: #D461A6;        /* Pink */
 }
 
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
@@ -44,13 +46,74 @@ body {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
   color: var(--accent-color);
+}
+
+/* ASCII Butterfly elements - with standard trans pride colors */
+.ascii-butterfly {
+  position: fixed; /* Fixed position so they stay in place while scrolling */
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1.2;
+  font-size: 8px; /* Increased from 6px to 8px */
+  z-index: 1;
+  pointer-events: none;
+  text-shadow: 0 0 2px var(--background);
+  opacity: 0.7; /* Slightly reduced from 0.8 for less visual dominance */
+}
+
+/* Trans pride colors - standard colors */
+.color-blue { color: #5BCEFA; } /* Trans flag blue (standard) */
+.color-pink { color: #F5A9B8; } /* Trans flag pink (standard) */
+.color-white { color: #FFFFFF; } /* Trans flag white (standard) */
+
+/* Butterfly positions */
+.butterfly-top-right {
+  top: 5%;
+  right: 3%;
+  transform: scale(0.7); /* Slightly reduced from 0.8 */
+  animation: butterfly-float-1 20s ease-in-out infinite;
+}
+
+.butterfly-bottom-left {
+  bottom: 5%;
+  left: 3%;
+  transform: scale(0.6) rotate(15deg);
+  animation: butterfly-float-2 22s ease-in-out infinite reverse;
+}
+
+.butterfly-footer {
+  bottom: 20%;
+  right: 8%;
+  transform: scale(0.5) rotate(-10deg);
+  animation: butterfly-float-3 25s ease-in-out infinite;
+  opacity: 0.6; /* More subtle */
+}
+
+/* Butterfly animations */
+@keyframes butterfly-float-1 {
+  0%, 100% { transform: scale(0.7) translate(0, 0); }
+  25% { transform: scale(0.7) translate(10px, -15px); }
+  50% { transform: scale(0.7) translate(5px, 10px); }
+  75% { transform: scale(0.7) translate(-15px, 5px); }
+}
+
+@keyframes butterfly-float-2 {
+  0%, 100% { transform: scale(0.6) rotate(15deg) translate(0, 0); }
+  30% { transform: scale(0.6) rotate(10deg) translate(-15px, 10px); }
+  60% { transform: scale(0.6) rotate(20deg) translate(10px, -15px); }
+}
+
+@keyframes butterfly-float-3 {
+  0%, 100% { transform: scale(0.5) rotate(-10deg) translate(0, 0); }
+  40% { transform: scale(0.5) rotate(-15deg) translate(20px, 10px); }
+  70% { transform: scale(0.5) rotate(-5deg) translate(-10px, -10px); }
 }
 
 /* Header */
@@ -74,7 +137,7 @@ header h1 {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary-color);
-  text-shadow: 0 0 5px rgba(232, 169, 203, 0.5);
+  text-shadow: 0 0 5px rgba(214, 41, 0, 0.5);
 }
 
 nav ul {
@@ -97,7 +160,7 @@ nav ul li a:hover {
 
 .resume-btn {
   background-color: var(--primary-color);
-  color: var(--background) !important;
+  color: var(--text-color) !important;
   padding: 8px 15px;
   border-radius: 20px;
   display: inline-flex;
@@ -109,7 +172,7 @@ nav ul li a:hover {
 .resume-btn:hover {
   background-color: var(--accent-color);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(245, 199, 141, 0.4);
+  box-shadow: 0 5px 15px rgba(212, 97, 166, 0.4);
 }
 
 /* Enhanced Hero Section */
@@ -121,15 +184,37 @@ nav ul li a:hover {
   overflow: hidden;
 }
 
+/* Sunset glow in hero section - Standard Lesbian flag colors */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, 
+                rgba(214, 41, 0, 0.1) 0%, 
+                rgba(255, 155, 85, 0.05) 40%, 
+                transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 10%;
+  width: 30%;
   height: 100%;
-  background: radial-gradient(ellipse at bottom right, rgba(232, 169, 203, 0.1), transparent 70%);
+  background: radial-gradient(
+      ellipse at center,
+      rgba(255, 155, 85, 0.2) 0%,
+      rgba(212, 97, 166, 0.1) 50%,
+      transparent 80%
+  );
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -157,7 +242,7 @@ nav ul li a:hover {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 10px rgba(232, 169, 203, 0.2);
+  text-shadow: 0 0 10px rgba(255, 155, 85, 0.2);
 }
 
 .hero .subtitle {
@@ -193,11 +278,11 @@ nav ul li a:hover {
 
 .cta-btn.primary {
   background-color: var(--primary-color);
-  color: var(--background);
+  color: var(--text-color);
 }
 
 .cta-btn.primary:hover {
-  background-color: var(--accent-color);
+  background-color: var(--secondary-color);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -253,7 +338,7 @@ section h2 {
   margin-bottom: 30px;
   color: var(--primary-color);
   text-align: center;
-  text-shadow: 0 0 5px rgba(232, 169, 203, 0.3);
+  text-shadow: 0 0 5px rgba(214, 41, 0, 0.3);
 }
 
 .subtitle {
@@ -291,7 +376,7 @@ section h2 {
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 
-              0 0 10px rgba(232, 169, 203, 0.2);
+              0 0 10px rgba(214, 41, 0, 0.2);
   border-color: var(--primary-color);
 }
 
@@ -476,13 +561,13 @@ section h2 {
 
 .demo-btn {
   background-color: var(--primary-color);
-  color: var(--background);
+  color: var(--text-color);
   border: 1px solid var(--primary-color);
 }
 
 .demo-btn:hover {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
   transform: translateY(-2px);
 }
 
@@ -513,8 +598,20 @@ section h2 {
 
 .filter-btn.active {
   background-color: var(--primary-color);
-  color: var(--background);
+  color: var(--text-color);
   border-color: var(--primary-color);
+}
+
+.filter-btn[data-filter="archive"] {
+  background-color: var(--accent-color);
+  color: var(--background);
+  border-color: var(--accent-color);
+}
+
+.filter-btn[data-filter="archive"]:hover,
+.filter-btn[data-filter="archive"].active {
+  background-color: #A40061; /* Darker pink from lesbian flag */
+  border-color: #A40061;
 }
 
 /* Project grid animation */
@@ -557,7 +654,7 @@ section h2 {
 .skill-category:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 
-              0 0 10px rgba(232, 169, 203, 0.2);
+              0 0 10px rgba(214, 41, 0, 0.2);
   border-color: var(--primary-color);
 }
 
@@ -592,7 +689,7 @@ section h2 {
 
 .skill-item:hover {
   background-color: var(--primary-color);
-  color: var(--background);
+  color: var(--text-color);
   transform: scale(1.05);
 }
 
@@ -620,7 +717,7 @@ section h2 {
 .stats-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4),
-              0 0 10px rgba(232, 169, 203, 0.2);
+              0 0 10px rgba(214, 41, 0, 0.2);
 }
 
 .stats-card img {
@@ -685,7 +782,7 @@ section h2 {
 .spotify-widget img:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4),
-              0 0 10px rgba(232, 169, 203, 0.2);
+              0 0 10px rgba(214, 41, 0, 0.2);
 }
 
 /* About Section */
@@ -740,7 +837,7 @@ section h2 {
   background-color: var(--hover-color);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2),
-              0 0 10px rgba(232, 169, 203, 0.2);
+              0 0 10px rgba(214, 41, 0, 0.2);
   border-color: var(--primary-color);
 }
 
@@ -763,7 +860,7 @@ section h2 {
 .hire-me:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4),
-              0 0 10px rgba(232, 169, 203, 0.2);
+              0 0 10px rgba(214, 41, 0, 0.2);
   border-color: var(--primary-color);
 }
 
@@ -872,10 +969,94 @@ footer {
 
 /* SVG Butterfly */
 .butterfly-svg {
-  fill: var(--secondary-color);
+  fill: #5BCEFA; /* Using standard trans blue */
   opacity: 0.5;
   width: 40px;
   height: 40px;
+}
+
+.project-updated {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--light-text);
+  font-size: 0.9rem;
+}
+
+.project-updated i {
+  color: var(--primary-color);
+  opacity: 0.8;
+}
+
+/* Make sure the project metadata layout works well with the new timestamp */
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+.project-stats {
+  display: flex;
+  gap: 15px;
+}
+
+.update-time {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: var(--light-text);
+  font-style: italic;
+}
+
+/* Project Title Container (to hold title and archive badge) */
+.title-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Archive Badge */
+.archive-badge {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--background);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Make the archive badge animate on hover */
+.project-card:hover .archive-badge {
+  background-color: #A40061; /* Darker pink */
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+/* Dark theme scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--hover-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
 }
 
 /* Responsive */
@@ -941,101 +1122,4 @@ footer {
     width: 100%;
     justify-content: center;
   }
-}
-
-/* Dark theme scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--hover-color);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-color);
-}
-
-.project-updated {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--light-text);
-  font-size: 0.9rem;
-}
-
-.project-updated i {
-  color: var(--primary-color);
-  opacity: 0.8;
-}
-
-/* Make sure the project metadata layout works well with the new timestamp */
-.project-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 0.9rem;
-  color: var(--light-text);
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid var(--border-color);
-}
-
-.project-stats {
-  display: flex;
-  gap: 15px;
-}
-
-.update-time {
-  margin-top: 5px;
-  font-size: 0.8rem;
-  color: var(--light-text);
-  font-style: italic;
-}
-
-/* Project Title Container (to hold title and archive badge) */
-.title-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* Archive Badge */
-.archive-badge {
-  display: inline-block;
-  background-color: var(--accent-color);
-  color: var(--background);
-  padding: 3px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 2px;
-}
-
-/* Make the archive badge animate on hover */
-.project-card:hover .archive-badge {
-  background-color: #e8a15a;
-  transform: scale(1.05);
-  transition: all 0.2s ease;
-}
-
-/* Adjust the project filters to include the archive filter */
-.filter-btn[data-filter="archive"] {
-  background-color: var(--accent-color);
-  color: var(--background);
-  border-color: var(--accent-color);
-}
-
-.filter-btn[data-filter="archive"]:hover,
-.filter-btn[data-filter="archive"].active {
-  background-color: #e8a15a;
-  border-color: #e8a15a;
 }
