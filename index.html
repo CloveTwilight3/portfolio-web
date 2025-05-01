@@ -19,7 +19,7 @@
     
     <!-- Aesthetic additions for cozy style -->
     <style>
-        /* ASCII Butterfly elements */
+        /* ASCII Butterfly element */
         .ascii-butterfly {
             position: absolute;
             font-family: monospace;
@@ -30,44 +30,16 @@
             pointer-events: none;
             opacity: 0.7;
             text-shadow: 0 0 2px var(--background);
-        }
-        
-        .ascii-butterfly-1 {
             top: 10%;
             right: 5%;
-            animation: ascii-float-1 20s ease-in-out infinite;
+            animation: butterfly-float 25s ease-in-out infinite;
         }
         
-        .ascii-butterfly-2 {
-            bottom: 30%;
-            left: 5%;
-            animation: ascii-float-2 25s ease-in-out infinite reverse;
-        }
-        
-        .ascii-butterfly-3 {
-            top: 50%;
-            right: 8%;
-            transform: scale(0.8) rotate(-5deg);
-            animation: ascii-float-3 22s ease-in-out infinite;
-        }
-        
-        @keyframes ascii-float-1 {
+        @keyframes butterfly-float {
             0%, 100% { transform: translate(0, 0); }
             25% { transform: translate(10px, -15px); }
             50% { transform: translate(5px, 10px); }
             75% { transform: translate(-15px, 5px); }
-        }
-        
-        @keyframes ascii-float-2 {
-            0%, 100% { transform: translate(0, 0) rotate(-5deg); }
-            30% { transform: translate(-10px, 15px) rotate(0deg); }
-            60% { transform: translate(15px, -10px) rotate(-10deg); }
-        }
-        
-        @keyframes ascii-float-3 {
-            0%, 100% { transform: scale(0.8) rotate(-5deg) translate(0, 0); }
-            35% { transform: scale(0.8) rotate(-8deg) translate(-20px, 10px); }
-            70% { transform: scale(0.8) rotate(-2deg) translate(15px, -15px); }
         }
         
         .color-l1 { color: var(--primary-color); }
@@ -119,8 +91,8 @@
     </style>
 </head>
 <body>
-    <!-- ASCII Butterfly decorations -->
-    <div class="ascii-butterfly ascii-butterfly-1">
+    <!-- ASCII Butterfly - single complete butterfly -->
+    <div class="ascii-butterfly">
 <span class="color-l1">                         _______</span>
 <span class="color-l2">                       LLLLLLLLLLL</span>
 <span class="color-l1">                   __LLLLLLLLLLLLLL</span>
@@ -138,33 +110,29 @@
 <span class="color-l1"> L   _LLL_LLLL___         _LLLLLL</span>
 <span class="color-l2">LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
 <span class="color-l1">L  LLLLLLLLLLLLLLL        LLLLLL</span>
-    </div>
-
-    <div class="ascii-butterfly ascii-butterfly-2">
-<span class="color-l2">        ~~LLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL</span>
-<span class="color-l1">      ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
-<span class="color-l1">  LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
-<span class="color-l2">___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_</span>
-<span class="color-l1">LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
-<span class="color-l2">__LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL</span>
-<span class="color-l1">LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
-<span class="color-l2">_LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL</span>
-<span class="color-l1">LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL</span>
-<span class="color-l1">LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL</span>
-<span class="color-l2">LLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~</span>
-    </div>
-
-    <div class="ascii-butterfly ascii-butterfly-3">
-<span class="color-l1">LLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL</span>
-<span class="color-l2">LLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~</span>
-<span class="color-l3">LLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-l2"> LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~</span>
-<span class="color-l1">  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL</span>
-<span class="color-l1">   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~</span>
-<span class="color-l2">           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL</span>
-<span class="color-l1">               ~~~~~~LLLLLLLLLL~             LLLLLL</span>
-<span class="color-l2">                         LLLLL              _LLLLLL</span>
-<span class="color-l3">                         LLLLL    L     L   LLLLLLL</span>
+<span class="color-l2">LL LLLLLLLLLLLLLLLL        LLLLL~</span>
+<span class="color-l1">L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
+<span class="color-l2">LLLLLLLLLLLLLLLL~       LLLLLL</span>
+<span class="color-l1">  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
+<span class="color-l2">LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
+<span class="color-l1"> LLLLLLLLLLLLL____       _LLLLLL_</span>
+<span class="color-l2">  LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
+<span class="color-l1">   LLLLLLLLLLLLLLLLLL_       LLLLL</span>
+<span class="color-l2">   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
+<span class="color-l1">    LL      LLLLLLLLL   LLLLLLLLL</span>
+<span class="color-l2">    LL       ~~~~~       ~LLLLLL</span>
+<span class="color-l1">    LL_            _     LLLLLL</span>
+<span class="color-l2">   ~LLLL          ~L   LLLLLL~</span>
+<span class="color-l1">  LLLLLLL___     LLLLLLLLLL</span>
+<span class="color-l2">  LLLLLLLLLLLL   LLLLLLL~</span>
+<span class="color-l3"> LLL_ LLLLLLLLLLLLLLLLLLL</span>
+<span class="color-l2">LLLLLLL~LLLLLLLLLLLLLLLL~</span>
+<span class="color-l1">LLLL     LLLLLLLLLLLLLL</span>
+<span class="color-l1">LLLLL        ~~~~~~~~~</span>
+<span class="color-l2"> LLL       _LLLLL</span>
+<span class="color-l1">          LLLLLL</span>
+<span class="color-l2">        _LLLLLL</span>
+<span class="color-l3">L     L   LLLLLLL</span>
     </div>
 
     <!-- Dreamcatcher decoration -->
@@ -205,7 +173,7 @@
                 <div class="hero-text">
                     <h2>👋 Hi, I'm <span class="highlight">Clove Twilight</span></h2>
                     <h3 class="subtitle">Developer • Linux Enthusiast • Minecraft Modder</h3>
-                    <p class="hero-description">Building creative solutions with code, from Discord bots to Minecraft plugins. Passionate about open-source and Linux.</p>
+                    <p class="hero-description">Building creative solutions with code, from Discord bots to Minecraft plugins. I'm a passionate developer with a focus on useful, quality software.</p>
                     <div class="hero-cta">
                         <a href="#projects" class="cta-btn primary"><i class="fas fa-code"></i> View My Work</a>
                         <a href="#contact" class="cta-btn secondary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
@@ -225,7 +193,7 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2>🔗 My Projects</h2>
+            <h2>🔗 Featured Projects</h2>
             <p class="subtitle">A collection of my work - from Discord bots to Minecraft plugins</p>
                 <div class="project-filters">
                     <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -310,10 +278,10 @@
                     <h3><i class="fas fa-tools"></i> DevOps</h3>
                     <div class="skill-list">
                         <div class="skill-item">Git/GitHub</div>
-                        <div class="skill-item">GitHub Actions</div>
+                        <div class="skill-item">CI/CD</div>
                         <div class="skill-item">Docker</div>
                         <div class="skill-item">Linux Administration</div>
-                        <div class="skill-item">CI/CD</div>
+                        <div class="skill-item">Server Management</div>
                     </div>
                 </div>
             </div>
@@ -322,8 +290,8 @@
 
     <section id="stats" class="stats">
         <div class="container">
-            <h2>📊 GitHub Stats</h2>
-            <p class="subtitle">A glimpse into my coding activity</p>
+            <h2>📊 Coding Activity</h2>
+            <p class="subtitle">A glimpse into my development work</p>
             
             <div class="stats-cards">
                 <div class="stats-card">
@@ -392,7 +360,7 @@
             <p class="subtitle">Interested in working together? Reach out through any of these platforms</p>
             <div class="contact-links">
                 <a href="https://github.com/clovetwilight3" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.clovetwilight3.co.uk" target="_blank"><i class="fas fa-globe"></i> Personal Website</a>
+                <a href="https://clovetwilight3.co.uk" target="_blank"><i class="fas fa-globe"></i> Website</a>
                 <a href="mailto:admin@clovetwilight3.co.uk"><i class="fas fa-envelope"></i> Email Me</a>
                 <a href="https://discord.gg/ZPDjhfcvQe" target="_blank"><i class="fab fa-discord"></i> Discord: CloveTwilight3</a>
             </div>
@@ -420,7 +388,7 @@
                 </div>
             </div>
             <div class="footer-note">
-                <p>This portfolio is automatically updated every 10 minutes with my latest GitHub projects.</p>
+                <p>My portfolio is regularly updated with my latest projects and work.</p>
             </div>
         </div>
     </footer>
