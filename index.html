@@ -16,71 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-    /* ASCII Butterfly elements - with standard trans pride colors */
-    .ascii-butterfly {
-        position: fixed; /* Fixed position so they stay in place while scrolling */
-        font-family: monospace;
-        white-space: pre;
-        line-height: 1.2;
-        font-size: 8px; /* Increased from 6px to 8px */
-        z-index: 1;
-        pointer-events: none;
-        text-shadow: 0 0 2px var(--background);
-        opacity: 0.7; /* Slightly reduced from 0.8 for less visual dominance */
-    }
-    
-    /* Trans pride colors - standard colors */
-    .color-blue { color: #5BCEFA; } /* Trans flag blue (standard) */
-    .color-pink { color: #F5A9B8; } /* Trans flag pink (standard) */
-    .color-white { color: #FFFFFF; } /* Trans flag white (standard) */
-    
-    /* Butterfly positions */
-    .butterfly-top-right {
-        top: 5%;
-        right: 3%;
-        transform: scale(0.7); /* Slightly reduced from 0.8 */
-        animation: butterfly-float-1 20s ease-in-out infinite;
-    }
-    
-    .butterfly-bottom-left {
-        bottom: 5%;
-        left: 3%;
-        transform: scale(0.6) rotate(15deg);
-        animation: butterfly-float-2 22s ease-in-out infinite reverse;
-    }
-    
-    .butterfly-footer {
-        bottom: 20%;
-        right: 8%;
-        transform: scale(0.5) rotate(-10deg);
-        animation: butterfly-float-3 25s ease-in-out infinite;
-        opacity: 0.6; /* More subtle */
-    }
-    
-    /* Butterfly animations */
-    @keyframes butterfly-float-1 {
-        0%, 100% { transform: scale(0.7) translate(0, 0); }
-        25% { transform: scale(0.7) translate(10px, -15px); }
-        50% { transform: scale(0.7) translate(5px, 10px); }
-        75% { transform: scale(0.7) translate(-15px, 5px); }
-    }
-    
-    @keyframes butterfly-float-2 {
-        0%, 100% { transform: scale(0.6) rotate(15deg) translate(0, 0); }
-        30% { transform: scale(0.6) rotate(10deg) translate(-15px, 10px); }
-        60% { transform: scale(0.6) rotate(20deg) translate(10px, -15px); }
-    }
-    
-    @keyframes butterfly-float-3 {
-        0%, 100% { transform: scale(0.5) rotate(-10deg) translate(0, 0); }
-        40% { transform: scale(0.5) rotate(-15deg) translate(20px, 10px); }
-        70% { transform: scale(0.5) rotate(-5deg) translate(-10px, -10px); }
-    }
-</style>
 </head>
 <body>
-    <!-- Top right butterfly - Blue, Pink, White style -->
+    <!-- Top right butterfly - Blue, Pink, White style (trans colors) -->
     <div class="ascii-butterfly butterfly-top-right">
 <span class="color-blue">                                                                  _______</span>
 <span class="color-blue">                                                                LLLLLLLLLLL</span>
@@ -130,7 +68,7 @@
 <span class="color-blue">                                 ~~~~~~~~~</span>
     </div>
 
-    <!-- Bottom left butterfly - Pink, White, Blue style -->
+    <!-- Bottom left butterfly - Pink, White, Blue style (trans colors) -->
     <div class="ascii-butterfly butterfly-bottom-left">
 <span class="color-blue">                                                                  _______</span>
 <span class="color-blue">                                                                LLLLLLLLLLL</span>
@@ -180,7 +118,7 @@
 <span class="color-blue">                                 ~~~~~~~~~</span>
     </div>
 
-    <!-- Footer area butterfly - Blue, Pink, White, Pink, Blue -->
+    <!-- Footer area butterfly - Blue, Pink, White, Pink, Blue (trans flag colors) -->
     <div class="ascii-butterfly butterfly-footer">
 <span class="color-blue">                                                                  _______</span>
 <span class="color-blue">                                                                LLLLLLLLLLL</span>
@@ -367,27 +305,32 @@
         </div>
     </section>
 
+    <!-- Updated GitHub Stats section with custom lesbian/trans colors -->
     <section id="stats" class="stats">
         <div class="container">
-            <h2>📊 Coding Activity</h2>
+            <h2>📊 GitHub Stats</h2>
             <p class="subtitle">A glimpse into my development work</p>
             
             <div class="stats-cards">
                 <div class="stats-card">
-                    <img src="https://github-readme-stats.vercel.app/api?username=clovetwilight3&theme=synthwave&show_icons=true" alt="CloveTwilight3's GitHub Stats">
+                    <!-- Custom lesbian flag colored GitHub stats card -->
+                    <img src="https://github-readme-stats.vercel.app/api?username=clovetwilight3&bg_color=2C0E11&title_color=FF9B55&text_color=FFFFFF&icon_color=D461A6&border_color=672235&show_icons=true" alt="CloveTwilight3's GitHub Stats">
                 </div>
                 <div class="stats-card">
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=clovetwilight3&layout=compact&theme=synthwave&hide_border=true" alt="Top Languages">
+                    <!-- Custom lesbian flag colored top languages card -->
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=clovetwilight3&layout=compact&bg_color=2C0E11&title_color=FF9B55&text_color=FFFFFF&border_color=672235" alt="Top Languages">
                 </div>
             </div>
             
-            <!-- GitHub contributions calendar -->
+            <!-- Custom colored GitHub contributions calendar - use trans colors -->
             <div class="github-calendar">
-                <img src="https://ghchart.rshah.org/clovetwilight3" alt="GitHub Contributions" class="contributions-chart">
+                <div class="trans-border-container">
+                    <img src="https://ghchart.rshah.org/clovetwilight3" alt="GitHub Contributions" class="contributions-chart">
+                </div>
             </div>
             
             <div class="profile-views">
-                <img src="https://komarev.com/ghpvc/?username=clovetwilight3&label=Profile%20views&color=0e75b6&style=flat" alt="clovetwilight3">
+                <img src="https://komarev.com/ghpvc/?username=clovetwilight3&label=Profile%20views&color=D62900&style=flat" alt="clovetwilight3">
             </div>
             
             <div class="languages">
@@ -410,11 +353,15 @@
         </div>
     </section>
 
+    <!-- Updated Spotify Section with trans border -->
     <section id="spotify" class="spotify">
         <div class="container">
             <h2>🎵 Spotify Currently Playing</h2>
-            <div class="spotify-widget">
-                <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=x060f5w4ftwv8zc8fi9662t70&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false" alt="Spotify">
+            <div class="spotify-container">
+                <!-- Standard Spotify widget with trans-border -->
+                <div class="spotify-widget trans-border">
+                    <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=x060f5w4ftwv8zc8fi9662t70&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false" alt="Spotify">
+                </div>
             </div>
         </div>
     </section>
