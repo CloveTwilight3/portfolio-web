@@ -16,9 +16,11 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, Trans, Lesbian, etc.) for displaying your current tracks
 
+**Language:** JavaScript
+
 ⭐ 0 | 🍴 0
 
-Last updated: Thu May 01 2025 at 22:48
+Last updated: Thu May 01 2025 at 22:59
 
 ---
 
