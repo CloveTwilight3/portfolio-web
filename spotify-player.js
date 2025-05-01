@@ -2,7 +2,7 @@
 // You only need to expose your Client ID (no secrets!)
 
 // Configuration - Only needs your public Client ID
-const CLIENT_ID = 'CLIENT_ID';
+const CLIENT_ID = 'b04666be3db24771877f4c008fc248c7';
 
 // Your GitHub Pages URL (e.g., 'https://yourusername.github.io/repo-name')
 const REDIRECT_URI = window.location.origin + window.location.pathname;
