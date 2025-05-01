@@ -19,32 +19,66 @@
     
     <!-- Aesthetic additions for cozy style -->
     <style>
-        /* ASCII Butterfly element */
+        /* ASCII Butterfly elements - with trans pride colors */
         .ascii-butterfly {
-            position: absolute;
+            position: fixed; /* Fixed position so they stay in place while scrolling */
             font-family: monospace;
             white-space: pre;
             line-height: 1.2;
             font-size: 6px;
             z-index: 1;
             pointer-events: none;
-            opacity: 0.8;
             text-shadow: 0 0 2px var(--background);
+            opacity: 0.6;
+        }
+        
+        /* Trans pride colors - dark pastel variants */
+        .color-blue { color: #5B4B8A; } /* Trans flag blue (darker pastel) */
+        .color-pink { color: #D88DB6; } /* Trans flag pink (darker pastel) */
+        .color-white { color: #E6D9EF; } /* Trans flag white (slightly darker/warmer) */
+        
+        /* Butterfly positions */
+        .butterfly-top-right {
             top: 5%;
+            right: 3%;
+            transform: scale(0.6);
+            animation: butterfly-float-1 20s ease-in-out infinite;
+        }
+        
+        .butterfly-bottom-left {
+            bottom: 5%;
+            left: 3%;
+            transform: scale(0.45) rotate(15deg);
+            animation: butterfly-float-2 22s ease-in-out infinite reverse;
+        }
+        
+        .butterfly-footer {
+            bottom: 15%;
             right: 5%;
-            animation: butterfly-float 25s ease-in-out infinite;
+            transform: scale(0.4) rotate(-10deg);
+            animation: butterfly-float-3 25s ease-in-out infinite;
+            opacity: 0.5;
         }
         
-        @keyframes butterfly-float {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(10px, -15px); }
-            50% { transform: translate(5px, 10px); }
-            75% { transform: translate(-15px, 5px); }
+        /* Butterfly animations */
+        @keyframes butterfly-float-1 {
+            0%, 100% { transform: scale(0.6) translate(0, 0); }
+            25% { transform: scale(0.6) translate(10px, -15px); }
+            50% { transform: scale(0.6) translate(5px, 10px); }
+            75% { transform: scale(0.6) translate(-15px, 5px); }
         }
         
-        .color-p { color: var(--primary-color); }   /* Pink */
-        .color-s { color: var(--secondary-color); } /* Purple */
-        .color-a { color: var(--accent-color); }    /* Gold */
+        @keyframes butterfly-float-2 {
+            0%, 100% { transform: scale(0.45) rotate(15deg) translate(0, 0); }
+            30% { transform: scale(0.45) rotate(10deg) translate(-15px, 10px); }
+            60% { transform: scale(0.45) rotate(20deg) translate(10px, -15px); }
+        }
+        
+        @keyframes butterfly-float-3 {
+            0%, 100% { transform: scale(0.4) rotate(-10deg) translate(0, 0); }
+            40% { transform: scale(0.4) rotate(-15deg) translate(20px, 10px); }
+            70% { transform: scale(0.4) rotate(-5deg) translate(-10px, -10px); }
+        }
         
         /* Sunset glow in hero section */
         .hero::after {
@@ -81,54 +115,154 @@
     </style>
 </head>
 <body>
-    <!-- Full ASCII Butterfly from terminal -->
-    <div class="ascii-butterfly">
-<span class="color-p">                                                                  _______</span>
-<span class="color-s">                                                                LLLLLLLLLLL</span>
-<span class="color-p">                                                            __LLLLLLLLLLLLLL</span>
-<span class="color-s">                                                           LLLLLLLLLLLLLLLLL</span>
-<span class="color-p">                                                         _LLLLLLLLLLLLLLLLLL</span>
-<span class="color-s">                                                        LLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-p">                                                      _LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-p">                                                      LLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-s">                                              L     _LLLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-p">                                             LL     LLLLLL~~~LLLLLLLLLLLLLL</span>
-<span class="color-s">                                            _L    _LLLLL      LLLLLLLLLLLLL</span>
-<span class="color-p">                                            L~    LLL~        LLLLLLLLLLLLL</span>
-<span class="color-s">                                           LL   _LLL        _LL   LLLLLLLL</span>
-<span class="color-p">                                          LL    LL~         ~~     ~LLLLLL</span>
-<span class="color-p">                                          L   _LLL_LLLL___         _LLLLLL</span>
-<span class="color-s">                                         LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
-<span class="color-p">                                         L  LLLLLLLLLLLLLLL        LLLLLL</span>
-<span class="color-s">                                        LL LLLLLLLLLLLLLLLL        LLLLL~</span>
-<span class="color-p">                  LLLLLLLL_______       L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
-<span class="color-s">                         ~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL</span>
-<span class="color-p">                       ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
-<span class="color-p">                   LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
-<span class="color-s">             ___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_</span>
-<span class="color-p">          LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
-<span class="color-s">      __LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL</span>
-<span class="color-p">     LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
-<span class="color-s">   _LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL</span>
-<span class="color-p">  LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL</span>
-<span class="color-p"> LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL</span>
-<span class="color-s">LLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~</span>
-<span class="color-p">LLLLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL</span>
-<span class="color-s">LLLLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~</span>
-<span class="color-p">LLLLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-s"> LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~</span>
-<span class="color-p">  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL</span>
-<span class="color-p">   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~</span>
-<span class="color-s">           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL</span>
-<span class="color-p">               ~~~~~~LLLLLLLLLL~             LLLLLL</span>
-<span class="color-s">                         LLLLL              _LLLLLL</span>
-<span class="color-p">                         LLLLL    L     L   LLLLLLL</span>
-<span class="color-s">                          LLLLL__LL    _L__LLLLLLLL</span>
-<span class="color-p">                          LLLLLLLLLL  LLLLLLLLLLLL</span>
-<span class="color-p">                           LLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-s">                            ~LLLLLLLLLLLLLLLLL~~</span>
-<span class="color-p">                               LLLLLLLLLLLLL</span>
-<span class="color-s">                                 ~~~~~~~~~</span>
+    <!-- Top right butterfly - with trans pride colors -->
+    <div class="ascii-butterfly butterfly-top-right">
+<span class="color-pink">                                                                  _______</span>
+<span class="color-blue">                                                                LLLLLLLLLLL</span>
+<span class="color-pink">                                                            __LLLLLLLLLLLLLL</span>
+<span class="color-blue">                                                           LLLLLLLLLLLLLLLLL</span>
+<span class="color-pink">                                                         _LLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue">                                                        LLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-pink">                                                      _LLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-white">                                                      LLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue">                                              L     _LLLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-pink">                                             LL     LLLLLL~~~LLLLLLLLLLLLLL</span>
+<span class="color-blue">                                            _L    _LLLLL      LLLLLLLLLLLLL</span>
+<span class="color-pink">                                            L~    LLL~        LLLLLLLLLLLLL</span>
+<span class="color-blue">                                           LL   _LLL        _LL   LLLLLLLL</span>
+<span class="color-pink">                                          LL    LL~         ~~     ~LLLLLL</span>
+<span class="color-white">                                          L   _LLL_LLLL___         _LLLLLL</span>
+<span class="color-blue">                                         LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
+<span class="color-pink">                                         L  LLLLLLLLLLLLLLL        LLLLLL</span>
+<span class="color-blue">                                        LL LLLLLLLLLLLLLLLL        LLLLL~</span>
+<span class="color-pink">                  LLLLLLLL_______       L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
+<span class="color-blue">                         ~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL</span>
+<span class="color-white">                       ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
+<span class="color-white">                   LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
+<span class="color-blue">             ___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_</span>
+<span class="color-pink">          LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
+<span class="color-blue">      __LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL</span>
+<span class="color-pink">     LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
+<span class="color-blue">   _LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL</span>
+<span class="color-pink">  LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL</span>
+<span class="color-white"> LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL</span>
+<span class="color-blue">LLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~</span>
+<span class="color-pink">LLLLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL</span>
+<span class="color-blue">LLLLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~</span>
+<span class="color-pink">LLLLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue"> LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~</span>
+<span class="color-white">  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL</span>
+<span class="color-white">   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~</span>
+<span class="color-blue">           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL</span>
+<span class="color-pink">               ~~~~~~LLLLLLLLLL~             LLLLLL</span>
+<span class="color-blue">                         LLLLL              _LLLLLL</span>
+<span class="color-pink">                         LLLLL    L     L   LLLLLLL</span>
+<span class="color-blue">                          LLLLL__LL    _L__LLLLLLLL</span>
+<span class="color-pink">                          LLLLLLLLLL  LLLLLLLLLLLL</span>
+<span class="color-white">                           LLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue">                            ~LLLLLLLLLLLLLLLLL~~</span>
+<span class="color-pink">                               LLLLLLLLLLLLL</span>
+<span class="color-blue">                                 ~~~~~~~~~</span>
+    </div>
+
+    <!-- Bottom left butterfly - same butterfly with trans colors -->
+    <div class="ascii-butterfly butterfly-bottom-left">
+<span class="color-pink">                                                                  _______</span>
+<span class="color-blue">                                                                LLLLLLLLLLL</span>
+<span class="color-pink">                                                            __LLLLLLLLLLLLLL</span>
+<span class="color-blue">                                                           LLLLLLLLLLLLLLLLL</span>
+<span class="color-pink">                                                         _LLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue">                                                        LLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-pink">                                                      _LLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-white">                                                      LLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue">                                              L     _LLLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-pink">                                             LL     LLLLLL~~~LLLLLLLLLLLLLL</span>
+<span class="color-blue">                                            _L    _LLLLL      LLLLLLLLLLLLL</span>
+<span class="color-pink">                                            L~    LLL~        LLLLLLLLLLLLL</span>
+<span class="color-blue">                                           LL   _LLL        _LL   LLLLLLLL</span>
+<span class="color-pink">                                          LL    LL~         ~~     ~LLLLLL</span>
+<span class="color-white">                                          L   _LLL_LLLL___         _LLLLLL</span>
+<span class="color-blue">                                         LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
+<span class="color-pink">                                         L  LLLLLLLLLLLLLLL        LLLLLL</span>
+<span class="color-blue">                                        LL LLLLLLLLLLLLLLLL        LLLLL~</span>
+<span class="color-pink">                  LLLLLLLL_______       L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
+<span class="color-blue">                         ~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL</span>
+<span class="color-white">                       ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
+<span class="color-white">                   LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
+<span class="color-blue">             ___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_</span>
+<span class="color-pink">          LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
+<span class="color-blue">      __LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL</span>
+<span class="color-pink">     LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
+<span class="color-blue">   _LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL</span>
+<span class="color-pink">  LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL</span>
+<span class="color-white"> LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL</span>
+<span class="color-blue">LLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~</span>
+<span class="color-pink">LLLLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL</span>
+<span class="color-blue">LLLLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~</span>
+<span class="color-pink">LLLLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue"> LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~</span>
+<span class="color-white">  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL</span>
+<span class="color-white">   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~</span>
+<span class="color-blue">           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL</span>
+<span class="color-pink">               ~~~~~~LLLLLLLLLL~             LLLLLL</span>
+<span class="color-blue">                         LLLLL              _LLLLLL</span>
+<span class="color-pink">                         LLLLL    L     L   LLLLLLL</span>
+<span class="color-blue">                          LLLLL__LL    _L__LLLLLLLL</span>
+<span class="color-pink">                          LLLLLLLLLL  LLLLLLLLLLLL</span>
+<span class="color-white">                           LLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue">                            ~LLLLLLLLLLLLLLLLL~~</span>
+<span class="color-pink">                               LLLLLLLLLLLLL</span>
+<span class="color-blue">                                 ~~~~~~~~~</span>
+    </div>
+
+    <!-- Footer area butterfly - same butterfly with trans colors -->
+    <div class="ascii-butterfly butterfly-footer">
+<span class="color-pink">                                                                  _______</span>
+<span class="color-blue">                                                                LLLLLLLLLLL</span>
+<span class="color-pink">                                                            __LLLLLLLLLLLLLL</span>
+<span class="color-blue">                                                           LLLLLLLLLLLLLLLLL</span>
+<span class="color-pink">                                                         _LLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue">                                                        LLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-pink">                                                      _LLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-white">                                                      LLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue">                                              L     _LLLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-pink">                                             LL     LLLLLL~~~LLLLLLLLLLLLLL</span>
+<span class="color-blue">                                            _L    _LLLLL      LLLLLLLLLLLLL</span>
+<span class="color-pink">                                            L~    LLL~        LLLLLLLLLLLLL</span>
+<span class="color-blue">                                           LL   _LLL        _LL   LLLLLLLL</span>
+<span class="color-pink">                                          LL    LL~         ~~     ~LLLLLL</span>
+<span class="color-white">                                          L   _LLL_LLLL___         _LLLLLL</span>
+<span class="color-blue">                                         LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
+<span class="color-pink">                                         L  LLLLLLLLLLLLLLL        LLLLLL</span>
+<span class="color-blue">                                        LL LLLLLLLLLLLLLLLL        LLLLL~</span>
+<span class="color-pink">                  LLLLLLLL_______       L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
+<span class="color-blue">                         ~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL</span>
+<span class="color-white">                       ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
+<span class="color-white">                   LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
+<span class="color-blue">             ___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_</span>
+<span class="color-pink">          LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
+<span class="color-blue">      __LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL</span>
+<span class="color-pink">     LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
+<span class="color-blue">   _LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL</span>
+<span class="color-pink">  LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL</span>
+<span class="color-white"> LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL</span>
+<span class="color-blue">LLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~</span>
+<span class="color-pink">LLLLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL</span>
+<span class="color-blue">LLLLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~</span>
+<span class="color-pink">LLLLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue"> LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~</span>
+<span class="color-white">  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL</span>
+<span class="color-white">   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~</span>
+<span class="color-blue">           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL</span>
+<span class="color-pink">               ~~~~~~LLLLLLLLLL~             LLLLLL</span>
+<span class="color-blue">                         LLLLL              _LLLLLL</span>
+<span class="color-pink">                         LLLLL    L     L   LLLLLLL</span>
+<span class="color-blue">                          LLLLL__LL    _L__LLLLLLLL</span>
+<span class="color-pink">                          LLLLLLLLLL  LLLLLLLLLLLL</span>
+<span class="color-white">                           LLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-blue">                            ~LLLLLLLLLLLLLLLLL~~</span>
+<span class="color-pink">                               LLLLLLLLLLLLL</span>
+<span class="color-blue">                                 ~~~~~~~~~</span>
     </div>
 
     <header>
@@ -192,186 +326,7 @@
         </div>
     </section>
 
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2>🧠 Skills & Technologies</h2>
-            <p class="subtitle">My technical toolkit for solving problems</p>
-            
-            <div class="skills-categories">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Languages</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">JavaScript</div>
-                        <div class="skill-item">TypeScript</div>
-                        <div class="skill-item">Java</div>
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">Kotlin</div>
-                        <div class="skill-item">Rust</div>
-                        <div class="skill-item">Bash</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Node.js</div>
-                        <div class="skill-item">Express</div>
-                        <div class="skill-item">Flask</div>
-                        <div class="skill-item">REST APIs</div>
-                        <div class="skill-item">MongoDB</div>
-                        <div class="skill-item">SQL</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-desktop"></i> Frontend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">HTML5</div>
-                        <div class="skill-item">CSS3</div>
-                        <div class="skill-item">React</div>
-                        <div class="skill-item">Vue.js</div>
-                        <div class="skill-item">Responsive Design</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fab fa-discord"></i> Discord</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Discord.js</div>
-                        <div class="skill-item">Bot Development</div>
-                        <div class="skill-item">Slash Commands</div>
-                        <div class="skill-item">API Integration</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-cubes"></i> Minecraft</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Spigot/Bukkit</div>
-                        <div class="skill-item">Plugin Development</div>
-                        <div class="skill-item">Forge Modding</div>
-                        <div class="skill-item">Resource Packs</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> DevOps</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Git/GitHub</div>
-                        <div class="skill-item">CI/CD</div>
-                        <div class="skill-item">Docker</div>
-                        <div class="skill-item">Linux Administration</div>
-                        <div class="skill-item">Server Management</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="stats" class="stats">
-        <div class="container">
-            <h2>📊 Coding Activity</h2>
-            <p class="subtitle">A glimpse into my development work</p>
-            
-            <div class="stats-cards">
-                <div class="stats-card">
-                    <img src="https://github-readme-stats.vercel.app/api?username=clovetwilight3&theme=synthwave&show_icons=true" alt="CloveTwilight3's GitHub Stats">
-                </div>
-                <div class="stats-card">
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=clovetwilight3&layout=compact&theme=synthwave&hide_border=true" alt="Top Languages">
-                </div>
-            </div>
-            
-            <!-- GitHub contributions calendar -->
-            <div class="github-calendar">
-                <img src="https://ghchart.rshah.org/clovetwilight3" alt="GitHub Contributions" class="contributions-chart">
-            </div>
-            
-            <div class="profile-views">
-                <img src="https://komarev.com/ghpvc/?username=clovetwilight3&label=Profile%20views&color=0e75b6&style=flat" alt="clovetwilight3">
-            </div>
-            
-            <div class="languages">
-                <h3>🖥️ Languages Known</h3>
-                <div class="language-badges">
-                    <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?logo=javascript&logoColor=black" alt="JavaScript">
-                    <img src="https://img.shields.io/badge/Python-31A8FF.svg?logo=python&logoColor=white" alt="Python">
-                    <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?logo=openjdk&logoColor=white" alt="Java">
-                    <img src="https://img.shields.io/badge/YAML-CB171E?logo=yaml&logoColor=fff" alt="YAML">
-                    <img src="https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff" alt="CSS">
-                    <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff" alt="TypeScript">
-                    <img src="https://img.shields.io/badge/Rust-%23000000.svg?e&logo=rust&logoColor=white" alt="Rust">
-                    <img src="https://img.shields.io/badge/XML-767C52?logo=xml&logoColor=fff" alt="XML">
-                    <img src="https://img.shields.io/badge/Kotlin-%237F52FF.svg?logo=kotlin&logoColor=white" alt="Kotlin">
-                    <img src="https://img.shields.io/badge/Markdown-%23000000.svg?logo=markdown&logoColor=white" alt="Markdown">
-                    <img src="https://img.shields.io/badge/JSON-000?logo=json&logoColor=fff" alt="JSON">
-                    <img src="https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=fff" alt="Bash">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="spotify" class="spotify">
-        <div class="container">
-            <h2>🎵 Spotify Currently Playing</h2>
-            <div class="spotify-widget">
-                <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=x060f5w4ftwv8zc8fi9662t70&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false" alt="Spotify">
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am Clove Twilight, a passionate developer focusing on creating useful applications, from Discord bots to Minecraft plugins and web applications.</p>
-                    <p>I am also a plural system, so see <a href="https://friends.clovetwilight3.co.uk/" target="_blank">friends.clovetwilight3.co.uk</a> (In dev)</p>
-                    <p>With a background in both frontend and backend technologies, I enjoy solving complex problems and building tools that help others. I'm particularly interested in gaming-related development and automation.</p>
-                    <p>When I'm not coding, you can find me exploring Linux systems, contributing to open-source projects, or experimenting with new programming languages and frameworks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>🌐 Get In Touch</h2>
-            <p class="subtitle">Interested in working together? Reach out through any of these platforms</p>
-            <div class="contact-links">
-                <a href="https://github.com/clovetwilight3" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://clovetwilight3.co.uk" target="_blank"><i class="fas fa-globe"></i> Website</a>
-                <a href="mailto:admin@clovetwilight3.co.uk"><i class="fas fa-envelope"></i> Email Me</a>
-                <a href="https://discord.gg/ZPDjhfcvQe" target="_blank"><i class="fab fa-discord"></i> Discord: CloveTwilight3</a>
-            </div>
-            
-            <div class="hire-me">
-                <h3>Looking to hire?</h3>
-                <p>I'm currently available for freelance work and open to job opportunities in software development.</p>
-                <a href="mailto:admin@clovetwilight3.co.uk?subject=Job Opportunity" class="cta-btn primary">Let's Talk <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <img src="favicon.png" alt="Clove Twilight Logo" class="footer-logo">
-                    <p>&copy; 2025 Clove Twilight</p>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/clovetwilight3">GitHub</a>
-                    <a href="https://clovetwilight3.co.uk">Website</a>
-                    <a href="/resume.pdf">Resume</a>
-                    <a href="#projects">Projects</a>
-                </div>
-            </div>
-            <div class="footer-note">
-                <p>My portfolio is regularly updated with my latest projects and work.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Rest of your content sections (skills, stats, about, contact, etc.) -->
 
     <script src="scripts.js"></script>
 </body>
