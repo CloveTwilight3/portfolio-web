@@ -16,103 +16,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    /* ASCII Butterfly elements - with standard trans pride colors */
+    .ascii-butterfly {
+        position: fixed; /* Fixed position so they stay in place while scrolling */
+        font-family: monospace;
+        white-space: pre;
+        line-height: 1.2;
+        font-size: 8px; /* Increased from 6px to 8px */
+        z-index: 1;
+        pointer-events: none;
+        text-shadow: 0 0 2px var(--background);
+        opacity: 0.7; /* Slightly reduced from 0.8 for less visual dominance */
+    }
     
-    <!-- Aesthetic additions for cozy style -->
-    <style>
-        /* ASCII Butterfly elements - with trans pride colors properly arranged */
-        .ascii-butterfly {
-            position: fixed; /* Fixed position so they stay in place while scrolling */
-            font-family: monospace;
-            white-space: pre;
-            line-height: 1.2;
-            font-size: 8px; /* Increased from 6px to 8px */
-            z-index: 1;
-            pointer-events: none;
-            text-shadow: 0 0 2px var(--background);
-            opacity: 0.7; /* Slightly reduced from 0.8 for less visual dominance */
-        }
-        
-        /* Trans pride colors - dark pastel variants */
-        .color-blue { color: #5B4B8A; } /* Trans flag blue (darker pastel) */
-        .color-pink { color: #D88DB6; } /* Trans flag pink (darker pastel) */
-        .color-white { color: #E6D9EF; } /* Trans flag white (slightly darker/warmer) */
-        
-        /* Butterfly positions */
-        .butterfly-top-right {
-            top: 5%;
-            right: 3%;
-            transform: scale(0.7); /* Slightly reduced from 0.8 */
-            animation: butterfly-float-1 20s ease-in-out infinite;
-        }
-        
-        .butterfly-bottom-left {
-            bottom: 5%;
-            left: 3%;
-            transform: scale(0.6) rotate(15deg);
-            animation: butterfly-float-2 22s ease-in-out infinite reverse;
-        }
-        
-        .butterfly-footer {
-            bottom: 20%;
-            right: 8%;
-            transform: scale(0.5) rotate(-10deg);
-            animation: butterfly-float-3 25s ease-in-out infinite;
-            opacity: 0.6; /* More subtle */
-        }
-        
-        /* Butterfly animations */
-        @keyframes butterfly-float-1 {
-            0%, 100% { transform: scale(0.7) translate(0, 0); }
-            25% { transform: scale(0.7) translate(10px, -15px); }
-            50% { transform: scale(0.7) translate(5px, 10px); }
-            75% { transform: scale(0.7) translate(-15px, 5px); }
-        }
-        
-        @keyframes butterfly-float-2 {
-            0%, 100% { transform: scale(0.6) rotate(15deg) translate(0, 0); }
-            30% { transform: scale(0.6) rotate(10deg) translate(-15px, 10px); }
-            60% { transform: scale(0.6) rotate(20deg) translate(10px, -15px); }
-        }
-        
-        @keyframes butterfly-float-3 {
-            0%, 100% { transform: scale(0.5) rotate(-10deg) translate(0, 0); }
-            40% { transform: scale(0.5) rotate(-15deg) translate(20px, 10px); }
-            70% { transform: scale(0.5) rotate(-5deg) translate(-10px, -10px); }
-        }
-        
-        /* Sunset glow in hero section */
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: linear-gradient(to top, 
-                        rgba(177, 140, 211, 0.1) 0%, 
-                        rgba(232, 169, 203, 0.05) 40%, 
-                        transparent 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 10%;
-            width: 30%;
-            height: 100%;
-            background: radial-gradient(
-                ellipse at center,
-                rgba(245, 199, 141, 0.2) 0%,
-                rgba(232, 169, 203, 0.1) 50%,
-                transparent 80%
-            );
-            z-index: 1;
-            pointer-events: none;
-        }
-    </style>
+    /* Trans pride colors - standard colors */
+    .color-blue { color: #5BCEFA; } /* Trans flag blue (standard) */
+    .color-pink { color: #F5A9B8; } /* Trans flag pink (standard) */
+    .color-white { color: #FFFFFF; } /* Trans flag white (standard) */
+    
+    /* Butterfly positions */
+    .butterfly-top-right {
+        top: 5%;
+        right: 3%;
+        transform: scale(0.7); /* Slightly reduced from 0.8 */
+        animation: butterfly-float-1 20s ease-in-out infinite;
+    }
+    
+    .butterfly-bottom-left {
+        bottom: 5%;
+        left: 3%;
+        transform: scale(0.6) rotate(15deg);
+        animation: butterfly-float-2 22s ease-in-out infinite reverse;
+    }
+    
+    .butterfly-footer {
+        bottom: 20%;
+        right: 8%;
+        transform: scale(0.5) rotate(-10deg);
+        animation: butterfly-float-3 25s ease-in-out infinite;
+        opacity: 0.6; /* More subtle */
+    }
+    
+    /* Butterfly animations */
+    @keyframes butterfly-float-1 {
+        0%, 100% { transform: scale(0.7) translate(0, 0); }
+        25% { transform: scale(0.7) translate(10px, -15px); }
+        50% { transform: scale(0.7) translate(5px, 10px); }
+        75% { transform: scale(0.7) translate(-15px, 5px); }
+    }
+    
+    @keyframes butterfly-float-2 {
+        0%, 100% { transform: scale(0.6) rotate(15deg) translate(0, 0); }
+        30% { transform: scale(0.6) rotate(10deg) translate(-15px, 10px); }
+        60% { transform: scale(0.6) rotate(20deg) translate(10px, -15px); }
+    }
+    
+    @keyframes butterfly-float-3 {
+        0%, 100% { transform: scale(0.5) rotate(-10deg) translate(0, 0); }
+        40% { transform: scale(0.5) rotate(-15deg) translate(20px, 10px); }
+        70% { transform: scale(0.5) rotate(-5deg) translate(-10px, -10px); }
+    }
+</style>
 </head>
 <body>
     <!-- Top right butterfly - Blue, Pink, White style -->
