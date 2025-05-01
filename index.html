@@ -24,13 +24,13 @@
             position: absolute;
             font-family: monospace;
             white-space: pre;
-            line-height: 1;
-            font-size: 10px;
+            line-height: 1.2;
+            font-size: 6px;
             z-index: 1;
             pointer-events: none;
-            opacity: 0.7;
+            opacity: 0.8;
             text-shadow: 0 0 2px var(--background);
-            top: 10%;
+            top: 5%;
             right: 5%;
             animation: butterfly-float 25s ease-in-out infinite;
         }
@@ -42,19 +42,9 @@
             75% { transform: translate(-15px, 5px); }
         }
         
-        .color-l1 { color: var(--primary-color); }
-        .color-l2 { color: var(--secondary-color); }
-        .color-l3 { color: var(--accent-color); }
-        
-        /* Dreamcatcher element */
-        .dreamcatcher {
-            position: absolute;
-            top: 10%;
-            right: 15%;
-            opacity: 0.25;
-            z-index: 1;
-            pointer-events: none;
-        }
+        .color-p { color: var(--primary-color); }   /* Pink */
+        .color-s { color: var(--secondary-color); } /* Purple */
+        .color-a { color: var(--accent-color); }    /* Gold */
         
         /* Sunset glow in hero section */
         .hero::after {
@@ -91,64 +81,54 @@
     </style>
 </head>
 <body>
-    <!-- ASCII Butterfly - single complete butterfly -->
+    <!-- Full ASCII Butterfly from terminal -->
     <div class="ascii-butterfly">
-<span class="color-l1">                         _______</span>
-<span class="color-l2">                       LLLLLLLLLLL</span>
-<span class="color-l1">                   __LLLLLLLLLLLLLL</span>
-<span class="color-l2">                  LLLLLLLLLLLLLLLLL</span>
-<span class="color-l1">                _LLLLLLLLLLLLLLLLLL</span>
-<span class="color-l2">               LLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-l1">             _LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-l1">             LLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-l2">     L     _LLLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-l1">    LL     LLLLLL~~~LLLLLLLLLLLLLL</span>
-<span class="color-l2">   _L    _LLLLL      LLLLLLLLLLLLL</span>
-<span class="color-l1">   L~    LLL~        LLLLLLLLLLLLL</span>
-<span class="color-l2">  LL   _LLL        _LL   LLLLLLLL</span>
-<span class="color-l1"> LL    LL~         ~~     ~LLLLLL</span>
-<span class="color-l1"> L   _LLL_LLLL___         _LLLLLL</span>
-<span class="color-l2">LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
-<span class="color-l1">L  LLLLLLLLLLLLLLL        LLLLLL</span>
-<span class="color-l2">LL LLLLLLLLLLLLLLLL        LLLLL~</span>
-<span class="color-l1">L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
-<span class="color-l2">LLLLLLLLLLLLLLLL~       LLLLLL</span>
-<span class="color-l1">  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
-<span class="color-l2">LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
-<span class="color-l1"> LLLLLLLLLLLLL____       _LLLLLL_</span>
-<span class="color-l2">  LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
-<span class="color-l1">   LLLLLLLLLLLLLLLLLL_       LLLLL</span>
-<span class="color-l2">   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
-<span class="color-l1">    LL      LLLLLLLLL   LLLLLLLLL</span>
-<span class="color-l2">    LL       ~~~~~       ~LLLLLL</span>
-<span class="color-l1">    LL_            _     LLLLLL</span>
-<span class="color-l2">   ~LLLL          ~L   LLLLLL~</span>
-<span class="color-l1">  LLLLLLL___     LLLLLLLLLL</span>
-<span class="color-l2">  LLLLLLLLLLLL   LLLLLLL~</span>
-<span class="color-l3"> LLL_ LLLLLLLLLLLLLLLLLLL</span>
-<span class="color-l2">LLLLLLL~LLLLLLLLLLLLLLLL~</span>
-<span class="color-l1">LLLL     LLLLLLLLLLLLLL</span>
-<span class="color-l1">LLLLL        ~~~~~~~~~</span>
-<span class="color-l2"> LLL       _LLLLL</span>
-<span class="color-l1">          LLLLLL</span>
-<span class="color-l2">        _LLLLLL</span>
-<span class="color-l3">L     L   LLLLLLL</span>
-    </div>
-
-    <!-- Dreamcatcher decoration -->
-    <div class="dreamcatcher">
-        <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="30" fill="none" stroke="#e8a9cb" stroke-width="2"/>
-            <circle cx="50" cy="50" r="20" fill="none" stroke="#e8a9cb" stroke-width="1.5"/>
-            <circle cx="50" cy="50" r="10" fill="none" stroke="#e8a9cb" stroke-width="1"/>
-            <line x1="50" y1="20" x2="50" y2="80" stroke="#e8a9cb" stroke-width="1"/>
-            <line x1="20" y1="50" x2="80" y2="50" stroke="#e8a9cb" stroke-width="1"/>
-            <line x1="30" y1="30" x2="70" y2="70" stroke="#e8a9cb" stroke-width="1"/>
-            <line x1="30" y1="70" x2="70" y2="30" stroke="#e8a9cb" stroke-width="1"/>
-            <line x1="50" y1="80" x2="45" y2="90" stroke="#e8a9cb" stroke-width="1"/>
-            <line x1="50" y1="80" x2="50" y2="90" stroke="#e8a9cb" stroke-width="1"/>
-            <line x1="50" y1="80" x2="55" y2="90" stroke="#e8a9cb" stroke-width="1"/>
-        </svg>
+<span class="color-p">                                                                  _______</span>
+<span class="color-s">                                                                LLLLLLLLLLL</span>
+<span class="color-p">                                                            __LLLLLLLLLLLLLL</span>
+<span class="color-s">                                                           LLLLLLLLLLLLLLLLL</span>
+<span class="color-p">                                                         _LLLLLLLLLLLLLLLLLL</span>
+<span class="color-s">                                                        LLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-p">                                                      _LLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-p">                                                      LLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-s">                                              L     _LLLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-p">                                             LL     LLLLLL~~~LLLLLLLLLLLLLL</span>
+<span class="color-s">                                            _L    _LLLLL      LLLLLLLLLLLLL</span>
+<span class="color-p">                                            L~    LLL~        LLLLLLLLLLLLL</span>
+<span class="color-s">                                           LL   _LLL        _LL   LLLLLLLL</span>
+<span class="color-p">                                          LL    LL~         ~~     ~LLLLLL</span>
+<span class="color-p">                                          L   _LLL_LLLL___         _LLLLLL</span>
+<span class="color-s">                                         LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
+<span class="color-p">                                         L  LLLLLLLLLLLLLLL        LLLLLL</span>
+<span class="color-s">                                        LL LLLLLLLLLLLLLLLL        LLLLL~</span>
+<span class="color-p">                  LLLLLLLL_______       L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
+<span class="color-s">                         ~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL</span>
+<span class="color-p">                       ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
+<span class="color-p">                   LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
+<span class="color-s">             ___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_</span>
+<span class="color-p">          LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
+<span class="color-s">      __LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL</span>
+<span class="color-p">     LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
+<span class="color-s">   _LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL</span>
+<span class="color-p">  LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL</span>
+<span class="color-p"> LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL</span>
+<span class="color-s">LLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~</span>
+<span class="color-p">LLLLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL</span>
+<span class="color-s">LLLLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~</span>
+<span class="color-p">LLLLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-s"> LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~</span>
+<span class="color-p">  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL</span>
+<span class="color-p">   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~</span>
+<span class="color-s">           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL</span>
+<span class="color-p">               ~~~~~~LLLLLLLLLL~             LLLLLL</span>
+<span class="color-s">                         LLLLL              _LLLLLL</span>
+<span class="color-p">                         LLLLL    L     L   LLLLLLL</span>
+<span class="color-s">                          LLLLL__LL    _L__LLLLLLLL</span>
+<span class="color-p">                          LLLLLLLLLL  LLLLLLLLLLLL</span>
+<span class="color-p">                           LLLLLLLLLLLLLLLLLLLLLL</span>
+<span class="color-s">                            ~LLLLLLLLLLLLLLLLL~~</span>
+<span class="color-p">                               LLLLLLLLLLLLL</span>
+<span class="color-s">                                 ~~~~~~~~~</span>
     </div>
 
     <header>
