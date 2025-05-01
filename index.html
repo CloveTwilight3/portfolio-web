@@ -360,18 +360,13 @@
         <h2>🎵 Spotify Currently Playing</h2>
         <p class="subtitle">See what I'm listening to right now</p>
         
-        <!-- Embed your VPS-hosted Spotify Player -->
-        <div class="spotify-embed">
-            <iframe src="http://104.219.239.218:8080" 
-                    width="350" 
-                    height="300" 
-                    frameborder="0" 
-                    scrolling="no"
-                    allow="encrypted-media">
-            </iframe>
-        </div>
+        <!-- Custom Spotify player will be rendered here -->
+        <div id="spotify-player"></div>
     </div>
 </section>
+
+<!-- Add the script at the end of the body, before the closing </body> tag -->
+<script src="spotify-display.js"></script>
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
