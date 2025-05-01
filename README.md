@@ -12,6 +12,16 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
+### [spotify-player](https://github.com/CloveTwilight3/spotify-player)
+
+Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, Trans, Lesbian, etc.) for displaying your current tracks
+
+⭐ 0 | 🍴 0
+
+Last updated: Thu May 01 2025 at 22:45
+
+---
+
 ### [RoomMates-Helper](https://github.com/CloveTwilight3/RoomMates-Helper)
 
 RoomMates Verification System and More!
@@ -72,11 +82,11 @@ Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
-### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
-A simple Paper plugin that adds functionality for sponges to absorb lava.
+My personal 1.21.4 Resource Pack 
 
-**Language:** Java
+**Language:** Python
 
 ⭐ 1 | 🍴 0
 
@@ -84,11 +94,11 @@ Last updated: Mon Apr 28 2025 at 17:44
 
 ---
 
-### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
+### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
 
-My personal 1.21.4 Resource Pack 
+A simple Paper plugin that adds functionality for sponges to absorb lava.
 
-**Language:** Python
+**Language:** Java
 
 ⭐ 1 | 🍴 0
 
