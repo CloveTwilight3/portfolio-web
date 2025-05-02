@@ -12,6 +12,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
+### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 1 | 🍴 0
+
+Last updated: 12:15 2 May, 2025 (UTC)
+
+---
+
 ### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -21,18 +33,6 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 1 | 🍴 0
 
 Last updated: 12:03 2 May, 2025 (UTC)
-
----
-
-### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
-
-My GitHub profile repository with custom README and configuration.
-
-**Language:** Markdown
-
-⭐ 1 | 🍴 0
-
-Last updated: 05:34 2 May, 2025 (UTC)
 
 ---
 
