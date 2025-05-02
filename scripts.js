@@ -225,7 +225,7 @@ function createProjectCard(project) {
             if (project.name.toLowerCase().includes('discord') || 
                 project.description.toLowerCase().includes('discord') ||
                 project.name.toLowerCase() === 'roommates-helper' ||
-                project.name.toLowerCase() === 'roommates-beta ) {
+                project.name.toLowerCase() === 'roommates-beta') {
                 addTechBadge(techStack, 'Discord.js');
             }
         } else if (project.language === 'Java') {
@@ -428,7 +428,8 @@ function filterProjects(filter) {
                            description.includes('discord') ||
                            title.includes('bot') || 
                            description.includes('bot') ||
-                           title.toLowerCase().includes('roommates-helper'))) {
+                           title.toLowerCase().includes('roommates-helper') || 
+                           title.toLowerCase().includes('roommates-beta')) {
                     card.style.display = 'flex';
                 } else if (techTexts.includes(filter.toLowerCase())) {
                     card.style.display = 'flex';
