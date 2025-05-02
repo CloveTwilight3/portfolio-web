@@ -42,11 +42,21 @@ async function fetchRepositories(octokit) {
       direction: 'desc'
     });
     
-    // Filter out forks and specific repositories to ignore
-    const reposToIgnore = ['clovetwilight3', 'clovetwilight3.github.io'];
-    const filteredRepos = repos.filter(repo => !repo.fork && !reposToIgnore.includes(repo.name));
+    // Check if we should include all repositories
+    const includeAllRepos = process.env.INCLUDE_ALL_REPOS === 'true';
     
-    console.log(`Found ${filteredRepos.length} original repositories (excluding ignored repos)`);
+    // Filter out forks and specific repositories to ignore (if not including all)
+    let filteredRepos;
+    if (includeAllRepos) {
+      console.log('Including all non-fork repositories (including profile and portfolio)');
+      filteredRepos = repos.filter(repo => !repo.fork);
+    } else {
+      const reposToIgnore = ['clovetwilight3', 'clovetwilight3.github.io'];
+      filteredRepos = repos.filter(repo => !repo.fork && !reposToIgnore.includes(repo.name));
+      console.log(`Filtering out [${reposToIgnore.join(', ')}] repositories`);
+    }
+    
+    console.log(`Found ${filteredRepos.length} original repositories`);
     
     // For each repository, check if it's an archive
     for (const repo of filteredRepos) {
@@ -95,9 +105,13 @@ function generateProjectsMarkdown(repos) {
     
     markdown += `${projectTitle}\n\n`;
     
-    // For TransGamers specifically, enhance the description
+    // Special handling for specific repositories
     if (repo.name === 'TransGamers') {
       markdown += 'A public archive of a Discord Bot I have helped towards. This repository is maintained as an archive for reference purposes.\n\n';
+    } else if (repo.name === 'clovetwilight3.github.io') {
+      markdown += 'My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.\n\n';
+    } else if (repo.name === 'clovetwilight3') {
+      markdown += 'My GitHub profile repository with custom README and configuration.\n\n';
     } else {
       markdown += repo.description ? `${repo.description}\n\n` : 'No description provided.\n\n';
     }
@@ -105,6 +119,10 @@ function generateProjectsMarkdown(repos) {
     // Add language info if available
     if (repo.language) {
       markdown += `**Language:** ${repo.language}\n\n`;
+    } else if (repo.name === 'clovetwilight3') {
+      markdown += `**Language:** Markdown\n\n`;
+    } else if (repo.name === 'clovetwilight3.github.io') {
+      markdown += `**Language:** JavaScript\n\n`;
     }
     
     // Add stars and forks count
