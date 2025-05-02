@@ -262,24 +262,23 @@ function createProjectCard(project) {
     const actions = document.createElement('div');
     actions.className = 'project-actions';
     
+    // Live demo button (for certain projects)
+    const demoInfo = isWebProject(project);
+    if (demoInfo) {
+        const demoButton = document.createElement('a');
+        demoButton.href = demoInfo.url;
+        demoButton.target = '_blank';
+        demoButton.className = 'project-btn demo-btn';
+        demoButton.innerHTML = `<i class="fas fa-external-link-alt"></i> ${demoInfo.label}`;
+        actions.appendChild(demoButton);
+    }
+    
     // GitHub repo button
     const githubButton = document.createElement('a');
     githubButton.href = project.url;
     githubButton.target = '_blank';
     githubButton.className = 'project-btn github-btn';
     githubButton.innerHTML = '<i class="fab fa-github"></i> View Code';
-    
-    // Live demo button (for certain projects)
-    if (isWebProject(project)) {
-        const demoButton = document.createElement('a');
-        // Only plural-web has a demo at friends.clovetwilight3.co.uk
-        demoButton.href = `https://friends.clovetwilight3.co.uk`;
-        demoButton.target = '_blank';
-        demoButton.className = 'project-btn demo-btn';
-        demoButton.innerHTML = '<i class="fas fa-external-link-alt"></i> Live Demo';
-        actions.appendChild(demoButton);
-    }
-    
     actions.appendChild(githubButton);
     
     // Add elements to card
@@ -327,12 +326,20 @@ function addTechBadge(container, tech) {
 }
 
 function isWebProject(project) {
-    // Currently only the plural-web repo has a live demo
+    // Check for plural-web and spotify-player repos
     if (project.name.toLowerCase() === 'plural-web') {
-        return true;
+        return {
+            url: 'https://friends.clovetwilight3.co.uk',
+            label: 'Live Demo'
+        };
+    } else if (project.name.toLowerCase() === 'spotify-player') {
+        return {
+            url: 'http://demo.clovetwilight3.co.uk:8080',
+            label: 'Try Demo'
+        };
     }
     
-    // For all other projects, return false as they don't have live demos
+    // For all other projects, return false
     return false;
 }
 
