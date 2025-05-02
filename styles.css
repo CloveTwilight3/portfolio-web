@@ -1131,4 +1131,63 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     background-color: var(--card-bg);
   }
+
+/* Organization Badge Styles */
+.org-badge {
+  display: inline-block;
+  background-color: #2C5A7A; /* A blue shade for organization */
+  color: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Make the organization badge animate on hover */
+.project-card:hover .org-badge {
+  background-color: #3B8BC9; /* Lighter blue on hover */
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+/* Slight styling differences for organization projects */
+.project-card.org-project {
+  border-left: 3px solid #2C5A7A; /* Blue border */
+}
+
+.project-card.org-project:hover {
+  border-color: #3B8BC9; /* Lighter blue on hover */
+}
+
+.project-card.personal-project {
+  border-left: 3px solid var(--primary-color); /* Existing primary color */
+}
+
+/* Update filter button for organization */
+.filter-btn[data-filter="organization"] {
+  background-color: #2C5A7A;
+  color: var(--text-color);
+  border-color: #2C5A7A;
+}
+
+.filter-btn[data-filter="organization"]:hover,
+.filter-btn[data-filter="organization"].active {
+  background-color: #3B8BC9;
+  border-color: #3B8BC9;
+}
+
+.filter-btn[data-filter="personal"] {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-color: var(--primary-color);
+}
+
+.filter-btn[data-filter="personal"]:hover,
+.filter-btn[data-filter="personal"].active {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
 }
