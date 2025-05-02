@@ -8,9 +8,9 @@ Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, 
 
 **Language:** JavaScript
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
-Last updated: Fri May 02 2025 at 00:15
+Last updated: Fri May 02 2025 at 02:11
 
 ---
 
