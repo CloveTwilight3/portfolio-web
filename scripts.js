@@ -224,7 +224,8 @@ function createProjectCard(project) {
             // TypeScript badge already added above, so we don't add it twice
             if (project.name.toLowerCase().includes('discord') || 
                 project.description.toLowerCase().includes('discord') ||
-                project.name.toLowerCase() === 'roommates-helper') {
+                project.name.toLowerCase() === 'roommates-helper' ||
+                project.name.toLowerCase() === 'roommates-beta ) {
                 addTechBadge(techStack, 'Discord.js');
             }
         } else if (project.language === 'Java') {
