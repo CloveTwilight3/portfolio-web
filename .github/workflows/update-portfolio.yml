@@ -33,6 +33,7 @@ jobs:
           node .github/scripts/update-projects.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INCLUDE_ALL_REPOS: 'true'  # New environment variable
           
       - name: Fetch GitHub avatar for favicon
         run: |
