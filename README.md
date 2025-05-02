@@ -26,6 +26,16 @@ Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
+#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
+
+No description provided.
+
+⭐ 0 | 🍴 0
+
+Last updated: 23:44 2 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
