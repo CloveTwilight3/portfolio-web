@@ -12,6 +12,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
+### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** HTML
+
+⭐ 1 | 🍴 0
+
+Last updated: Fri May 02 2025 at 02:37
+
+---
+
 ### [spotify-player](https://github.com/CloveTwilight3/spotify-player)
 
 Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, Trans, Lesbian, etc.) for displaying your current tracks
@@ -171,6 +183,18 @@ Last updated: Mon Apr 28 2025 at 17:44
 A fun all-in-1 plugin
 
 **Language:** Java
+
+⭐ 1 | 🍴 0
+
+Last updated: Mon Apr 28 2025 at 17:44
+
+---
+
+### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
 
 ⭐ 1 | 🍴 0
 
