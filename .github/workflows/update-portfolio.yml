@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '*/10 * * * *'  # Runs every 10 minutes
   
-  # Run this workflow when you push to the main branch
+  # Run this workflow when you push to the main branch, but only when the actor is you
   push:
     branches: [ main ]
   
@@ -15,6 +15,9 @@ on:
 jobs:
   update-portfolio:
     runs-on: ubuntu-latest
+    
+    # Skip this job if the actor is the GitHub Actions bot
+    if: github.actor != 'github-actions[bot]' && github.actor != 'actions-user' && github.actor != 'GitHub Action'
     
     steps:
       - name: Checkout repository
