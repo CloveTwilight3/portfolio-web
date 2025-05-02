@@ -2,8 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-// Your GitHub username
+// Your GitHub username and organization
 const username = 'clovetwilight3';
+const orgName = 'UnifiedGaming-Systems';
+const orgDisplayName = 'UnifiedGaming Systems Ltd';
+const excludedOrgs = ['Epic-Games']; // Organizations to exclude
 
 // Format date and time
 function formatDateTime(dateString) {
@@ -120,6 +123,33 @@ async function generateResume() {
       username: username
     });
     
+    // Fetch organization repositories only if not in excluded list
+    let filteredOrgRepos = [];
+    let orgData = {};
+    
+    if (!excludedOrgs.includes(orgName)) {
+      const { data: orgRepos } = await octokit.repos.listForOrg({
+        org: orgName,
+        type: 'public',
+        sort: 'updated',
+        direction: 'desc'
+      });
+      
+      // Filter out forks from org repos
+      filteredOrgRepos = orgRepos.filter(repo => !repo.fork);
+      
+      // Get organization data
+      const orgDataResponse = await octokit.orgs.get({
+        org: orgName
+      });
+      
+      orgData = orgDataResponse.data;
+      
+      console.log(`Fetched ${filteredOrgRepos.length} repositories from ${orgName}`);
+    } else {
+      console.log(`Organization ${orgName} is in the excluded list. Skipping.`);
+    }
+    
     // Generate a simple HTML resume that can be converted to PDF
     const html = `
     <!DOCTYPE html>
@@ -200,6 +230,15 @@ async function generateResume() {
                 font-size: 12px;
                 margin-top: 5px;
             }
+            .organization {
+                background-color: #f5f5f5;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .organization h3 {
+                margin-top: 0;
+            }
         </style>
     </head>
     <body>
@@ -219,7 +258,18 @@ async function generateResume() {
             <p>I am a passionate developer focusing on building creative solutions with code, from Discord bots to Minecraft plugins. 
             I have experience with multiple programming languages and frameworks, with a particular 
             interest in gaming-related development and automation.</p>
-            </section>
+        </section>
+        
+        <section>
+            <h2>Organizations</h2>
+            <div class="organization">
+                <h3>${orgDisplayName}</h3>
+                <p>${orgData.description || 'A gaming systems development organization.'}</p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/${orgName}">github.com/${orgName}</a></p>
+                <p><strong>Repositories:</strong> ${filteredOrgRepos.length}</p>
+                <p><strong>Website:</strong> ${orgData.blog || 'N/A'}</p>
+            </div>
+        </section>
         
         <section>
             <h2>Technical Skills</h2>
@@ -251,8 +301,21 @@ async function generateResume() {
         </section>
         
         <section>
-            <h2>Featured Projects</h2>
+            <h2>Featured Personal Projects</h2>
             ${filteredRepos.slice(0, 5).map(repo => `
+                <div class="project">
+                    <h3>${repo.name}</h3>
+                    <p>${repo.description || 'No description provided.'}</p>
+                    <p><strong>Technologies:</strong> ${repo.language || 'Not specified'}</p>
+                    <p><strong>GitHub:</strong> <a href="${repo.html_url}">${repo.html_url}</a></p>
+                    <p class="update-time">Last updated: ${formatDateTime(repo.updated_at)}</p>
+                </div>
+            `).join('')}
+        </section>
+        
+        <section>
+            <h2>Featured Organization Projects</h2>
+            ${filteredOrgRepos.slice(0, 5).map(repo => `
                 <div class="project">
                     <h3>${repo.name}</h3>
                     <p>${repo.description || 'No description provided.'}</p>
@@ -267,15 +330,17 @@ async function generateResume() {
             <h2>GitHub Stats</h2>
             <div class="github-stats">
                 <div class="stat-box">
-                    <div class="stat-number">${filteredRepos.length}</div>
+                    <div class="stat-number">${filteredRepos.length + filteredOrgRepos.length}</div>
                     <div>Projects</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">${filteredRepos.reduce((sum, repo) => sum + repo.stargazers_count, 0)}</div>
+                    <div class="stat-number">${filteredRepos.reduce((sum, repo) => sum + repo.stargazers_count, 0) + 
+                                              filteredOrgRepos.reduce((sum, repo) => sum + repo.stargazers_count, 0)}</div>
                     <div>Stars</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">${filteredRepos.reduce((sum, repo) => sum + repo.forks_count, 0)}</div>
+                    <div class="stat-number">${filteredRepos.reduce((sum, repo) => sum + repo.forks_count, 0) + 
+                                              filteredOrgRepos.reduce((sum, repo) => sum + repo.forks_count, 0)}</div>
                     <div>Forks</div>
                 </div>
             </div>
@@ -283,7 +348,7 @@ async function generateResume() {
         
         <section>
             <h2>Additional Information</h2>
-            <p>This resume was automatically generated from my GitHub profile. For the most up-to-date information, 
+            <p>This resume was automatically generated from my GitHub profile and organization data. For the most up-to-date information, 
             please visit my portfolio at <a href="https://clovetwilight3.co.uk">clovetwilight3.co.uk</a>.</p>
             <p>Last updated: ${formatDateTime(new Date())}</p>
         </section>
