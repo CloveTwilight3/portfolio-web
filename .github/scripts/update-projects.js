@@ -78,14 +78,18 @@ function formatDateTime(dateString) {
   const date = new Date(dateString);
   
   // Format date as "Day Month Year"
-  const formattedDate = date.toDateString();
+  const day = date.getDate();
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                      'July', 'August', 'September', 'October', 'November', 'December'];
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
   
   // Format time as "HH:MM"
   const hours = date.getHours().toString().padStart(2, '0');
   const minutes = date.getMinutes().toString().padStart(2, '0');
-  const formattedTime = `${hours}:${minutes}`;
   
-  return `${formattedDate} at ${formattedTime}`;
+  // Add time zone information (GitHub Actions runs in UTC)
+  return `${hours}:${minutes} ${day} ${month}, ${year} (UTC)`;
 }
 
 function generateProjectsMarkdown(repos) {
@@ -128,7 +132,7 @@ function generateProjectsMarkdown(repos) {
     // Add stars and forks count
     markdown += `⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}\n\n`;
     
-    // Add last update date WITH time
+    // Add last update date WITH time and timezone
     const lastUpdated = formatDateTime(repo.updated_at);
     markdown += `Last updated: ${lastUpdated}\n\n`;
     
