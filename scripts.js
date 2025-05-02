@@ -40,28 +40,59 @@ async function fetchProjects() {
 }
 
 async function fetchProjectsFromGitHub() {
-    // Your GitHub username
+    // Your GitHub username and organization
     const username = 'clovetwilight3';
+    const orgName = 'UnifiedGaming-Systems';
     
     try {
-        console.log(`Fetching repositories for ${username} from GitHub API...`);
-        // Fetch repositories from GitHub API
-        const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`);
+        console.log(`Fetching personal repositories for ${username} from GitHub API...`);
+        // Fetch personal repositories from GitHub API
+        const personalRepoResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`);
         
-        if (!response.ok) {
-            console.error("GitHub API request failed with status:", response.status);
-            throw new Error(`Failed to fetch repositories from GitHub: ${response.statusText}`);
+        if (!personalRepoResponse.ok) {
+            console.error("GitHub API request for personal repos failed with status:", personalRepoResponse.status);
+            throw new Error(`Failed to fetch personal repositories from GitHub: ${personalRepoResponse.statusText}`);
         }
         
-        const repos = await response.json();
-        console.log(`Successfully fetched ${repos.length} repositories from GitHub API`);
+        const personalRepos = await personalRepoResponse.json();
+        console.log(`Successfully fetched ${personalRepos.length} personal repositories from GitHub API`);
         
-        // Filter out only forks
-        const originalRepos = repos.filter(repo => !repo.fork);
-        console.log(`Found ${originalRepos.length} original repositories (non-forks)`);
+        // Filter out forks
+        const originalPersonalRepos = personalRepos.filter(repo => !repo.fork);
+        console.log(`Found ${originalPersonalRepos.length} original personal repositories (non-forks)`);
+        
+        // Add a repoType property to each repository
+        originalPersonalRepos.forEach(repo => {
+            repo.repoType = 'personal';
+        });
+        
+        // Now fetch organization repositories
+        console.log(`Fetching organization repositories for ${orgName} from GitHub API...`);
+        const orgRepoResponse = await fetch(`https://api.github.com/orgs/${orgName}/repos?sort=updated&direction=desc`);
+        
+        let originalOrgRepos = [];
+        if (orgRepoResponse.ok) {
+            const orgRepos = await orgRepoResponse.json();
+            console.log(`Successfully fetched ${orgRepos.length} organization repositories from GitHub API`);
+            
+            // Filter out forks from org repos
+            originalOrgRepos = orgRepos.filter(repo => !repo.fork);
+            console.log(`Found ${originalOrgRepos.length} original organization repositories (non-forks)`);
+            
+            // Add a repoType property to each repository
+            originalOrgRepos.forEach(repo => {
+                repo.repoType = 'organization';
+                repo.orgName = orgName;
+            });
+        } else {
+            console.warn(`Could not fetch organization repositories. Status: ${orgRepoResponse.status}`);
+        }
+        
+        // Combine both sets of repositories
+        const allRepos = [...originalPersonalRepos, ...originalOrgRepos];
         
         // Display projects
-        displayProjects(originalRepos);
+        displayProjects(allRepos);
     } catch (error) {
         console.error('Error fetching from GitHub API:', error);
         displayErrorMessage();
@@ -79,33 +110,82 @@ function parseAndDisplayProjects(markdown) {
     projectGrid.className = 'project-grid';
     projectsContainer.appendChild(projectGrid);
     
-    // Regular expression to extract project information from markdown
-    // Updated regex to match the new datetime format and look for [ARCHIVE] marker
-    const projectRegex = /### \[(.*?)\]\((.*?)\)(\s*\[ARCHIVE\])?\n\n([\s\S]*?)(?:\n\n\*\*Language:\*\* (.*?)\n\n)?⭐ (\d+) \| 🍴 (\d+)\n\n(?:Last updated: (.*?)\n\n)?---/g;
+    // Regular expressions to extract project information from markdown sections
+    // First, check if there are sections for personal and organization projects
+    const personalSectionRegex = /### Personal Projects\n\n([\s\S]*?)(?=### |$)/;
+    const orgSectionRegex = /### UnifiedGaming Systems Ltd Projects\n\n([\s\S]*?)(?=### |$)/;
     
-    let match;
+    // Extract personal and organization sections
+    const personalSection = personalSectionRegex.exec(markdown);
+    const orgSection = orgSectionRegex.exec(markdown);
+    
+    // Project regex to use within each section
+    const projectRegex = /#### \[(.*?)\]\((.*?)\)(\s*\[ARCHIVE\])?\n\n([\s\S]*?)(?:\n\n\*\*Language:\*\* (.*?)\n\n)?⭐ (\d+) \| 🍴 (\d+)\n\n(?:Last updated: (.*?)\n\n)?---/g;
+    
     let projectCount = 0;
     
     try {
-        while ((match = projectRegex.exec(markdown)) !== null) {
-            const [, name, url, archiveMarker, description, language, stars, forks, lastUpdated] = match;
-            console.log(`Found project: ${name}, Language: ${language || "Not specified"}`);
+        // Process personal projects first
+        if (personalSection) {
+            const personalContent = personalSection[1];
+            let match;
             
-            // Create project card
-            const projectCard = createProjectCard({
-                name,
-                url,
-                description: description.trim(),
-                language,
-                stars,
-                forks,
-                lastUpdated,
-                // Check if this project is an archive based on the marker or name/description
-                isArchive: !!archiveMarker || isArchiveProject(name, description.trim())
-            });
+            // Reset regex index
+            projectRegex.lastIndex = 0;
             
-            projectGrid.appendChild(projectCard);
-            projectCount++;
+            while ((match = projectRegex.exec(personalContent)) !== null) {
+                const [, name, url, archiveMarker, description, language, stars, forks, lastUpdated] = match;
+                console.log(`Found personal project: ${name}, Language: ${language || "Not specified"}`);
+                
+                // Create project card
+                const projectCard = createProjectCard({
+                    name,
+                    url,
+                    description: description.trim(),
+                    language,
+                    stars,
+                    forks,
+                    lastUpdated,
+                    repoType: 'personal',
+                    // Check if this project is an archive based on the marker or name/description
+                    isArchive: !!archiveMarker || isArchiveProject(name, description.trim())
+                });
+                
+                projectGrid.appendChild(projectCard);
+                projectCount++;
+            }
+        }
+        
+        // Process organization projects second
+        if (orgSection) {
+            const orgContent = orgSection[1];
+            let match;
+            
+            // Reset regex index
+            projectRegex.lastIndex = 0;
+            
+            while ((match = projectRegex.exec(orgContent)) !== null) {
+                const [, name, url, archiveMarker, description, language, stars, forks, lastUpdated] = match;
+                console.log(`Found organization project: ${name}, Language: ${language || "Not specified"}`);
+                
+                // Create project card
+                const projectCard = createProjectCard({
+                    name,
+                    url,
+                    description: description.trim(),
+                    language,
+                    stars,
+                    forks,
+                    lastUpdated,
+                    repoType: 'organization',
+                    orgName: 'UnifiedGaming-Systems',
+                    // Check if this project is an archive based on the marker or name/description
+                    isArchive: !!archiveMarker || isArchiveProject(name, description.trim())
+                });
+                
+                projectGrid.appendChild(projectCard);
+                projectCount++;
+            }
         }
         
         console.log(`Parsed and displayed ${projectCount} projects from markdown`);
@@ -140,9 +220,17 @@ function displayProjects(repos) {
     projectGrid.className = 'project-grid';
     projectsContainer.appendChild(projectGrid);
     
+    // Sort repositories - personal first, then organization
+    repos.sort((a, b) => {
+        if (a.repoType !== b.repoType) {
+            return a.repoType === 'personal' ? -1 : 1;
+        }
+        return new Date(b.updated_at) - new Date(a.updated_at);
+    });
+    
     // Add project cards
     repos.forEach(repo => {
-        console.log(`Creating card for: ${repo.name}, Language: ${repo.language || "Not specified"}`);
+        console.log(`Creating card for: ${repo.name}, Language: ${repo.language || "Not specified"}, Type: ${repo.repoType}`);
         const projectCard = createProjectCard({
             name: repo.name,
             url: repo.html_url,
@@ -151,6 +239,8 @@ function displayProjects(repos) {
             stars: repo.stargazers_count,
             forks: repo.forks_count,
             lastUpdated: formatDateTime(repo.updated_at),
+            repoType: repo.repoType,
+            orgName: repo.orgName,
             // Check if this project is an archive based on name or description
             isArchive: isArchiveProject(repo.name, repo.description || '')
         });
@@ -217,6 +307,15 @@ function createProjectCard(project) {
         const card = document.createElement('div');
         card.className = 'project-card';
         
+        // Add data attributes for filtering
+        if (project.repoType === 'organization' || project.url.includes('UnifiedGaming-Systems')) {
+            card.dataset.organization = 'true';
+            card.classList.add('org-project');
+        } else {
+            card.dataset.personal = 'true';
+            card.classList.add('personal-project');
+        }
+        
         const content = document.createElement('div');
         content.className = 'project-content';
         
@@ -240,6 +339,14 @@ function createProjectCard(project) {
             archiveBadge.className = 'archive-badge';
             archiveBadge.textContent = 'Archive';
             titleContainer.appendChild(archiveBadge);
+        }
+        
+        // Add organization badge if it's an org project
+        if (project.repoType === 'organization' || project.url.includes('UnifiedGaming-Systems')) {
+            const orgBadge = document.createElement('span');
+            orgBadge.className = 'org-badge';
+            orgBadge.textContent = 'UG Systems';
+            titleContainer.appendChild(orgBadge);
         }
         
         title.appendChild(titleContainer);
@@ -549,6 +656,12 @@ function filterProjects(filter) {
             
             if (filter === 'all') {
                 shouldShow = true;
+            } else if (filter === 'personal') {
+                // Show only personal projects
+                shouldShow = card.classList.contains('personal-project');
+            } else if (filter === 'organization') {
+                // Show only organization projects
+                shouldShow = card.classList.contains('org-project');
             } else if (filter === 'archive') {
                 // Show only archived projects
                 shouldShow = !!card.querySelector('.archive-badge');
@@ -588,9 +701,6 @@ function filterProjects(filter) {
         });
         
         console.log(`Filter results: ${visibleCount} projects visible`);
-        
-        // Remove filtering class to finish animation
-        projectGrid.classList.remove('filtering');
         
         // Show message if no projects match the filter
         if (visibleCount === 0) {
@@ -704,6 +814,65 @@ function addMissingStyles() {
         .project-updated i {
             margin-right: 5px;
             color: var(--accent-color);
+        }
+        
+        /* Organization Badge Styles */
+        .org-badge {
+            display: inline-block;
+            background-color: #2C5A7A; /* A blue shade for organization */
+            color: #FFFFFF;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+        
+        /* Make the organization badge animate on hover */
+        .project-card:hover .org-badge {
+            background-color: #3B8BC9; /* Lighter blue on hover */
+            transform: scale(1.05);
+            transition: all 0.2s ease;
+        }
+        
+        /* Styling for organization projects */
+        .project-card.org-project {
+            border-left: 3px solid #2C5A7A; /* Blue border */
+        }
+        
+        .project-card.org-project:hover {
+            border-color: #3B8BC9; /* Lighter blue on hover */
+        }
+        
+        .project-card.personal-project {
+            border-left: 3px solid var(--primary-color); /* Existing primary color */
+        }
+        
+        /* Update filter button for organization */
+        .filter-btn[data-filter="organization"] {
+            background-color: #2C5A7A;
+            color: var(--text-color);
+            border-color: #2C5A7A;
+        }
+        
+        .filter-btn[data-filter="organization"]:hover,
+        .filter-btn[data-filter="organization"].active {
+            background-color: #3B8BC9;
+            border-color: #3B8BC9;
+        }
+        
+        .filter-btn[data-filter="personal"] {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border-color: var(--primary-color);
+        }
+        
+        .filter-btn[data-filter="personal"]:hover,
+        .filter-btn[data-filter="personal"].active {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
         }
     `;
     
