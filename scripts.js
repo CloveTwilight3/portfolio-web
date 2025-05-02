@@ -334,7 +334,7 @@ function isWebProject(project) {
         };
     } else if (project.name.toLowerCase() === 'spotify-player') {
         return {
-            url: 'http://demo.clovetwilight3.co.uk:8080',
+            url: 'http://demo.clovetwilight3.co.uk:8080/',
             label: 'Try Demo'
         };
     }
