@@ -12,18 +12,6 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ## Projects
 
-### [github-activity-tracker](https://github.com/CloveTwilight3/github-activity-tracker)
-
-No description provided.
-
-**Language:** JavaScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 11:49 2 May, 2025 (UTC)
-
----
-
 ### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -32,7 +20,7 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 
 ⭐ 1 | 🍴 0
 
-Last updated: 11:40 2 May, 2025 (UTC)
+Last updated: 12:03 2 May, 2025 (UTC)
 
 ---
 
