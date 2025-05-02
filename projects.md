@@ -10,7 +10,7 @@ Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, 
 
 ⭐ 0 | 🍴 0
 
-Last updated: Thu May 01 2025 at 23:16
+Last updated: Fri May 02 2025 at 00:15
 
 ---
 
