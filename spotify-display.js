@@ -1,27 +1,25 @@
-// spotify-display.js - Connect to Spotify API backend and display currently playing track
+// spotify-player.js - Improved player with fallback functionality
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize the Spotify display
-  const spotifyDisplay = {
+  const spotifyPlayer = {
     container: document.getElementById('spotify-player'),
     backendUrl: 'http://104.219.239.218:3000',
     currentTrackId: null,
     isPlaying: false,
     
-    // Initialize the player UI
     init: function() {
       if (!this.container) {
         console.error('Spotify player container not found');
         return;
       }
       
-      // Create initial player UI
+      // Create the player UI first
       this.createPlayerUI();
       
-      // Start polling for track updates
+      // Then attempt to connect to backend, with fallback display
       this.startPolling();
     },
     
-    // Create the player UI elements
     createPlayerUI: function() {
       // Trans flag colors
       const colors = {
@@ -76,9 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
       this.addCustomCSS();
     },
     
-    // Add the CSS for the player
     addCustomCSS: function() {
+      // Check if styles already exist
+      if (document.getElementById('spotify-player-styles')) {
+        return;
+      }
+      
       const style = document.createElement('style');
+      style.id = 'spotify-player-styles';
       style.textContent = `
         /* Trans-themed Spotify Player Styles */
         .spotify-player-container {
@@ -184,6 +187,11 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
 
+        .spotify-player-bar {
+          animation: equalize 1.5s ease-in-out infinite;
+          animation-delay: calc(var(--index, 0) * 0.1s);
+        }
+
         .spotify-player-metadata {
           display: flex;
           justify-content: space-between;
@@ -210,8 +218,13 @@ document.addEventListener('DOMContentLoaded', function() {
       document.head.appendChild(style);
     },
     
-    // Start polling for track updates
     startPolling: function() {
+      // First give each bar a random animation delay and height
+      this.elements.bars.forEach((bar, index) => {
+        bar.style.setProperty('--index', index);
+        bar.style.setProperty('--random-height', `${Math.floor(Math.random() * 25)}%`);
+      });
+      
       // Fetch current track immediately
       this.fetchCurrentlyPlaying();
       
@@ -221,10 +234,17 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 5000);
     },
     
-    // Fetch the currently playing track
     fetchCurrentlyPlaying: async function() {
       try {
-        const response = await fetch(`${this.backendUrl}/currently-playing`);
+        // Add a timeout to the fetch to prevent long waits
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        
+        const response = await fetch(`${this.backendUrl}/currently-playing`, {
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
         
         // If 204 No Content (nothing playing) and fallback is enabled
         if (response.status === 204) {
@@ -251,14 +271,20 @@ document.addEventListener('DOMContentLoaded', function() {
         
       } catch (error) {
         console.error('Error fetching current track:', error);
-        this.showError('Could not connect to Spotify');
+        this.showFallbackUI();
       }
     },
     
-    // Fetch recently played as fallback
     fetchRecentlyPlayed: async function() {
       try {
-        const response = await fetch(`${this.backendUrl}/recently-played`);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        
+        const response = await fetch(`${this.backendUrl}/recently-played`, {
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
         
         if (!response.ok) {
           this.showNotPlaying();
@@ -280,11 +306,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
       } catch (error) {
         console.error('Error fetching recently played tracks:', error);
-        this.showNotPlaying();
+        this.showFallbackUI();
       }
     },
     
-    // Update player with track info
     updatePlayerInfo: function(track, isPlaying, isRecent = false) {
       // Update track ID
       const trackId = track.id;
@@ -307,18 +332,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (this.elements.explicit) {
         this.elements.explicit.style.visibility = track.explicit ? 'visible' : 'hidden';
       }
-      
-      // Update isPlaying state
-      const wasPlaying = this.isPlaying;
-      this.isPlaying = isPlaying;
-      
-      // Animate equalizer bars if music is playing or if track changed
-      if (isPlaying !== wasPlaying || isNewTrack) {
-        this.animateEqualizerBars(isPlaying);
-      }
     },
     
-    // Display not playing state
     showNotPlaying: function() {
       this.elements.title.textContent = 'Nothing Playing';
       this.elements.artist.textContent = 'Open Spotify to play music';
@@ -331,12 +346,9 @@ document.addEventListener('DOMContentLoaded', function() {
         this.elements.explicit.style.visibility = 'hidden';
       }
       
-      // Stop the equalizer animation
-      this.animateEqualizerBars(false);
       this.currentTrackId = null;
     },
     
-    // Show error state
     showError: function(message) {
       this.elements.title.textContent = 'Connection Error';
       this.elements.artist.textContent = message;
@@ -348,34 +360,19 @@ document.addEventListener('DOMContentLoaded', function() {
       if (this.elements.explicit) {
         this.elements.explicit.style.visibility = 'hidden';
       }
-      
-      // Stop the equalizer animation
-      this.animateEqualizerBars(false);
     },
     
-    // Animate equalizer bars
-    animateEqualizerBars: function(isPlaying) {
-      if (isPlaying) {
-        // If music is playing, make the bars "dance"
-        this.elements.bars.forEach(bar => {
-          // Reset any previous animation
-          bar.style.animation = 'none';
-          bar.offsetHeight; // Trigger reflow
-          
-          // Apply random animation delay to each bar for natural effect
-          const delay = Math.random() * 0.5;
-          bar.style.animation = `equalize 1.5s ease-in-out ${delay}s infinite`;
-        });
-      } else {
-        // If not playing, make the bars static and small
-        this.elements.bars.forEach(bar => {
-          bar.style.animation = 'none';
-          bar.style.height = '5px';
-        });
+    showFallbackUI: function() {
+      // Show fallback UI when backend is unreachable
+      this.elements.title.textContent = 'Spotify Player Demo';
+      this.elements.artist.textContent = 'Clove Twilight';
+      
+      if (this.elements.album) {
+        this.elements.album.textContent = 'Album: Portfolio Demo';
       }
     }
   };
   
-  // Initialize the Spotify display
-  spotifyDisplay.init();
+  // Initialize the Spotify player
+  spotifyPlayer.init();
 });
