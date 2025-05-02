@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 // Your GitHub username
 const username = 'clovetwilight3';
@@ -27,9 +28,32 @@ async function generateResume() {
     // First, check if a custom resume.pdf exists
     const customPdfPath = path.join(process.cwd(), 'custom_resume.pdf');
     const resumePdfPath = path.join(process.cwd(), 'resume.pdf');
+    const resumeHtmlPath = path.join(process.cwd(), 'resume.html');
+    const cachePath = path.join(process.cwd(), '.resume-cache.json');
+
+    // Check for existing cache
+    let cacheData = { hash: '', lastGenerated: 0 };
+    if (fs.existsSync(cachePath)) {
+      try {
+        cacheData = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
+      } catch (err) {
+        console.log('Could not read resume cache file, will regenerate');
+      }
+    }
 
     if (fs.existsSync(customPdfPath)) {
-      // If a custom resume exists, copy it to the standard location
+      // If a custom resume exists, check if it's changed
+      const customPdfContent = fs.readFileSync(customPdfPath);
+      const customPdfHash = crypto.createHash('md5').update(customPdfContent).digest('hex');
+      
+      if (cacheData.hash === customPdfHash && 
+          fs.existsSync(resumePdfPath) && 
+          fs.existsSync(resumeHtmlPath)) {
+        console.log('Custom resume.pdf unchanged. Skipping regeneration.');
+        return;
+      }
+      
+      // If it has changed or files don't exist, copy it to the standard location
       fs.copyFileSync(customPdfPath, resumePdfPath);
       console.log('Using custom resume.pdf found in repository.');
       
@@ -49,12 +73,27 @@ async function generateResume() {
       </html>
       `;
       
-      fs.writeFileSync(path.join(process.cwd(), 'resume.html'), htmlForwarder);
+      fs.writeFileSync(resumeHtmlPath, htmlForwarder);
       console.log('Created HTML redirect to custom PDF resume.');
+      
+      // Update cache
+      cacheData = { hash: customPdfHash, lastGenerated: Date.now() };
+      fs.writeFileSync(cachePath, JSON.stringify(cacheData));
       return;
     }
     
-    console.log('No custom resume.pdf found. Generating HTML resume...');
+    // If no custom PDF exists, check if we need to regenerate HTML resume
+    // Only regenerate if it's been more than 1 day since last generation
+    const ONE_DAY = 24 * 60 * 60 * 1000; // milliseconds
+    const shouldRegenerate = !fs.existsSync(resumeHtmlPath) || 
+                              (Date.now() - cacheData.lastGenerated) > ONE_DAY;
+    
+    if (!shouldRegenerate) {
+      console.log('HTML resume is recent. Skipping regeneration.');
+      return;
+    }
+    
+    console.log('No custom resume.pdf found or HTML resume is outdated. Generating HTML resume...');
     
     // Import Octokit using dynamic import
     const { Octokit } = await import('@octokit/rest');
@@ -253,7 +292,7 @@ async function generateResume() {
     `;
     
     // Write to resume.html file
-    fs.writeFileSync(path.join(process.cwd(), 'resume.html'), html);
+    fs.writeFileSync(resumeHtmlPath, html);
     console.log('Resume HTML generated successfully!');
     
     // Create a simple redirect file for resume.pdf if no custom PDF exists
@@ -271,8 +310,12 @@ async function generateResume() {
     </html>
     `;
     
-    fs.writeFileSync(path.join(process.cwd(), 'resume.pdf'), pdfRedirect);
+    fs.writeFileSync(resumePdfPath, pdfRedirect);
     console.log('Resume PDF redirect created successfully!');
+    
+    // Update cache
+    cacheData = { hash: '', lastGenerated: Date.now() };
+    fs.writeFileSync(cachePath, JSON.stringify(cacheData));
     
   } catch (error) {
     console.error('Error generating resume:', error);
