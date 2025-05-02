@@ -17,19 +17,76 @@ async function main() {
     // Fetch repositories (excluding forks)
     const repos = await fetchRepositories(octokit);
     
+    // Check if we need to preserve timestamps
+    const preserveTimestamps = process.env.PRESERVE_TIMESTAMPS === 'true';
+    
+    // Load existing projects content to check for changes and preserve timestamps if needed
+    const existingContent = loadExistingContent(preserveTimestamps);
+    
     // Generate markdown content for projects
-    const projectsContent = generateProjectsMarkdown(repos);
+    const projectsContent = generateProjectsMarkdown(repos, existingContent, preserveTimestamps);
     
-    // Update README.md
-    await updateReadme(projectsContent);
-    
-    // Create a dedicated projects page
-    await updateProjectsPage(projectsContent);
+    // Only update if there are actual content changes
+    if (hasContentChanged(existingContent.projects, projectsContent)) {
+      // Update README.md
+      await updateReadme(projectsContent);
+      
+      // Create a dedicated projects page
+      await updateProjectsPage(projectsContent);
+      
+      console.log('Projects updated with significant changes.');
+    } else {
+      console.log('No significant project changes detected. Skipping update.');
+    }
     
   } catch (error) {
     console.error('Error in main function:', error);
     process.exit(1);
   }
+}
+
+// Function to check if content has meaningful changes (ignoring timestamps)
+function hasContentChanged(oldContent, newContent) {
+  if (!oldContent) return true; // No old content, definitely changed
+  
+  // Remove all timestamp lines for comparison
+  const cleanOld = oldContent.replace(/Last updated:.*?\n/g, '');
+  const cleanNew = newContent.replace(/Last updated:.*?\n/g, '');
+  
+  // Compare the clean versions
+  return cleanOld !== cleanNew;
+}
+
+// Load existing content from files
+function loadExistingContent(preserveTimestamps) {
+  const result = {
+    projects: '',
+    timestamps: {}
+  };
+  
+  if (preserveTimestamps) {
+    try {
+      // Try to read existing projects.md
+      const projectsPath = path.join(process.cwd(), 'projects.md');
+      if (fs.existsSync(projectsPath)) {
+        const content = fs.readFileSync(projectsPath, 'utf8');
+        result.projects = content;
+        
+        // Extract timestamps for each project
+        const timestampRegex = /### \[(.*?)\].*?\n\n[\s\S]*?Last updated: (.*?)\n\n/g;
+        let match;
+        while ((match = timestampRegex.exec(content)) !== null) {
+          result.timestamps[match[1]] = match[2];
+        }
+        
+        console.log(`Loaded ${Object.keys(result.timestamps).length} existing timestamps`);
+      }
+    } catch (error) {
+      console.warn('Warning: Could not load existing content:', error.message);
+    }
+  }
+  
+  return result;
 }
 
 async function fetchRepositories(octokit) {
@@ -74,7 +131,12 @@ async function fetchRepositories(octokit) {
   }
 }
 
-function formatDateTime(dateString) {
+function formatDateTime(dateString, existingTimestamps, repoName, preserveTimestamps) {
+  // If we're preserving timestamps and have an existing one for this repo, use it
+  if (preserveTimestamps && existingTimestamps && existingTimestamps[repoName]) {
+    return existingTimestamps[repoName];
+  }
+  
   const date = new Date(dateString);
   
   // Format date as "Day Month Year"
@@ -92,7 +154,7 @@ function formatDateTime(dateString) {
   return `${hours}:${minutes} ${day} ${month}, ${year} (UTC)`;
 }
 
-function generateProjectsMarkdown(repos) {
+function generateProjectsMarkdown(repos, existingContent, preserveTimestamps) {
   if (repos.length === 0) {
     return '## Projects\n\nNo original projects found (excluding ignored repositories).';
   }
@@ -132,8 +194,13 @@ function generateProjectsMarkdown(repos) {
     // Add stars and forks count
     markdown += `⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}\n\n`;
     
-    // Add last update date WITH time and timezone
-    const lastUpdated = formatDateTime(repo.updated_at);
+    // Add last update date WITH time and timezone, preserving existing timestamps if requested
+    const lastUpdated = formatDateTime(
+      repo.updated_at, 
+      existingContent.timestamps, 
+      repo.name, 
+      preserveTimestamps
+    );
     markdown += `Last updated: ${lastUpdated}\n\n`;
     
     markdown += '---\n\n';
