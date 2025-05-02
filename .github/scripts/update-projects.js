@@ -1,8 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-// Your GitHub username - replace with your actual username
+// Your GitHub username and organization name
 const username = 'clovetwilight3';
+const orgName = 'UnifiedGaming-Systems';
+const excludedOrgs = ['Epic-Games']; // Organizations to exclude
 
 async function main() {
   try {
@@ -14,8 +16,12 @@ async function main() {
       auth: process.env.GITHUB_TOKEN
     });
     
-    // Fetch repositories (excluding forks)
-    const repos = await fetchRepositories(octokit);
+    // Fetch repositories (excluding forks) from both user and organization
+    const userRepos = await fetchUserRepositories(octokit);
+    const orgRepos = await fetchOrgRepositories(octokit);
+    
+    // Combine both repository lists
+    const allRepos = [...userRepos, ...orgRepos];
     
     // Check if we need to preserve timestamps
     const preserveTimestamps = process.env.PRESERVE_TIMESTAMPS === 'true';
@@ -24,7 +30,7 @@ async function main() {
     const existingContent = loadExistingContent(preserveTimestamps);
     
     // Generate markdown content for projects
-    const projectsContent = generateProjectsMarkdown(repos, existingContent, preserveTimestamps);
+    const projectsContent = generateProjectsMarkdown(allRepos, existingContent, preserveTimestamps);
     
     // Only update if there are actual content changes
     if (hasContentChanged(existingContent.projects, projectsContent)) {
@@ -89,7 +95,7 @@ function loadExistingContent(preserveTimestamps) {
   return result;
 }
 
-async function fetchRepositories(octokit) {
+async function fetchUserRepositories(octokit) {
   try {
     // Fetch all public repositories for the user
     const { data: repos } = await octokit.repos.listForUser({
@@ -105,7 +111,7 @@ async function fetchRepositories(octokit) {
     // Filter out forks and specific repositories to ignore (if not including all)
     let filteredRepos;
     if (includeAllRepos) {
-      console.log('Including all non-fork repositories (including profile and portfolio)');
+      console.log('Including all non-fork user repositories (including profile and portfolio)');
       filteredRepos = repos.filter(repo => !repo.fork);
     } else {
       const reposToIgnore = ['clovetwilight3', 'clovetwilight3.github.io'];
@@ -113,7 +119,12 @@ async function fetchRepositories(octokit) {
       console.log(`Filtering out [${reposToIgnore.join(', ')}] repositories`);
     }
     
-    console.log(`Found ${filteredRepos.length} original repositories`);
+    console.log(`Found ${filteredRepos.length} original user repositories`);
+    
+    // Tag repositories as personal
+    filteredRepos.forEach(repo => {
+      repo.repoType = 'personal';
+    });
     
     // For each repository, check if it's an archive
     for (const repo of filteredRepos) {
@@ -126,7 +137,50 @@ async function fetchRepositories(octokit) {
     
     return filteredRepos;
   } catch (error) {
-    console.error('Error fetching repositories:', error);
+    console.error('Error fetching user repositories:', error);
+    return [];
+  }
+}
+
+async function fetchOrgRepositories(octokit) {
+  try {
+    // Only fetch repositories from specified organization (UnifiedGaming-Systems)
+    // and explicitly exclude any organizations in the excludedOrgs array
+    if (excludedOrgs.includes(orgName)) {
+      console.log(`Organization ${orgName} is in the excluded list. Skipping.`);
+      return [];
+    }
+    
+    // Fetch all public repositories for the organization
+    const { data: repos } = await octokit.repos.listForOrg({
+      org: orgName,
+      type: 'public',
+      sort: 'updated',
+      direction: 'desc'
+    });
+    
+    // Filter out forks
+    const filteredRepos = repos.filter(repo => !repo.fork);
+    
+    console.log(`Found ${filteredRepos.length} original repositories from ${orgName}`);
+    
+    // Tag repositories as organizational
+    filteredRepos.forEach(repo => {
+      repo.repoType = 'organization';
+      repo.orgName = orgName; // Add organization name for reference
+    });
+    
+    // For each repository, check if it's an archive
+    for (const repo of filteredRepos) {
+      // Check if repository is an archive based on description
+      if (repo.description && repo.description.toLowerCase().includes('archive')) {
+        repo.isArchive = true;
+      }
+    }
+    
+    return filteredRepos;
+  } catch (error) {
+    console.error(`Error fetching repositories from ${orgName}:`, error);
     return [];
   }
 }
@@ -159,52 +213,106 @@ function generateProjectsMarkdown(repos, existingContent, preserveTimestamps) {
     return '## Projects\n\nNo original projects found (excluding ignored repositories).';
   }
   
+  // Sort repositories - first by type (personal first, then org), then by update date
+  repos.sort((a, b) => {
+    if (a.repoType !== b.repoType) {
+      return a.repoType === 'personal' ? -1 : 1;
+    }
+    return new Date(b.updated_at) - new Date(a.updated_at);
+  });
+
+  // Group repositories
+  const personalRepos = repos.filter(repo => repo.repoType === 'personal');
+  const orgRepos = repos.filter(repo => repo.repoType === 'organization');
+  
   let markdown = '## Projects\n\n';
   
-  repos.forEach(repo => {
-    let projectTitle = `### [${repo.name}](${repo.html_url})`;
+  // Add personal projects section
+  if (personalRepos.length > 0) {
+    markdown += '### Personal Projects\n\n';
     
-    // Add archive marker if it's an archive
-    if (repo.isArchive) {
-      projectTitle += ' [ARCHIVE]';
-    }
+    personalRepos.forEach(repo => {
+      let projectTitle = `#### [${repo.name}](${repo.html_url})`;
+      
+      // Add archive marker if it's an archive
+      if (repo.isArchive) {
+        projectTitle += ' [ARCHIVE]';
+      }
+      
+      markdown += `${projectTitle}\n\n`;
+      
+      // Special handling for specific repositories
+      if (repo.name === 'TransGamers') {
+        markdown += 'A public archive of a Discord Bot I have helped towards. This repository is maintained as an archive for reference purposes.\n\n';
+      } else if (repo.name === 'clovetwilight3.github.io') {
+        markdown += 'My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.\n\n';
+      } else if (repo.name === 'clovetwilight3') {
+        markdown += 'My GitHub profile repository with custom README and configuration.\n\n';
+      } else {
+        markdown += repo.description ? `${repo.description}\n\n` : 'No description provided.\n\n';
+      }
+      
+      // Add language info if available
+      if (repo.language) {
+        markdown += `**Language:** ${repo.language}\n\n`;
+      } else if (repo.name === 'clovetwilight3') {
+        markdown += `**Language:** Markdown\n\n`;
+      } else if (repo.name === 'clovetwilight3.github.io') {
+        markdown += `**Language:** JavaScript\n\n`;
+      }
+      
+      // Add stars and forks count
+      markdown += `⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}\n\n`;
+      
+      // Add last update date WITH time and timezone, preserving existing timestamps if requested
+      const lastUpdated = formatDateTime(
+        repo.updated_at, 
+        existingContent.timestamps, 
+        repo.name, 
+        preserveTimestamps
+      );
+      markdown += `Last updated: ${lastUpdated}\n\n`;
+      
+      markdown += '---\n\n';
+    });
+  }
+  
+  // Add organization projects section
+  if (orgRepos.length > 0) {
+    markdown += '### UnifiedGaming Systems Ltd Projects\n\n';
     
-    markdown += `${projectTitle}\n\n`;
-    
-    // Special handling for specific repositories
-    if (repo.name === 'TransGamers') {
-      markdown += 'A public archive of a Discord Bot I have helped towards. This repository is maintained as an archive for reference purposes.\n\n';
-    } else if (repo.name === 'clovetwilight3.github.io') {
-      markdown += 'My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.\n\n';
-    } else if (repo.name === 'clovetwilight3') {
-      markdown += 'My GitHub profile repository with custom README and configuration.\n\n';
-    } else {
+    orgRepos.forEach(repo => {
+      let projectTitle = `#### [${repo.name}](${repo.html_url})`;
+      
+      // Add archive marker if it's an archive
+      if (repo.isArchive) {
+        projectTitle += ' [ARCHIVE]';
+      }
+      
+      markdown += `${projectTitle}\n\n`;
+      
       markdown += repo.description ? `${repo.description}\n\n` : 'No description provided.\n\n';
-    }
-    
-    // Add language info if available
-    if (repo.language) {
-      markdown += `**Language:** ${repo.language}\n\n`;
-    } else if (repo.name === 'clovetwilight3') {
-      markdown += `**Language:** Markdown\n\n`;
-    } else if (repo.name === 'clovetwilight3.github.io') {
-      markdown += `**Language:** JavaScript\n\n`;
-    }
-    
-    // Add stars and forks count
-    markdown += `⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}\n\n`;
-    
-    // Add last update date WITH time and timezone, preserving existing timestamps if requested
-    const lastUpdated = formatDateTime(
-      repo.updated_at, 
-      existingContent.timestamps, 
-      repo.name, 
-      preserveTimestamps
-    );
-    markdown += `Last updated: ${lastUpdated}\n\n`;
-    
-    markdown += '---\n\n';
-  });
+      
+      // Add language info if available
+      if (repo.language) {
+        markdown += `**Language:** ${repo.language}\n\n`;
+      }
+      
+      // Add stars and forks count
+      markdown += `⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}\n\n`;
+      
+      // Add last update date WITH time and timezone, preserving existing timestamps if requested
+      const lastUpdated = formatDateTime(
+        repo.updated_at, 
+        existingContent.timestamps, 
+        repo.name, 
+        preserveTimestamps
+      );
+      markdown += `Last updated: ${lastUpdated}\n\n`;
+      
+      markdown += '---\n\n';
+    });
+  }
   
   return markdown;
 }
