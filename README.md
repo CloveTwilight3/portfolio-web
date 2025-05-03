@@ -14,6 +14,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 2 | 🍴 0
+
+Last updated: 01:48 3 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -59,18 +71,6 @@ A custom discord bot that communicates with APIs
 ⭐ 2 | 🍴 0
 
 Last updated: 03:22 3 May, 2025 (UTC)
-
----
-
-#### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 2 | 🍴 0
-
-Last updated: 01:48 3 May, 2025 (UTC)
 
 ---
 
