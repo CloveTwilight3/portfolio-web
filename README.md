@@ -14,6 +14,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 0 | 🍴 0
+
+Last updated: 23:44 2 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -23,16 +35,6 @@ My GitHub profile repository with custom README and configuration.
 ⭐ 1 | 🍴 0
 
 Last updated: 14:38 2 May, 2025 (UTC)
-
----
-
-#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: 23:44 2 May, 2025 (UTC)
 
 ---
 
