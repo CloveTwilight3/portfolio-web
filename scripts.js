@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set up project filtering once projects are loaded
     setupProjectFilters();
-    
-    // Set up the Work/Personal toggle switch
-    setupWorkPersonalToggle();
 });
 
 // Global state for project visibility
@@ -400,6 +397,11 @@ function createProjectCard(project) {
         // Add data-type attribute for the type toggle
         card.dataset.type = project.repoType;
         
+        // Add data attribute for the archive filter
+        if (project.isArchive) {
+            card.dataset.archive = 'true';
+        }
+        
         const content = document.createElement('div');
         content.className = 'project-content';
         
@@ -458,24 +460,29 @@ function createProjectCard(project) {
         // Add tech badges based on language and other cues in the project name/description
         if (project.language) {
             addTechBadge(techStack, project.language);
+            card.dataset.language = project.language.toLowerCase();
             
             // Add related tech badges based on language
             if (project.language === 'JavaScript') {
                 if (project.name.toLowerCase().includes('react') || 
                     project.description.toLowerCase().includes('react')) {
                     addTechBadge(techStack, 'React');
+                    card.dataset.react = 'true';
                 }
                 if (project.name.toLowerCase().includes('node') || 
                     project.description.toLowerCase().includes('node')) {
                     addTechBadge(techStack, 'Node.js');
+                    card.dataset.nodejs = 'true';
                 }
                 if (project.name.toLowerCase().includes('discord') || 
                     project.description.toLowerCase().includes('discord')) {
                     addTechBadge(techStack, 'Discord.js');
+                    card.dataset.discord = 'true';
                 }
                 // Add Web Development badge for JavaScript projects
                 if (isWebDev) {
                     addTechBadge(techStack, 'Web Development');
+                    card.dataset.webdev = 'true';
                 }
             } else if (project.language === 'TypeScript') {
                 // TypeScript badge already added above, so we don't add it twice
@@ -484,10 +491,12 @@ function createProjectCard(project) {
                     project.name.toLowerCase() === 'roommates-helper' ||
                     project.name.toLowerCase() === 'roommates-beta') {
                     addTechBadge(techStack, 'Discord.js');
+                    card.dataset.discord = 'true';
                 }
                 // Add Web Development badge for TypeScript projects
                 if (isWebDev) {
                     addTechBadge(techStack, 'Web Development');
+                    card.dataset.webdev = 'true';
                 }
             } else if (project.language === 'Java') {
                 if (project.name.toLowerCase().includes('minecraft') || 
@@ -497,20 +506,25 @@ function createProjectCard(project) {
                     project.name.toLowerCase().includes('spigot') ||
                     project.name.toLowerCase().includes('bukkit')) {
                     addTechBadge(techStack, 'Spigot/Bukkit');
+                    card.dataset.minecraft = 'true';
                 }
             } else if (project.language === 'Python') {
                 if (project.name.toLowerCase().includes('flask') || 
                     project.description.toLowerCase().includes('flask')) {
                     addTechBadge(techStack, 'Flask');
+                    card.dataset.flask = 'true';
                 }
                 if (project.name.toLowerCase().includes('web') || 
                     project.description.toLowerCase().includes('web')) {
                     addTechBadge(techStack, 'Web');
+                    card.dataset.web = 'true';
                     addTechBadge(techStack, 'Web Development');
+                    card.dataset.webdev = 'true';
                 }
             } else if (project.language === 'HTML' || project.language === 'CSS') {
                 // For HTML/CSS projects, add web development badge
                 addTechBadge(techStack, 'Web Development');
+                card.dataset.webdev = 'true';
             }
         }
         
@@ -518,16 +532,40 @@ function createProjectCard(project) {
         if (project.name === 'clovetwilight3.github.io') {
             if (!project.language || project.language !== 'JavaScript') {
                 addTechBadge(techStack, 'JavaScript');
+                card.dataset.language = 'javascript';
             }
             addTechBadge(techStack, 'HTML5');
+            card.dataset.html = 'true';
             addTechBadge(techStack, 'CSS3');
+            card.dataset.css = 'true';
             addTechBadge(techStack, 'GitHub Pages');
+            card.dataset.github = 'true';
             addTechBadge(techStack, 'Web Development');
+            card.dataset.webdev = 'true';
         }
         
         // Add web development badge for specific web projects
         if (project.name === 'plural-web' || project.name === 'spotify-player') {
             addTechBadge(techStack, 'Web Development');
+            card.dataset.webdev = 'true';
+        }
+        
+        // Check for Discord-related projects
+        if (project.name.toLowerCase().includes('discord') || 
+            project.description.toLowerCase().includes('discord') ||
+            project.name.toLowerCase() === 'roommates-helper' ||
+            project.name.toLowerCase() === 'roommates-beta') {
+            card.dataset.discord = 'true';
+        }
+        
+        // Check for Minecraft-related projects
+        if (project.name.toLowerCase().includes('minecraft') || 
+            project.description.toLowerCase().includes('minecraft') ||
+            project.name.toLowerCase().includes('plugin') || 
+            project.description.toLowerCase().includes('plugin') ||
+            project.name.toLowerCase().includes('spigot') ||
+            project.name.toLowerCase().includes('bukkit')) {
+            card.dataset.minecraft = 'true';
         }
         
         // Project meta information
@@ -730,10 +768,11 @@ function setupWorkPersonalToggle() {
         </div>
     `;
     
-    // Insert toggle before the filter buttons
-    const filterButtons = projectsSection.querySelector('.project-filters');
-    if (filterButtons) {
-        filterButtons.parentNode.insertBefore(toggleContainer, filterButtons);
+    // Insert the toggle before the filter buttons
+    const filterSection = projectsSection.querySelector('.project-filters');
+    
+    if (filterSection) {
+        filterSection.parentNode.insertBefore(toggleContainer, filterSection);
     } else {
         // If filter buttons not found, add it directly to the projects container
         const projectsContainer = projectsSection.querySelector('.container');
@@ -771,36 +810,111 @@ function setupWorkPersonalToggle() {
 
 // Project filtering functionality
 function setupProjectFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    if (!filterButtons.length) {
+    // Check for existing filter buttons
+    let existingFilterButtons = document.querySelectorAll('.filter-btn');
+    
+    // If there are no filter buttons, create them
+    if (existingFilterButtons.length === 0) {
+        createFilterButtons();
+        existingFilterButtons = document.querySelectorAll('.filter-btn');
+    }
+    
+    // Skip if still no filter buttons (might mean container is missing)
+    if (existingFilterButtons.length === 0) {
         console.log("No filter buttons found. Skipping filter setup.");
         return;
     }
     
-    console.log(`Setting up ${filterButtons.length} filter buttons`);
+    console.log(`Setting up ${existingFilterButtons.length} filter buttons`);
     
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Get the filter value
-            const filterValue = this.getAttribute('data-filter');
-            console.log(`Filter selected: ${filterValue}`);
-            
-            // Update global state
-            projectState.activeFilter = filterValue;
-            
-            // Apply filtering
-            applyProjectFilters();
-        });
+    // Remove the "Personal" and "Organization" filter buttons since we now have the toggle
+    existingFilterButtons.forEach(button => {
+        const filterValue = button.getAttribute('data-filter');
+        if (filterValue === 'personal' || filterValue === 'organization') {
+            button.remove();
+        } else {
+            // Add event listener to remaining buttons
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get the filter value
+                const filterValue = this.getAttribute('data-filter');
+                console.log(`Filter selected: ${filterValue}`);
+                
+                // Update global state
+                projectState.activeFilter = filterValue;
+                
+                // Apply filtering
+                applyProjectFilters();
+            });
+        }
     });
 }
 
-// Combine both work/personal toggle and regular filters
+// Create filter buttons if they don't exist
+function createFilterButtons() {
+    const projectsSection = document.querySelector('.projects');
+    if (!projectsSection) {
+        console.warn("Projects section not found. Cannot create filter buttons.");
+        return;
+    }
+    
+    // Check if filter buttons container already exists
+    let filterButtonsContainer = projectsSection.querySelector('.project-filters');
+    
+    // Create the container if it doesn't exist
+    if (!filterButtonsContainer) {
+        filterButtonsContainer = document.createElement('div');
+        filterButtonsContainer.className = 'project-filters';
+        
+        // Insert the container into the DOM
+        const projectsContainer = projectsSection.querySelector('.container');
+        if (projectsContainer) {
+            // Find the toggle container
+            const toggleContainer = projectsContainer.querySelector('.project-type-toggle');
+            if (toggleContainer) {
+                // Insert after the toggle
+                toggleContainer.parentNode.insertBefore(filterButtonsContainer, toggleContainer.nextSibling);
+            } else {
+                // Insert after the subtitle
+                const subtitle = projectsContainer.querySelector('.subtitle');
+                if (subtitle) {
+                    subtitle.parentNode.insertBefore(filterButtonsContainer, subtitle.nextSibling);
+                } else {
+                    // Add at the beginning of the container
+                    projectsContainer.insertBefore(filterButtonsContainer, projectsContainer.firstChild);
+                }
+            }
+        }
+    }
+    
+    // Define the filter types (removed personal and organization)
+    const filterTypes = [
+        { value: 'all', label: 'All Projects' },
+        { value: 'javascript', label: 'JavaScript' },
+        { value: 'typescript', label: 'TypeScript' },
+        { value: 'java', label: 'Java' },
+        { value: 'python', label: 'Python' },
+        { value: 'minecraft', label: 'Minecraft' },
+        { value: 'discord', label: 'Discord' },
+        { value: 'archive', label: 'Archives' }
+    ];
+    
+    // Create buttons for each filter type
+    filterTypes.forEach(filter => {
+        const button = document.createElement('button');
+        button.className = 'filter-btn' + (filter.value === 'all' ? ' active' : '');
+        button.setAttribute('data-filter', filter.value);
+        button.textContent = filter.label;
+        filterButtonsContainer.appendChild(button);
+    });
+}
+
+// Combined filtering logic for both type toggle and category filters
 function applyProjectFilters() {
     console.log(`Applying filters - Mode: ${projectState.showMode}, Filter: ${projectState.activeFilter}`);
     const projectGrid = document.querySelector('.project-grid');
@@ -836,42 +950,15 @@ function applyProjectFilters() {
             let shouldShowByCategory = true;
             
             if (projectState.activeFilter !== 'all') {
-                if (projectState.activeFilter === 'personal') {
-                    shouldShowByCategory = card.classList.contains('personal-project');
-                } else if (projectState.activeFilter === 'organization') {
-                    shouldShowByCategory = card.classList.contains('work-project');
-                } else if (projectState.activeFilter === 'archive') {
-                    shouldShowByCategory = !!card.querySelector('.archive-badge');
+                if (projectState.activeFilter === 'archive') {
+                    shouldShowByCategory = card.hasAttribute('data-archive');
+                } else if (projectState.activeFilter === 'minecraft') {
+                    shouldShowByCategory = card.hasAttribute('data-minecraft');
+                } else if (projectState.activeFilter === 'discord') {
+                    shouldShowByCategory = card.hasAttribute('data-discord');
                 } else {
-                    // Check if card has matching tech-badge or language
-                    const techBadges = card.querySelectorAll('.tech-badge');
-                    const techTexts = Array.from(techBadges).map(badge => badge.textContent.toLowerCase());
-                    
-                    // Also check project title and description
-                    const title = (card.querySelector('.project-title') || {textContent: ''}).textContent.toLowerCase();
-                    const description = (card.querySelector('.project-description') || {textContent: ''}).textContent.toLowerCase();
-                    
-                    if (projectState.activeFilter === 'minecraft' && 
-                        (techTexts.includes('spigot/bukkit') || 
-                         title.includes('minecraft') || 
-                         description.includes('minecraft') ||
-                         title.includes('plugin') || 
-                         description.includes('plugin'))) {
-                        shouldShowByCategory = true;
-                    } else if (projectState.activeFilter === 'discord' && 
-                              (techTexts.includes('discord.js') || 
-                               title.includes('discord') || 
-                               description.includes('discord') ||
-                               title.includes('bot') || 
-                               description.includes('bot') ||
-                               title.toLowerCase().includes('roommates-helper') || 
-                               title.toLowerCase().includes('roommates-beta'))) {
-                        shouldShowByCategory = true;
-                    } else if (techTexts.includes(projectState.activeFilter.toLowerCase())) {
-                        shouldShowByCategory = true;
-                    } else {
-                        shouldShowByCategory = false;
-                    }
+                    // Check if card has matching language or tech
+                    shouldShowByCategory = card.hasAttribute(`data-${projectState.activeFilter.toLowerCase()}`);
                 }
             }
             
@@ -1075,31 +1162,6 @@ function addMissingStyles() {
         
         .no-projects p {
             margin-bottom: 20px;
-        }
-        
-        /* Update filter button for organization */
-        .filter-btn[data-filter="organization"] {
-            background-color: #2C5A7A;
-            color: var(--text-color);
-            border-color: #2C5A7A;
-        }
-        
-        .filter-btn[data-filter="organization"]:hover,
-        .filter-btn[data-filter="organization"].active {
-            background-color: #3B8BC9;
-            border-color: #3B8BC9;
-        }
-        
-        .filter-btn[data-filter="personal"] {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            border-color: var(--primary-color);
-        }
-        
-        .filter-btn[data-filter="personal"]:hover,
-        .filter-btn[data-filter="personal"].active {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
         }
         
         /* Work/Personal toggle styling */
