@@ -7,7 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set up project filtering once projects are loaded
     setupProjectFilters();
+    
+    // Set up the Work/Personal toggle switch
+    setupWorkPersonalToggle();
 });
+
+// Global state for project visibility
+const projectState = {
+    showMode: 'all', // 'all', 'personal', or 'work'
+    activeFilter: 'all' // Current active filter
+};
 
 async function fetchProjects() {
     try {
@@ -90,7 +99,7 @@ async function fetchProjectsFromGitHub() {
             
             // Add a repoType property to each repository
             originalOrgRepos.forEach(repo => {
-                repo.repoType = 'organization';
+                repo.repoType = 'work';
                 repo.orgName = orgName;
             });
         } else {
@@ -215,7 +224,7 @@ function parseAndDisplayProjects(markdown) {
                     stars,
                     forks,
                     lastUpdated,
-                    repoType: 'organization',
+                    repoType: 'work', // Changed from 'organization' to 'work' for consistency
                     orgName: 'UnifiedGaming-Systems',
                     // Check if this project is an archive based on the marker or name/description
                     isArchive: !!archiveMarker || isArchiveProject(name, description.trim())
@@ -234,15 +243,19 @@ function parseAndDisplayProjects(markdown) {
             console.warn("No projects found in the markdown file.");
             // Try to use direct GitHub API as a fallback
             fetchProjectsFromGitHub();
+        } else {
+            // Set up Work/Personal toggle and project filters
+            setupWorkPersonalToggle();
+            setupProjectFilters();
+            
+            // Create the project summary section
+            createProjectSummary(projectGrid);
         }
     } catch (error) {
         console.error("Error parsing markdown:", error);
         console.log("Trying GitHub API as fallback after markdown parsing error");
         fetchProjectsFromGitHub();
     }
-    
-    // Set up project filtering
-    setupProjectFilters();
 }
 
 function displayProjects(repos) {
@@ -297,8 +310,29 @@ function displayProjects(repos) {
     
     console.log(`Displayed ${repos.length} projects from GitHub API`);
     
-    // Set up project filtering
+    // Set up Work/Personal toggle and project filters
+    setupWorkPersonalToggle();
     setupProjectFilters();
+    
+    // Create the project summary section
+    createProjectSummary(projectGrid);
+}
+
+// Create a summary of displayed projects
+function createProjectSummary(projectGrid) {
+    const personalProjects = projectGrid.querySelectorAll('.project-card.personal-project');
+    const workProjects = projectGrid.querySelectorAll('.project-card.work-project');
+    
+    const summaryEl = document.createElement('div');
+    summaryEl.className = 'project-summary';
+    summaryEl.innerHTML = `
+        <p>Showing <strong>${personalProjects.length + workProjects.length}</strong> projects 
+        (<span class="personal-count">${personalProjects.length} personal</span>, 
+        <span class="work-count">${workProjects.length} work</span>)</p>
+    `;
+    
+    // Insert summary before the grid
+    projectGrid.parentNode.insertBefore(summaryEl, projectGrid);
 }
 
 // Function to check if a project is an archive
@@ -355,13 +389,16 @@ function createProjectCard(project) {
         card.className = 'project-card';
         
         // Add data attributes for filtering
-        if (project.repoType === 'organization' || project.url.includes('UnifiedGaming-Systems')) {
-            card.dataset.organization = 'true';
-            card.classList.add('org-project');
+        if (project.repoType === 'work' || project.url.includes('UnifiedGaming-Systems')) {
+            card.dataset.work = 'true';
+            card.classList.add('work-project');
         } else {
             card.dataset.personal = 'true';
             card.classList.add('personal-project');
         }
+        
+        // Add data-type attribute for the type toggle
+        card.dataset.type = project.repoType;
         
         const content = document.createElement('div');
         content.className = 'project-content';
@@ -388,8 +425,8 @@ function createProjectCard(project) {
             titleContainer.appendChild(archiveBadge);
         }
         
-        // Add organization badge if it's an org project
-        if (project.repoType === 'organization' || project.url.includes('UnifiedGaming-Systems')) {
+        // Add organization badge if it's a work project
+        if (project.repoType === 'work' || project.url.includes('UnifiedGaming-Systems')) {
             const orgBadge = document.createElement('span');
             orgBadge.className = 'org-badge';
             orgBadge.textContent = 'UG Systems';
@@ -664,6 +701,74 @@ function displayErrorMessage() {
     `;
 }
 
+// Set up the Work/Personal toggle
+function setupWorkPersonalToggle() {
+    const projectsSection = document.querySelector('.projects');
+    if (!projectsSection) {
+        console.warn("Projects section not found. Skipping Work/Personal toggle setup.");
+        return;
+    }
+    
+    // Check if toggle already exists
+    if (document.querySelector('.project-type-toggle')) {
+        return; // Toggle already set up
+    }
+    
+    // Create the toggle container
+    const toggleContainer = document.createElement('div');
+    toggleContainer.className = 'project-type-toggle';
+    
+    // Create the toggle switch
+    toggleContainer.innerHTML = `
+        <div class="toggle-container">
+            <div class="toggle-label">Show:</div>
+            <div class="toggle-buttons">
+                <button class="toggle-btn active" data-show="all">All Projects</button>
+                <button class="toggle-btn" data-show="personal">Personal Only</button>
+                <button class="toggle-btn" data-show="work">Work Only</button>
+            </div>
+        </div>
+    `;
+    
+    // Insert toggle before the filter buttons
+    const filterButtons = projectsSection.querySelector('.project-filters');
+    if (filterButtons) {
+        filterButtons.parentNode.insertBefore(toggleContainer, filterButtons);
+    } else {
+        // If filter buttons not found, add it directly to the projects container
+        const projectsContainer = projectsSection.querySelector('.container');
+        if (projectsContainer) {
+            // Insert after the subtitle
+            const subtitle = projectsContainer.querySelector('.subtitle');
+            if (subtitle) {
+                subtitle.parentNode.insertBefore(toggleContainer, subtitle.nextSibling);
+            } else {
+                // Add at the beginning of the container
+                projectsContainer.insertBefore(toggleContainer, projectsContainer.firstChild);
+            }
+        }
+    }
+    
+    // Add event listeners to toggle buttons
+    const toggleButtons = document.querySelectorAll('.toggle-btn');
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active button
+            toggleButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Get show value
+            const showValue = this.getAttribute('data-show');
+            
+            // Update global state
+            projectState.showMode = showValue;
+            
+            // Apply filtering
+            applyProjectFilters();
+        });
+    });
+}
+
 // Project filtering functionality
 function setupProjectFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -686,14 +791,18 @@ function setupProjectFilters() {
             const filterValue = this.getAttribute('data-filter');
             console.log(`Filter selected: ${filterValue}`);
             
+            // Update global state
+            projectState.activeFilter = filterValue;
+            
             // Apply filtering
-            filterProjects(filterValue);
+            applyProjectFilters();
         });
     });
 }
 
-function filterProjects(filter) {
-    console.log(`Filtering projects by: ${filter}`);
+// Combine both work/personal toggle and regular filters
+function applyProjectFilters() {
+    console.log(`Applying filters - Mode: ${projectState.showMode}, Filter: ${projectState.activeFilter}`);
     const projectGrid = document.querySelector('.project-grid');
     if (!projectGrid) {
         console.warn("Project grid not found. Cannot filter projects.");
@@ -709,64 +818,99 @@ function filterProjects(filter) {
     
     setTimeout(() => {
         let visibleCount = 0;
+        let personalCount = 0;
+        let workCount = 0;
         
         // Apply filtering logic
         projectCards.forEach(card => {
-            let shouldShow = false;
+            // First apply the work/personal filter
+            let shouldShowByType = true;
             
-            if (filter === 'all') {
-                shouldShow = true;
-            } else if (filter === 'personal') {
-                // Show only personal projects
-                shouldShow = card.classList.contains('personal-project');
-            } else if (filter === 'organization') {
-                // Show only organization projects
-                shouldShow = card.classList.contains('org-project');
-            } else if (filter === 'archive') {
-                // Show only archived projects
-                shouldShow = !!card.querySelector('.archive-badge');
-            } else {
-                // Check if card has matching tech-badge or language
-                const techBadges = card.querySelectorAll('.tech-badge');
-                const techTexts = Array.from(techBadges).map(badge => badge.textContent.toLowerCase());
-                
-                // Also check project title and description
-                const title = (card.querySelector('.project-title') || {textContent: ''}).textContent.toLowerCase();
-                const description = (card.querySelector('.project-description') || {textContent: ''}).textContent.toLowerCase();
-                
-                if (filter === 'minecraft' && 
-                    (techTexts.includes('spigot/bukkit') || 
-                     title.includes('minecraft') || 
-                     description.includes('minecraft') ||
-                     title.includes('plugin') || 
-                     description.includes('plugin'))) {
-                    shouldShow = true;
-                } else if (filter === 'discord' && 
-                          (techTexts.includes('discord.js') || 
-                           title.includes('discord') || 
-                           description.includes('discord') ||
-                           title.includes('bot') || 
-                           description.includes('bot') ||
-                           title.toLowerCase().includes('roommates-helper') || 
-                           title.toLowerCase().includes('roommates-beta'))) {
-                    shouldShow = true;
-                } else if (techTexts.includes(filter.toLowerCase())) {
-                    shouldShow = true;
+            if (projectState.showMode === 'personal') {
+                shouldShowByType = card.classList.contains('personal-project');
+            } else if (projectState.showMode === 'work') {
+                shouldShowByType = card.classList.contains('work-project');
+            }
+            
+            // Then apply the regular filters
+            let shouldShowByCategory = true;
+            
+            if (projectState.activeFilter !== 'all') {
+                if (projectState.activeFilter === 'personal') {
+                    shouldShowByCategory = card.classList.contains('personal-project');
+                } else if (projectState.activeFilter === 'organization') {
+                    shouldShowByCategory = card.classList.contains('work-project');
+                } else if (projectState.activeFilter === 'archive') {
+                    shouldShowByCategory = !!card.querySelector('.archive-badge');
+                } else {
+                    // Check if card has matching tech-badge or language
+                    const techBadges = card.querySelectorAll('.tech-badge');
+                    const techTexts = Array.from(techBadges).map(badge => badge.textContent.toLowerCase());
+                    
+                    // Also check project title and description
+                    const title = (card.querySelector('.project-title') || {textContent: ''}).textContent.toLowerCase();
+                    const description = (card.querySelector('.project-description') || {textContent: ''}).textContent.toLowerCase();
+                    
+                    if (projectState.activeFilter === 'minecraft' && 
+                        (techTexts.includes('spigot/bukkit') || 
+                         title.includes('minecraft') || 
+                         description.includes('minecraft') ||
+                         title.includes('plugin') || 
+                         description.includes('plugin'))) {
+                        shouldShowByCategory = true;
+                    } else if (projectState.activeFilter === 'discord' && 
+                              (techTexts.includes('discord.js') || 
+                               title.includes('discord') || 
+                               description.includes('discord') ||
+                               title.includes('bot') || 
+                               description.includes('bot') ||
+                               title.toLowerCase().includes('roommates-helper') || 
+                               title.toLowerCase().includes('roommates-beta'))) {
+                        shouldShowByCategory = true;
+                    } else if (techTexts.includes(projectState.activeFilter.toLowerCase())) {
+                        shouldShowByCategory = true;
+                    } else {
+                        shouldShowByCategory = false;
+                    }
                 }
             }
             
-            // Apply visibility
+            // Apply visibility - must pass both filters
+            const shouldShow = shouldShowByType && shouldShowByCategory;
             card.style.display = shouldShow ? 'flex' : 'none';
-            if (shouldShow) visibleCount++;
+            
+            if (shouldShow) {
+                visibleCount++;
+                if (card.classList.contains('personal-project')) personalCount++;
+                if (card.classList.contains('work-project')) workCount++;
+            }
         });
         
-        console.log(`Filter results: ${visibleCount} projects visible`);
+        console.log(`Filter results: ${visibleCount} projects visible (${personalCount} personal, ${workCount} work)`);
+        
+        // Update the project summary if it exists
+        const summaryEl = document.querySelector('.project-summary');
+        if (summaryEl) {
+            summaryEl.innerHTML = `
+                <p>Showing <strong>${visibleCount}</strong> projects 
+                (<span class="personal-count">${personalCount} personal</span>, 
+                <span class="work-count">${workCount} work</span>)</p>
+            `;
+        }
         
         // Show message if no projects match the filter
         if (visibleCount === 0) {
             const noMatchMessage = document.createElement('div');
             noMatchMessage.className = 'no-matches-message';
-            noMatchMessage.innerHTML = `<p>No projects match the "${filter}" filter.</p>`;
+            
+            // Customize message based on filters
+            let message = `<p>No projects match the "${projectState.activeFilter}" filter`;
+            if (projectState.showMode !== 'all') {
+                message += ` in the "${projectState.showMode}" category`;
+            }
+            message += '.</p>';
+            
+            noMatchMessage.innerHTML = message;
             
             // Check if message already exists
             const existingMessage = projectGrid.querySelector('.no-matches-message');
@@ -782,6 +926,9 @@ function filterProjects(filter) {
                 projectGrid.removeChild(existingMessage);
             }
         }
+        
+        // Remove filtering class
+        projectGrid.classList.remove('filtering');
     }, 300); // Match this with the CSS transition time
 }
 
@@ -902,12 +1049,12 @@ function addMissingStyles() {
             transition: all 0.2s ease;
         }
         
-        /* Styling for organization projects */
-        .project-card.org-project {
+        /* Styling for work projects */
+        .project-card.work-project {
             border-left: 3px solid #2C5A7A; /* Blue border */
         }
         
-        .project-card.org-project:hover {
+        .project-card.work-project:hover {
             border-color: #3B8BC9; /* Lighter blue on hover */
         }
         
@@ -953,6 +1100,122 @@ function addMissingStyles() {
         .filter-btn[data-filter="personal"].active {
             background-color: var(--secondary-color);
             border-color: var(--secondary-color);
+        }
+        
+        /* Work/Personal toggle styling */
+        .project-type-toggle {
+            margin: 10px 0 30px;
+            text-align: center;
+        }
+        
+        .toggle-container {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--card-bg);
+            border-radius: 30px;
+            padding: 5px 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+        
+        .toggle-label {
+            margin-right: 10px;
+            font-weight: 600;
+            color: var(--light-text);
+        }
+        
+        .toggle-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .toggle-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: none;
+            background-color: transparent;
+            color: var(--text-color);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .toggle-btn:hover {
+            background-color: var(--hover-color);
+        }
+        
+        .toggle-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .toggle-btn[data-show="work"].active {
+            background-color: #2C5A7A;
+        }
+        
+        .toggle-btn[data-show="personal"].active {
+            background-color: var(--primary-color);
+        }
+        
+        .toggle-btn[data-show="all"].active {
+            background: linear-gradient(to right, var(--primary-color), #2C5A7A);
+        }
+        
+        /* Project summary styling */
+        .project-summary {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        .project-summary .personal-count {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .project-summary .work-count {
+            color: #3B8BC9;
+            font-weight: 600;
+        }
+        
+        /* Animation for filtering */
+        .project-grid {
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-grid.filtering {
+            opacity: 0.5;
+        }
+        
+        /* Project card transitions */
+        .project-card {
+            transition: all 0.3s ease, opacity 0.5s ease, transform 0.3s ease;
+        }
+        
+        /* Add a loading spinner */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--light-text);
+        }
+        
+        .loading:after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
     `;
     
