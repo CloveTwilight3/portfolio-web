@@ -26,7 +26,16 @@ async function fetchProjects() {
         console.log("Successfully fetched projects.md");
         const markdown = await response.text();
         console.log("Markdown content length:", markdown.length);
-        parseAndDisplayProjects(markdown);
+        
+        // Log the first portion of markdown content for debugging
+        console.log("Markdown content sample:", markdown.substring(0, 500));
+        
+        if (markdown.length > 0) {
+            parseAndDisplayProjects(markdown);
+        } else {
+            console.error("Markdown file is empty");
+            displayNoProjectsMessage();
+        }
     } catch (error) {
         console.error('Error fetching projects:', error);
         console.log("Trying fallback to GitHub API...");
@@ -91,6 +100,12 @@ async function fetchProjectsFromGitHub() {
         // Combine both sets of repositories
         const allRepos = [...originalPersonalRepos, ...originalOrgRepos];
         
+        if (allRepos.length === 0) {
+            console.warn("No repositories found in GitHub API.");
+            displayNoProjectsMessage();
+            return;
+        }
+        
         // Display projects
         displayProjects(allRepos);
     } catch (error) {
@@ -103,6 +118,11 @@ function parseAndDisplayProjects(markdown) {
     console.log("Parsing markdown to display projects...");
     // Remove the loading indicator
     const projectsContainer = document.getElementById('projects-container');
+    if (!projectsContainer) {
+        console.error("Could not find projects-container element");
+        return;
+    }
+    
     projectsContainer.innerHTML = '';
     
     // Create a project grid
@@ -110,24 +130,36 @@ function parseAndDisplayProjects(markdown) {
     projectGrid.className = 'project-grid';
     projectsContainer.appendChild(projectGrid);
     
-    // Regular expressions to extract project information from markdown sections
-    // First, check if there are sections for personal and organization projects
-    const personalSectionRegex = /### Personal Projects\n\n([\s\S]*?)(?=### |$)/;
-    const orgSectionRegex = /### UnifiedGaming Systems Ltd Projects\n\n([\s\S]*?)(?=### |$)/;
-    
-    // Extract personal and organization sections
-    const personalSection = personalSectionRegex.exec(markdown);
-    const orgSection = orgSectionRegex.exec(markdown);
-    
-    // Project regex to use within each section
-    const projectRegex = /#### \[(.*?)\]\((.*?)\)(\s*\[ARCHIVE\])?\n\n([\s\S]*?)(?:\n\n\*\*Language:\*\* (.*?)\n\n)?⭐ (\d+) \| 🍴 (\d+)\n\n(?:Last updated: (.*?)\n\n)?---/g;
-    
-    let projectCount = 0;
-    
     try {
+        // Simple check to see if we have project sections at all
+        if (!markdown.includes("### Personal Projects") && !markdown.includes("### UnifiedGaming Systems Ltd Projects")) {
+            console.warn("No project sections found in markdown");
+            console.log("Markdown content:", markdown);
+            displayNoProjectsMessage();
+            return;
+        }
+        
+        // Regular expressions to extract project information from markdown sections
+        // First, check if there are sections for personal and organization projects
+        const personalSectionRegex = /### Personal Projects\n\n([\s\S]*?)(?=### |$)/;
+        const orgSectionRegex = /### UnifiedGaming Systems Ltd Projects\n\n([\s\S]*?)(?=### |$)/;
+        
+        // Extract personal and organization sections
+        const personalSection = personalSectionRegex.exec(markdown);
+        const orgSection = orgSectionRegex.exec(markdown);
+        
+        // Project regex to use within each section
+        const projectRegex = /#### \[(.*?)\]\((.*?)\)(\s*\[ARCHIVE\])?\n\n([\s\S]*?)(?:\n\n\*\*Language:\*\* (.*?)\n\n)?⭐ (\d+) \| 🍴 (\d+)\n\n(?:Last updated: (.*?)\n\n)?---/g;
+        
+        let projectCount = 0;
+        
         // Process personal projects first
         if (personalSection) {
             const personalContent = personalSection[1];
+            
+            console.log("Found personal projects section, content length:", personalContent.length);
+            console.log("Sample:", personalContent.substring(0, 200));
+            
             let match;
             
             // Reset regex index
@@ -154,11 +186,17 @@ function parseAndDisplayProjects(markdown) {
                 projectGrid.appendChild(projectCard);
                 projectCount++;
             }
+        } else {
+            console.warn("No personal projects section found in markdown");
         }
         
         // Process organization projects second
         if (orgSection) {
             const orgContent = orgSection[1];
+            
+            console.log("Found organization projects section, content length:", orgContent.length);
+            console.log("Sample:", orgContent.substring(0, 200));
+            
             let match;
             
             // Reset regex index
@@ -186,17 +224,21 @@ function parseAndDisplayProjects(markdown) {
                 projectGrid.appendChild(projectCard);
                 projectCount++;
             }
+        } else {
+            console.warn("No organization projects section found in markdown");
         }
         
         console.log(`Parsed and displayed ${projectCount} projects from markdown`);
         
         if (projectCount === 0) {
             console.warn("No projects found in the markdown file.");
-            displayNoProjectsMessage();
+            // Try to use direct GitHub API as a fallback
+            fetchProjectsFromGitHub();
         }
     } catch (error) {
         console.error("Error parsing markdown:", error);
-        displayErrorMessage();
+        console.log("Trying GitHub API as fallback after markdown parsing error");
+        fetchProjectsFromGitHub();
     }
     
     // Set up project filtering
@@ -207,6 +249,11 @@ function displayProjects(repos) {
     console.log("Displaying projects from GitHub API data...");
     // Remove the loading indicator
     const projectsContainer = document.getElementById('projects-container');
+    if (!projectsContainer) {
+        console.error("Could not find projects-container element");
+        return;
+    }
+    
     projectsContainer.innerHTML = '';
     
     if (repos.length === 0) {
@@ -585,15 +632,28 @@ function isWebProject(project) {
 
 function displayNoProjectsMessage() {
     const projectsContainer = document.getElementById('projects-container');
+    if (!projectsContainer) {
+        console.error("Could not find projects-container element");
+        return;
+    }
+    
     projectsContainer.innerHTML = `
         <div class="no-projects">
             <p>No original projects found. Any new non-forked repositories will appear here automatically.</p>
+            <button onclick="window.retryLoadProjects()" class="retry-btn">
+                <i class="fas fa-sync-alt"></i> Retry Loading Projects
+            </button>
         </div>
     `;
 }
 
 function displayErrorMessage() {
     const projectsContainer = document.getElementById('projects-container');
+    if (!projectsContainer) {
+        console.error("Could not find projects-container element");
+        return;
+    }
+    
     projectsContainer.innerHTML = `
         <div class="error-message">
             <p>Unable to load projects. Please try again later.</p>
@@ -729,6 +789,11 @@ function filterProjects(filter) {
 window.retryLoadProjects = function() {
     console.log("Manual retry initiated");
     const projectsContainer = document.getElementById('projects-container');
+    if (!projectsContainer) {
+        console.error("Could not find projects-container element");
+        return;
+    }
+    
     projectsContainer.innerHTML = '<div class="loading">Loading projects...</div>';
     fetchProjects();
 };
@@ -848,6 +913,21 @@ function addMissingStyles() {
         
         .project-card.personal-project {
             border-left: 3px solid var(--primary-color); /* Existing primary color */
+        }
+
+        /* No Projects message styling */
+        .no-projects {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            color: var(--light-text);
+        }
+        
+        .no-projects p {
+            margin-bottom: 20px;
         }
         
         /* Update filter button for organization */
