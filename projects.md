@@ -4,15 +4,15 @@
 
 ### Personal Projects
 
-#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
 
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+No description provided.
 
-**Language:** JavaScript
+**Language:** TypeScript
 
 ⭐ 2 | 🍴 0
 
-Last updated: 14:46 2 May, 2025 (UTC)
+Last updated: 23:44 2 May, 2025 (UTC)
 
 ---
 
@@ -28,15 +28,15 @@ Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
-#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
+#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
-No description provided.
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
 
-**Language:** TypeScript
+**Language:** JavaScript
 
 ⭐ 2 | 🍴 0
 
-Last updated: 23:44 2 May, 2025 (UTC)
+Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
