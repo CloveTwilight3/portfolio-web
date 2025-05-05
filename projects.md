@@ -16,6 +16,18 @@ Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
+#### [EMIS](https://github.com/CloveTwilight3/EMIS)
+
+This is a JARVIS like assistant for your desktop, working on Debian-Based Distros, Mac and Windows
+
+**Language:** JavaScript
+
+⭐ 2 | 🍴 0
+
+Last updated: 02:47 2 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -76,11 +88,11 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
+#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
 
-My personal 1.21.4 Resource Pack 
+A simple Paper plugin that adds functionality for sponges to absorb lava.
 
-**Language:** Python
+**Language:** Java
 
 ⭐ 2 | 🍴 0
 
@@ -88,11 +100,11 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
-A simple Paper plugin that adds functionality for sponges to absorb lava.
+My personal 1.21.4 Resource Pack 
 
-**Language:** Java
+**Language:** Python
 
 ⭐ 2 | 🍴 0
 
@@ -227,18 +239,6 @@ Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, 
 ⭐ 2 | 🍴 0
 
 Last updated: 02:11 2 May, 2025 (UTC)
-
----
-
-#### [EMIS](https://github.com/CloveTwilight3/EMIS)
-
-This is a JARVIS like assistant for your desktop, working on Debian-Based Distros, Mac and Windows
-
-**Language:** JavaScript
-
-⭐ 2 | 🍴 0
-
-Last updated: 02:47 2 May, 2025 (UTC)
 
 ---
 
