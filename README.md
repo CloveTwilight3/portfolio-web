@@ -14,15 +14,15 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [EMIS](https://github.com/CloveTwilight3/EMIS)
 
-My GitHub profile repository with custom README and configuration.
+This is a JARVIS like assistant for your desktop, working on Most Linux Distros and Windows
 
-**Language:** Markdown
+**Language:** JavaScript
 
-⭐ 2 | 🍴 0
+⭐ 3 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 02:47 2 May, 2025 (UTC)
 
 ---
 
@@ -38,15 +38,15 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
-#### [EMIS](https://github.com/CloveTwilight3/EMIS)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-This is a JARVIS like assistant for your desktop, working on Most Linux Distros and Windows
+My GitHub profile repository with custom README and configuration.
 
-**Language:** JavaScript
+**Language:** Markdown
 
-⭐ 3 | 🍴 0
+⭐ 2 | 🍴 0
 
-Last updated: 02:47 2 May, 2025 (UTC)
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
