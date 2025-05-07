@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 2 | 🍴 0
+
+Last updated: 01:48 3 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -61,18 +73,6 @@ No description provided.
 ⭐ 2 | 🍴 0
 
 Last updated: 23:44 2 May, 2025 (UTC)
-
----
-
-#### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 2 | 🍴 0
-
-Last updated: 01:48 3 May, 2025 (UTC)
 
 ---
 
