@@ -18,6 +18,11 @@
   /* Gradients */
   --gradient-start: #FF9B55;      /* Orange */
   --gradient-end: #D461A6;        /* Pink */
+  
+  /* Trans colors for special elements */
+  --trans-blue: #5BCEFA;
+  --trans-pink: #F5A9B8;
+  --trans-white: #FFFFFF;
 }
 
 /* Base styles */
@@ -327,6 +332,70 @@ nav ul li a:hover {
   transform-origin: bottom left;
 }
 
+/* Pronouns and Identity Badges */
+.pronouns-badge {
+  margin: 15px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pronouns-badge a {
+  display: inline-block;
+  background-color: rgba(255, 105, 180, 0.15);
+  color: #ff69b4;
+  border: 1px solid #ff69b4;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.pronouns-badge a:hover {
+  background-color: rgba(255, 105, 180, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+}
+
+.identity-badge {
+  display: inline-block;
+  background-color: rgba(214, 41, 0, 0.15);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.identity-badge:hover {
+  background-color: rgba(214, 41, 0, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(214, 41, 0, 0.3);
+}
+
+/* Pride flag border for identity section */
+.identity-section {
+  position: relative;
+  border-left: 5px solid transparent;
+  background-image: linear-gradient(
+    to bottom,
+    #D62900,
+    #FF9B55,
+    #FFFFFF,
+    #D461A6,
+    #A40061
+  );
+  background-clip: padding-box;
+  margin-top: 30px;
+  padding: 20px 20px 20px 25px;
+  border-radius: 8px;
+  background-color: var(--card-bg);
+}
+
 /* Sections */
 section {
   padding: 80px 0;
@@ -515,6 +584,36 @@ section h2 {
   background-color: rgba(88, 101, 242, 0.2);
   color: #5865F2;
   border-color: #5865F2;
+}
+
+.tech-badge.html {
+  background-color: rgba(227, 76, 38, 0.2);
+  color: #e34c26;
+  border-color: #e34c26;
+}
+
+.tech-badge.css {
+  background-color: rgba(21, 114, 182, 0.2);
+  color: #1572b6;
+  border-color: #1572b6;
+}
+
+.tech-badge.github {
+  background-color: rgba(110, 84, 148, 0.2);
+  color: #6e5494;
+  border-color: #6e5494;
+}
+
+.tech-badge.markdown {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.tech-badge.webdev {
+  background-color: rgba(66, 184, 131, 0.2);
+  color: #42b883;
+  border-color: #42b883;
 }
 
 .project-meta {
@@ -761,6 +860,20 @@ section h2 {
   margin-top: 20px;
 }
 
+/* Trans border container for GitHub contributions chart */
+.trans-border-container {
+  padding: 5px;
+  display: inline-block;
+  background: linear-gradient(to bottom, 
+    var(--trans-blue),
+    var(--trans-pink),
+    var(--trans-white),
+    var(--trans-pink),
+    var(--trans-blue)
+  );
+  border-radius: 10px;
+}
+
 /* Spotify Section */
 .spotify {
   background-color: var(--background);
@@ -804,6 +917,80 @@ section h2 {
 .about-text p {
   margin-bottom: 20px;
   font-size: 1.1rem;
+}
+
+/* Online Presence Section */
+.online-presence {
+  background-color: var(--card-bg);
+  padding: 80px 0;
+}
+
+.presence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.presence-card {
+  background-color: var(--background);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  gap: 20px;
+}
+
+.presence-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 
+              0 0 10px rgba(214, 41, 0, 0.2);
+  border-color: var(--primary-color);
+}
+
+.presence-icon {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.presence-content {
+  flex-grow: 1;
+}
+
+.presence-content h3 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.presence-content p {
+  color: var(--light-text);
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.presence-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  background-color: rgba(255, 155, 85, 0.1);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.presence-link:hover {
+  background-color: rgba(255, 155, 85, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Style for pronouns page icon */
+.presence-card:nth-child(1) .presence-icon {
+  color: #ff69b4;
 }
 
 /* Contact Section */
@@ -1059,6 +1246,227 @@ footer {
   background: var(--primary-color);
 }
 
+/* No Projects message styling */
+.no-projects {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  color: var(--light-text);
+}
+
+.no-projects p {
+  margin-bottom: 20px;
+}
+
+/* Work/Personal toggle styling */
+.project-type-toggle {
+  margin: 10px 0 30px;
+  text-align: center;
+}
+
+.toggle-container {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  border-radius: 30px;
+  padding: 5px 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.toggle-label {
+  margin-right: 10px;
+  font-weight: 600;
+  color: var(--light-text);
+}
+
+.toggle-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.toggle-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.toggle-btn[data-show="work"].active {
+  background-color: #2C5A7A;
+}
+
+.toggle-btn[data-show="personal"].active {
+  background-color: var(--primary-color);
+}
+
+.toggle-btn[data-show="all"].active {
+  background: linear-gradient(to right, var(--primary-color), #2C5A7A);
+}
+
+/* Project summary styling */
+.project-summary {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--light-text);
+  font-size: 0.9rem;
+}
+
+.project-summary .personal-count {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.project-summary .work-count {
+  color: #3B8BC9;
+  font-weight: 600;
+}
+
+/* Animation for filtering */
+.project-grid {
+  transition: opacity 0.3s ease;
+}
+
+.project-grid.filtering {
+  opacity: 0.5;
+}
+
+/* Project card transitions */
+.project-card {
+  transition: all 0.3s ease, opacity 0.5s ease, transform 0.3s ease;
+}
+
+/* Add a loading spinner */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--light-text);
+}
+
+.loading:after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* No matches message styling */
+.no-matches-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: var(--light-text);
+  font-style: italic;
+}
+
+.retry-btn {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.retry-btn:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.error-card {
+  background-color: rgba(255, 0, 0, 0.1);
+  border-color: #ff0000;
+}
+
+/* Organization Badge Styles */
+.org-badge {
+  display: inline-block;
+  background-color: #2C5A7A; /* A blue shade for organization */
+  color: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Make the organization badge animate on hover */
+.project-card:hover .org-badge {
+  background-color: #3B8BC9; /* Lighter blue on hover */
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+/* Styling for work projects */
+.project-card.work-project {
+  border-left: 3px solid #2C5A7A; /* Blue border */
+}
+
+.project-card.work-project:hover {
+  border-color: #3B8BC9; /* Lighter blue on hover */
+}
+
+.project-card.personal-project {
+  border-left: 3px solid var(--primary-color); /* Existing primary color */
+}
+
+/* Update filter button for organization */
+.filter-btn[data-filter="organization"] {
+  background-color: #2C5A7A;
+  color: var(--text-color);
+  border-color: #2C5A7A;
+}
+
+.filter-btn[data-filter="organization"]:hover,
+.filter-btn[data-filter="organization"].active {
+  background-color: #3B8BC9;
+  border-color: #3B8BC9;
+}
+
+.filter-btn[data-filter="personal"] {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-color: var(--primary-color);
+}
+
+.filter-btn[data-filter="personal"]:hover,
+.filter-btn[data-filter="personal"].active {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
@@ -1092,6 +1500,24 @@ footer {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+  }
+  
+  .presence-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .presence-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .presence-link {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -1131,63 +1557,15 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     background-color: var(--card-bg);
   }
-
-/* Organization Badge Styles */
-.org-badge {
-  display: inline-block;
-  background-color: #2C5A7A; /* A blue shade for organization */
-  color: #FFFFFF;
-  padding: 3px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 2px;
-}
-
-/* Make the organization badge animate on hover */
-.project-card:hover .org-badge {
-  background-color: #3B8BC9; /* Lighter blue on hover */
-  transform: scale(1.05);
-  transition: all 0.2s ease;
-}
-
-/* Slight styling differences for organization projects */
-.project-card.org-project {
-  border-left: 3px solid #2C5A7A; /* Blue border */
-}
-
-.project-card.org-project:hover {
-  border-color: #3B8BC9; /* Lighter blue on hover */
-}
-
-.project-card.personal-project {
-  border-left: 3px solid var(--primary-color); /* Existing primary color */
-}
-
-/* Update filter button for organization */
-.filter-btn[data-filter="organization"] {
-  background-color: #2C5A7A;
-  color: var(--text-color);
-  border-color: #2C5A7A;
-}
-
-.filter-btn[data-filter="organization"]:hover,
-.filter-btn[data-filter="organization"].active {
-  background-color: #3B8BC9;
-  border-color: #3B8BC9;
-}
-
-.filter-btn[data-filter="personal"] {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  border-color: var(--primary-color);
-}
-
-.filter-btn[data-filter="personal"]:hover,
-.filter-btn[data-filter="personal"].active {
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
-}
+  
+  .pronouns-badge {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .identity-section {
+    padding: 15px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
