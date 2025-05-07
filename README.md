@@ -1,3 +1,7 @@
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/clovetwilight3/clovetwilight3.github.io/update-portfolio.yml?branch=main)
+![License](https://img.shields.io/github/license/clovetwilight3/clovetwilight3.github.io)
+![GitHub last commit](https://img.shields.io/github/last-commit/clovetwilight3/clovetwilight3.github.io)
+
 # 👋 Hi, I'm Clove Twilight!
 ![My Discord](https://discord-readme-badge.vercel.app/api?id=1025770042245251122)
 
@@ -14,33 +18,9 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 2 | 🍴 0
-
-Last updated: 23:44 2 May, 2025 (UTC)
-
----
-
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
-
-My GitHub profile repository with custom README and configuration.
-
-**Language:** Markdown
-
-⭐ 2 | 🍴 0
-
-Last updated: 14:38 2 May, 2025 (UTC)
-
----
-
 #### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
 
-A Overlay For Users To See System Information Of People In VC
+No description provided.
 
 **Language:** TypeScript
 
@@ -59,6 +39,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 2 | 🍴 0
 
 Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -83,6 +75,18 @@ This is a JARVIS like assistant for your desktop, working on Most Linux Distros 
 ⭐ 3 | 🍴 0
 
 Last updated: 02:47 2 May, 2025 (UTC)
+
+---
+
+#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 2 | 🍴 0
+
+Last updated: 23:44 2 May, 2025 (UTC)
 
 ---
 
@@ -254,21 +258,19 @@ Last updated: 02:11 2 May, 2025 (UTC)
 
 ### UnifiedGaming Systems Ltd Projects
 
-#### [unifiedgaming-launcher](https://github.com/UnifiedGaming-Systems/unifiedgaming-launcher)
+#### [SpectrumOS](https://github.com/UnifiedGaming-Systems/SpectrumOS)
 
-A cross-platform game library manager that unifies your gaming experience across multiple platforms including Steam, Epic Games, PlayStation, Xbox, and GOG.
+SpectrumOS: Transitioning Beyond Boundaries
 
-**Language:** C#
+⭐ 2 | 🍴 0
 
-⭐ 1 | 🍴 0
-
-Last updated: 16:41 22 January, 2025 (UTC)
+Last updated: 18:23 2 May, 2025 (UTC)
 
 ---
 
 #### [UnifiedGaming-Systems.github.io](https://github.com/UnifiedGaming-Systems/UnifiedGaming-Systems.github.io)
 
-This repo is all the code used for UnifiedGaming System's Website
+No description provided.
 
 **Language:** HTML
 
@@ -278,23 +280,35 @@ Last updated: 19:03 3 May, 2025 (UTC)
 
 ---
 
+#### [policies](https://github.com/UnifiedGaming-Systems/policies)
+
+No description provided.
+
+⭐ 1 | 🍴 0
+
+Last updated: 12:07 21 January, 2025 (UTC)
+
+---
+
+#### [unifiedgaming-launcher](https://github.com/UnifiedGaming-Systems/unifiedgaming-launcher)
+
+No description provided.
+
+**Language:** C#
+
+⭐ 1 | 🍴 0
+
+Last updated: 16:41 22 January, 2025 (UTC)
+
+---
+
 #### [.github](https://github.com/UnifiedGaming-Systems/.github)
 
-Profile README.md
+No description provided.
 
 ⭐ 1 | 🍴 0
 
 Last updated: 19:25 24 February, 2025 (UTC)
-
----
-
-#### [SpectrumOS](https://github.com/UnifiedGaming-Systems/SpectrumOS)
-
-SpectrumOS: Transitioning Beyond Boundaries
-
-⭐ 2 | 🍴 0
-
-Last updated: 18:23 2 May, 2025 (UTC)
 
 ---
 
