@@ -17,6 +17,166 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Pronouns badge in hero section */
+        .pronouns-badge {
+          margin: 15px 0;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+        
+        .pronouns-badge a {
+          display: inline-block;
+          background-color: rgba(255, 105, 180, 0.15);
+          color: #ff69b4;
+          border: 1px solid #ff69b4;
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          text-decoration: none;
+        }
+        
+        .pronouns-badge a:hover {
+          background-color: rgba(255, 105, 180, 0.25);
+          transform: translateY(-2px);
+          box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+        }
+        
+        .identity-badge {
+          display: inline-block;
+          background-color: rgba(214, 41, 0, 0.15);
+          color: var(--primary-color);
+          border: 1px solid var(--primary-color);
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+        
+        .identity-badge:hover {
+          background-color: rgba(214, 41, 0, 0.25);
+          transform: translateY(-2px);
+          box-shadow: 0 3px 10px rgba(214, 41, 0, 0.3);
+        }
+        
+        /* Online Presence Section Styles */
+        .online-presence {
+          background-color: var(--card-bg);
+          padding: 80px 0;
+        }
+        
+        .presence-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 30px;
+          margin-top: 40px;
+        }
+        
+        .presence-card {
+          background-color: var(--background);
+          border-radius: 12px;
+          padding: 30px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          border: 1px solid var(--border-color);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          gap: 20px;
+        }
+        
+        .presence-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 
+                      0 0 10px rgba(214, 41, 0, 0.2);
+          border-color: var(--primary-color);
+        }
+        
+        .presence-icon {
+          color: var(--primary-color);
+          font-size: 2rem;
+        }
+        
+        .presence-content {
+          flex-grow: 1;
+        }
+        
+        .presence-content h3 {
+          color: var(--primary-color);
+          font-size: 1.3rem;
+          margin-bottom: 10px;
+        }
+        
+        .presence-content p {
+          color: var(--light-text);
+          margin-bottom: 15px;
+          font-size: 0.95rem;
+        }
+        
+        .presence-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--secondary-color);
+          font-size: 0.9rem;
+          padding: 8px 12px;
+          background-color: rgba(255, 155, 85, 0.1);
+          border-radius: 6px;
+          transition: all 0.3s ease;
+        }
+        
+        .presence-link:hover {
+          background-color: rgba(255, 155, 85, 0.2);
+          transform: translateY(-2px);
+        }
+        
+        /* Style for pronouns page icon */
+        .presence-card:nth-child(1) .presence-icon {
+          color: #ff69b4;
+        }
+        
+        /* Pride flag border for identity section */
+        .identity-section {
+          position: relative;
+          border-left: 5px solid transparent;
+          background-image: linear-gradient(
+            to bottom,
+            #D62900,
+            #FF9B55,
+            #FFFFFF,
+            #D461A6,
+            #A40061
+          );
+          background-clip: padding-box;
+          margin-top: 30px;
+          padding: 20px 20px 20px 25px;
+          border-radius: 8px;
+          background-color: var(--card-bg);
+        }
+
+        /* Responsive for presence section */
+        @media (max-width: 768px) {
+          .presence-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            padding: 20px;
+          }
+          
+          .presence-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+          }
+          
+          .presence-link {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+    </style>
 </head>
 <body>
     <!-- Top right butterfly - Blue, Pink, White style (trans colors) -->
@@ -178,6 +338,7 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#stats">Stats</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#online-presence">Online Presence</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="/resume.pdf" class="resume-btn" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a></li>
                 </ul>
@@ -191,6 +352,10 @@
                 <div class="hero-text">
                     <h2>👋 Hi, I'm <span class="highlight">Clove Twilight</span></h2>
                     <h3 class="subtitle">Developer • Linux Enthusiast • Minecraft Modder</h3>
+                    <div class="pronouns-badge">
+                        <a href="https://en.pronouns.page/@clovetwilight3" target="_blank">She/Her/Fae/Faer</a>
+                        <span class="identity-badge">Lesbian Trans Woman</span>
+                    </div>
                     <p class="hero-description">Building creative solutions with code, from Discord bots to Minecraft plugins. I'm a passionate developer with a focus on useful, quality software.</p>
                     <div class="hero-cta">
                         <a href="#projects" class="cta-btn primary"><i class="fas fa-code"></i> View My Work</a>
@@ -367,17 +532,89 @@
     </div>
 </section>
 
-<!-- Add the script at the end of the body, before the closing </body> tag -->
-<script src="spotify-display.js"></script>
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am Clove Twilight, a passionate developer focusing on creating useful applications, from Discord bots to Minecraft plugins and web applications.</p>
+                    <p>I am Clove Twilight (She/Her/Fae/Faer), a passionate developer focusing on creating useful applications, from Discord bots to Minecraft plugins and web applications.</p>
+                    <p>As a lesbian transgender woman, I bring my unique perspective to the development world, creating inclusive and accessible software solutions.</p>
                     <p>I am also a plural system, so see <a href="https://friends.clovetwilight3.co.uk/" target="_blank">friends.clovetwilight3.co.uk</a> (In dev)</p>
                     <p>With a background in both frontend and backend technologies, I enjoy solving complex problems and building tools that help others. I'm particularly interested in gaming-related development and automation.</p>
+                    <div class="identity-section">
+                        <p>My identity as a trans woman and a lesbian informs my approach to development, with a focus on creating software that works for everyone, regardless of background or identity. I believe strongly in creating spaces where all can feel welcome and represented.</p>
+                    </div>
                     <p>When I'm not coding, you can find me exploring Linux systems, contributing to open-source projects, or experimenting with new programming languages and frameworks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Presence Section -->
+    <section id="online-presence" class="online-presence">
+        <div class="container">
+            <h2>🌐 My Online Presence</h2>
+            <p class="subtitle">Connect with me across my various professional platforms</p>
+            
+            <div class="presence-grid">
+                <!-- Pronouns Page -->
+                <div class="presence-card">
+                    <div class="presence-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="presence-content">
+                        <h3>Pronouns Page</h3>
+                        <p>Learn more about my pronouns preferences and identity</p>
+                        <a href="https://en.pronouns.page/@clovetwilight3" class="presence-link" target="_blank">
+                            <span>en.pronouns.page/@clovetwilight3</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Website -->
+                <div class="presence-card">
+                    <div class="presence-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="presence-content">
+                        <h3>Portfolio Website</h3>
+                        <p>My professional portfolio showcasing projects and skills</p>
+                        <a href="https://clovetwilight3.co.uk" class="presence-link" target="_blank">
+                            <span>clovetwilight3.co.uk</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- System Website -->
+                <div class="presence-card">
+                    <div class="presence-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="presence-content">
+                        <h3>System Website</h3>
+                        <p>Information about my plural system and headmates</p>
+                        <a href="https://friends.clovetwilight3.co.uk" class="presence-link" target="_blank">
+                            <span>friends.clovetwilight3.co.uk</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- GitHub Profile -->
+                <div class="presence-card">
+                    <div class="presence-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="presence-content">
+                        <h3>GitHub Profile</h3>
+                        <p>Browse my code repositories and contributions</p>
+                        <a href="https://github.com/clovetwilight3" class="presence-link" target="_blank">
+                            <span>github.com/clovetwilight3</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -412,6 +649,8 @@
                 <div class="footer-links">
                     <a href="https://github.com/clovetwilight3">GitHub</a>
                     <a href="https://clovetwilight3.co.uk">Website</a>
+                    <a href="https://en.pronouns.page/@clovetwilight3">Pronouns</a>
+                    <a href="https://friends.clovetwilight3.co.uk">System</a>
                     <a href="/resume.pdf">Resume</a>
                     <a href="#projects">Projects</a>
                 </div>
