@@ -4,6 +4,30 @@
 
 ### Personal Projects
 
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
+
+---
+
+#### [plural-web](https://github.com/CloveTwilight3/plural-web)
+
+A PluralKit website created for friends to see who's fronting my system
+
+**Language:** Python
+
+⭐ 2 | 🍴 0
+
+Last updated: 18:59 28 April, 2025 (UTC)
+
+---
+
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -28,18 +52,6 @@ Last updated: 23:44 2 May, 2025 (UTC)
 
 ---
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
-
-My GitHub profile repository with custom README and configuration.
-
-**Language:** Markdown
-
-⭐ 2 | 🍴 0
-
-Last updated: 14:38 2 May, 2025 (UTC)
-
----
-
 #### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
 
 A Overlay For Users To See System Information Of People In VC
@@ -49,18 +61,6 @@ A Overlay For Users To See System Information Of People In VC
 ⭐ 2 | 🍴 0
 
 Last updated: 01:48 3 May, 2025 (UTC)
-
----
-
-#### [plural-web](https://github.com/CloveTwilight3/plural-web)
-
-A PluralKit website created for friends to see who's fronting my system
-
-**Language:** Python
-
-⭐ 2 | 🍴 0
-
-Last updated: 18:59 28 April, 2025 (UTC)
 
 ---
 
