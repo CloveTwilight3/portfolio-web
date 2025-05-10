@@ -4,15 +4,13 @@
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
 
-My GitHub profile repository with custom README and configuration.
+No description provided.
 
-**Language:** Markdown
+⭐ 1 | 🍴 0
 
-⭐ 2 | 🍴 0
-
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 15:03 10 May, 2025 (UTC)
 
 ---
 
@@ -28,13 +26,15 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
-#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-No description provided.
+My GitHub profile repository with custom README and configuration.
 
-⭐ 1 | 🍴 0
+**Language:** Markdown
 
-Last updated: 15:03 10 May, 2025 (UTC)
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
