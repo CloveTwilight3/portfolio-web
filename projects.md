@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
+
+---
+
 #### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
 
 No description provided.
@@ -23,18 +35,6 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 2 | 🍴 0
 
 Last updated: 14:46 2 May, 2025 (UTC)
-
----
-
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
-
-My GitHub profile repository with custom README and configuration.
-
-**Language:** Markdown
-
-⭐ 2 | 🍴 0
-
-Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
