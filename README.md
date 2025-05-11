@@ -18,18 +18,6 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
-
-My GitHub profile repository with custom README and configuration.
-
-**Language:** Markdown
-
-⭐ 2 | 🍴 0
-
-Last updated: 14:38 2 May, 2025 (UTC)
-
----
-
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -39,6 +27,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -278,6 +278,16 @@ Last updated: 02:11 2 May, 2025 (UTC)
 
 ### UnifiedGaming Systems Ltd Projects
 
+#### [SpectrumOS](https://github.com/UnifiedGaming-Systems/SpectrumOS)
+
+SpectrumOS: Transitioning Beyond Boundaries
+
+⭐ 2 | 🍴 0
+
+Last updated: 18:23 2 May, 2025 (UTC)
+
+---
+
 #### [unifiedgaming-launcher](https://github.com/UnifiedGaming-Systems/unifiedgaming-launcher)
 
 A cross-platform game library manager that unifies your gaming experience across multiple platforms including Steam, Epic Games, PlayStation, Xbox, and GOG.
@@ -309,16 +319,6 @@ Profile README.md
 ⭐ 1 | 🍴 0
 
 Last updated: 19:25 24 February, 2025 (UTC)
-
----
-
-#### [SpectrumOS](https://github.com/UnifiedGaming-Systems/SpectrumOS)
-
-SpectrumOS: Transitioning Beyond Boundaries
-
-⭐ 2 | 🍴 0
-
-Last updated: 18:23 2 May, 2025 (UTC)
 
 ---
 
