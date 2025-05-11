@@ -4,13 +4,15 @@
 
 ### Personal Projects
 
-#### [socialminecraft-discord-manager](https://github.com/CloveTwilight3/socialminecraft-discord-manager) [ARCHIVE]
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-This is a fork of the Discord Manager I have helped contribute to. This is for archive reasons only!
+My GitHub profile repository with custom README and configuration.
 
-⭐ 0 | 🍴 0
+**Language:** Markdown
 
-Last updated: 17:47 11 May, 2025 (UTC)
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -26,15 +28,13 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [socialminecraft-discord-manager](https://github.com/CloveTwilight3/socialminecraft-discord-manager) [ARCHIVE]
 
-My GitHub profile repository with custom README and configuration.
+This is a fork of the Discord Manager I have helped contribute to. This is for archive reasons only!
 
-**Language:** Markdown
+⭐ 0 | 🍴 0
 
-⭐ 2 | 🍴 0
-
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 17:47 11 May, 2025 (UTC)
 
 ---
 
