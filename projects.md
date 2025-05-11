@@ -4,15 +4,15 @@
 
 ### Personal Projects
 
-#### [plural-web](https://github.com/CloveTwilight3/plural-web)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-A PluralKit website created for friends to see who's fronting my system
+My GitHub profile repository with custom README and configuration.
 
-**Language:** Python
+**Language:** Markdown
 
 ⭐ 2 | 🍴 0
 
-Last updated: 18:59 28 April, 2025 (UTC)
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -28,15 +28,15 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [plural-web](https://github.com/CloveTwilight3/plural-web)
 
-My GitHub profile repository with custom README and configuration.
+A PluralKit website created for friends to see who's fronting my system
 
-**Language:** Markdown
+**Language:** Python
 
 ⭐ 2 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 18:59 28 April, 2025 (UTC)
 
 ---
 
