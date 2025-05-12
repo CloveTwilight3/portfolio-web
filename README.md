@@ -18,18 +18,6 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [git.clovetwilight3.co.uk](https://github.com/CloveTwilight3/git.clovetwilight3.co.uk)
-
-A git center for all my works
-
-**Language:** Python
-
-⭐ 0 | 🍴 0
-
-Last updated: 22:10 11 May, 2025 (UTC)
-
----
-
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -42,16 +30,6 @@ Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
-#### [socialminecraft-discord-manager](https://github.com/CloveTwilight3/socialminecraft-discord-manager) [ARCHIVE]
-
-This is a fork of the Discord Manager I have helped contribute to. This is for archive reasons only!
-
-⭐ 0 | 🍴 0
-
-Last updated: 17:47 11 May, 2025 (UTC)
-
----
-
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -61,6 +39,28 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
+#### [git.clovetwilight3.co.uk](https://github.com/CloveTwilight3/git.clovetwilight3.co.uk)
+
+A git center for all my works
+
+**Language:** Python
+
+⭐ 0 | 🍴 0
+
+Last updated: 22:10 11 May, 2025 (UTC)
+
+---
+
+#### [socialminecraft-discord-manager](https://github.com/CloveTwilight3/socialminecraft-discord-manager) [ARCHIVE]
+
+This is a fork of the Discord Manager I have helped contribute to. This is for archive reasons only!
+
+⭐ 0 | 🍴 0
+
+Last updated: 17:47 11 May, 2025 (UTC)
 
 ---
 
