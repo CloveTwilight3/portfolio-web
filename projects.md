@@ -38,18 +38,6 @@ Last updated: 17:47 11 May, 2025 (UTC)
 
 ---
 
-#### [plural-web](https://github.com/CloveTwilight3/plural-web)
-
-A PluralKit website created for friends to see who's fronting my system
-
-**Language:** Python
-
-⭐ 2 | 🍴 0
-
-Last updated: 18:59 28 April, 2025 (UTC)
-
----
-
 #### [Minecraft-Whitelist-Discord-Bot](https://github.com/CloveTwilight3/Minecraft-Whitelist-Discord-Bot)
 
 a simple and efficient plugin for a Discord bot for managing the Minecraft server whitelist
@@ -81,18 +69,6 @@ No description provided.
 ⭐ 2 | 🍴 0
 
 Last updated: 23:44 2 May, 2025 (UTC)
-
----
-
-#### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
-
-A Overlay For Users To See System Information Of People In VC
-
-**Language:** TypeScript
-
-⭐ 2 | 🍴 0
-
-Last updated: 01:48 3 May, 2025 (UTC)
 
 ---
 
