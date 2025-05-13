@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
 #### [spotify-player](https://github.com/CloveTwilight3/spotify-player)
 
 Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, Trans, Lesbian, etc.) for displaying your current tracks
@@ -37,18 +49,6 @@ No description provided.
 ⭐ 0 | 🍴 0
 
 Last updated: 23:16 13 May, 2025 (UTC)
-
----
-
-#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
