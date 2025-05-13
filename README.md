@@ -18,6 +18,54 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [spotify-player](https://github.com/CloveTwilight3/spotify-player)
+
+Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, Trans, Lesbian, etc.) for displaying your current tracks
+
+**Language:** JavaScript
+
+⭐ 2 | 🍴 0
+
+Last updated: 02:11 2 May, 2025 (UTC)
+
+---
+
+#### [-socialminecraft-discord-manager](https://github.com/CloveTwilight3/-socialminecraft-discord-manager)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 0 | 🍴 0
+
+Last updated: 23:18 13 May, 2025 (UTC)
+
+---
+
+#### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 0 | 🍴 0
+
+Last updated: 23:16 13 May, 2025 (UTC)
+
+---
+
+#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
 #### [plural-web](https://github.com/CloveTwilight3/plural-web)
 
 A PluralKit website created for friends to see who's fronting my system https://friends.clovetwilight3.co.uk
@@ -66,18 +114,6 @@ Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
-#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 14:46 2 May, 2025 (UTC)
-
----
-
 #### [socialminecraft-discord-manager](https://github.com/CloveTwilight3/socialminecraft-discord-manager) [ARCHIVE]
 
 This is a fork of the Discord Manager I have helped contribute to. This is for archive reasons only!
@@ -122,11 +158,11 @@ Last updated: 03:22 3 May, 2025 (UTC)
 
 ---
 
-#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
+#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
 
-My personal 1.21.4 Resource Pack 
+A simple Paper plugin that adds functionality for sponges to absorb lava.
 
-**Language:** Python
+**Language:** Java
 
 ⭐ 2 | 🍴 0
 
@@ -134,11 +170,11 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
-A simple Paper plugin that adds functionality for sponges to absorb lava.
+My personal 1.21.4 Resource Pack 
 
-**Language:** Java
+**Language:** Python
 
 ⭐ 2 | 🍴 0
 
@@ -182,16 +218,6 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [CloveLib](https://github.com/CloveTwilight3/CloveLib)
-
-A basic Library Plugin for Plugins
-
-⭐ 2 | 🍴 0
-
-Last updated: 17:44 28 April, 2025 (UTC)
-
----
-
 #### [JailPlugin](https://github.com/CloveTwilight3/JailPlugin)
 
 A simple jail plugin
@@ -199,6 +225,16 @@ A simple jail plugin
 **Language:** Java
 
 ⭐ 2 | 🍴 1
+
+Last updated: 17:44 28 April, 2025 (UTC)
+
+---
+
+#### [CloveLib](https://github.com/CloveTwilight3/CloveLib)
+
+A basic Library Plugin for Plugins
+
+⭐ 2 | 🍴 0
 
 Last updated: 17:44 28 April, 2025 (UTC)
 
@@ -249,18 +285,6 @@ A public archive of a Discord Bot I have helped towards. This repository is main
 ⭐ 2 | 🍴 0
 
 Last updated: 23:58 30 April, 2025 (UTC)
-
----
-
-#### [spotify-player](https://github.com/CloveTwilight3/spotify-player)
-
-Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, Trans, Lesbian, etc.) for displaying your current tracks
-
-**Language:** JavaScript
-
-⭐ 2 | 🍴 0
-
-Last updated: 02:11 2 May, 2025 (UTC)
 
 ---
 
