@@ -18,6 +18,42 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [plural-web](https://github.com/CloveTwilight3/plural-web)
+
+A PluralKit website created for friends to see who's fronting my system https://friends.clovetwilight3.co.uk
+
+**Language:** Python
+
+⭐ 0 | 🍴 0
+
+Last updated: 23:15 13 May, 2025 (UTC)
+
+---
+
+#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 0 | 🍴 0
+
+Last updated: 23:13 13 May, 2025 (UTC)
+
+---
+
+#### [EMIS](https://github.com/CloveTwilight3/EMIS)
+
+This is a JARVIS like assistant for your desktop, working on Most Linux Distros and Windows
+
+**Language:** JavaScript
+
+⭐ 0 | 🍴 0
+
+Last updated: 02:47 2 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -71,18 +107,6 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 15:03 10 May, 2025 (UTC)
-
----
-
-#### [EMIS](https://github.com/CloveTwilight3/EMIS)
-
-This is a JARVIS like assistant for your desktop, working on Most Linux Distros and Windows
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 02:47 2 May, 2025 (UTC)
 
 ---
 
