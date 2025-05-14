@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="spotify-display.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Clove Twilight's Developer Portfolio - Minecraft Modder, Java/TypeScript Developer, and Linux Enthusiast">
@@ -9,327 +8,184 @@
     <meta name="author" content="Clove Twilight">
     <meta name="google-adsense-account" content="ca-pub-2820378422214826">
     <title>Clove Twilight - Developer Portfolio</title>
+    
+    <!-- Google's AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2820378422214826" crossorigin="anonymous"></script>
+    
+    <!-- Google's Consent Mode Setup -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Default consent to denied until user provides consent
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
+        
+        // Function to handle user consent choices
+        function updateConsentState(consent) {
+            gtag('consent', 'update', {
+                'ad_storage': consent ? 'granted' : 'denied',
+                'analytics_storage': consent ? 'granted' : 'denied'
+            });
+            
+            // Store consent in local storage to remember user's choice
+            localStorage.setItem('user_consent', consent ? 'granted' : 'denied');
+            
+            // Hide consent banner
+            document.getElementById('consent-banner').style.display = 'none';
+            
+            // Reload ads if consent was granted
+            if (consent) {
+                (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 0;
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } else {
+                (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }
+        }
+        
+        // Show the consent banner when document loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user has already provided consent
+            const storedConsent = localStorage.getItem('user_consent');
+            if (storedConsent === 'granted') {
+                updateConsentState(true);
+            } else if (storedConsent === 'denied') {
+                updateConsentState(false);
+            } else {
+                // Show consent banner if no previous choice
+                document.getElementById('consent-banner').style.display = 'flex';
+            }
+        });
+    </script>
+    
+    <!-- Website Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <!-- Add favicons -->
+    
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="favicon.png">
-    <!-- Add a modern font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Add Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* Pronouns badge in hero section */
-        .pronouns-badge {
-          margin: 15px 0;
-          display: flex;
-          gap: 10px;
-          flex-wrap: wrap;
+        /* Layout styles with left sidebar */
+        .site-layout {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
         }
         
-        .pronouns-badge a {
-          display: inline-block;
-          background-color: rgba(255, 105, 180, 0.15);
-          color: #ff69b4;
-          border: 1px solid #ff69b4;
-          padding: 6px 12px;
-          border-radius: 20px;
-          font-size: 0.9rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
-          text-decoration: none;
+        .sidebar {
+            width: 300px;
+            min-width: 300px;
+            padding-top: 30px;
+            position: sticky;
+            top: 100px;
+            height: calc(100vh - 100px);
+            align-self: flex-start;
         }
         
-        .pronouns-badge a:hover {
-          background-color: rgba(255, 105, 180, 0.25);
-          transform: translateY(-2px);
-          box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3);
+        .main-content {
+            flex: 1;
+            min-width: 0; /* Prevents flex items from overflowing */
         }
         
-        .identity-badge {
-          display: inline-block;
-          background-color: rgba(214, 41, 0, 0.15);
-          color: var(--primary-color);
-          border: 1px solid var(--primary-color);
-          padding: 6px 12px;
-          border-radius: 20px;
-          font-size: 0.9rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-        
-        .identity-badge:hover {
-          background-color: rgba(214, 41, 0, 0.25);
-          transform: translateY(-2px);
-          box-shadow: 0 3px 10px rgba(214, 41, 0, 0.3);
-        }
-        
-        /* Online Presence Section Styles */
-        .online-presence {
-          background-color: var(--card-bg);
-          padding: 80px 0;
-        }
-        
-        .presence-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-          gap: 30px;
-          margin-top: 40px;
-        }
-        
-        .presence-card {
-          background-color: var(--background);
-          border-radius: 12px;
-          padding: 30px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-          border: 1px solid var(--border-color);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          display: flex;
-          gap: 20px;
-        }
-        
-        .presence-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 
-                      0 0 10px rgba(214, 41, 0, 0.2);
-          border-color: var(--primary-color);
-        }
-        
-        .presence-icon {
-          color: var(--primary-color);
-          font-size: 2rem;
-        }
-        
-        .presence-content {
-          flex-grow: 1;
-        }
-        
-        .presence-content h3 {
-          color: var(--primary-color);
-          font-size: 1.3rem;
-          margin-bottom: 10px;
-        }
-        
-        .presence-content p {
-          color: var(--light-text);
-          margin-bottom: 15px;
-          font-size: 0.95rem;
-        }
-        
-        .presence-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: var(--secondary-color);
-          font-size: 0.9rem;
-          padding: 8px 12px;
-          background-color: rgba(255, 155, 85, 0.1);
-          border-radius: 6px;
-          transition: all 0.3s ease;
-        }
-        
-        .presence-link:hover {
-          background-color: rgba(255, 155, 85, 0.2);
-          transform: translateY(-2px);
-        }
-        
-        /* Style for pronouns page icon */
-        .presence-card:nth-child(1) .presence-icon {
-          color: #ff69b4;
-        }
-        
-        /* Pride flag border for identity section */
-        .identity-section {
-          position: relative;
-          border-left: 5px solid transparent;
-          background-image: linear-gradient(
-            to bottom,
-            #D62900,
-            #FF9B55,
-            #FFFFFF,
-            #D461A6,
-            #A40061
-          );
-          background-clip: padding-box;
-          margin-top: 30px;
-          padding: 20px 20px 20px 25px;
-          border-radius: 8px;
-          background-color: var(--card-bg);
-        }
-
-        /* Responsive for presence section */
-        @media (max-width: 768px) {
-          .presence-card {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 15px;
+        /* Consent Banner */
+        #consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(32, 33, 36, 0.9);
+            color: white;
             padding: 20px;
-          }
-          
-          .presence-icon {
-            font-size: 2.5rem;
+            z-index: 1000;
+            display: none; /* Hidden by default, shown by JS */
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .consent-message {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
             margin-bottom: 10px;
-          }
-          
-          .presence-link {
-            width: 100%;
-            justify-content: center;
-          }
+        }
+        
+        .consent-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .consent-btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+        
+        .consent-accept {
+            background-color: #4285F4;
+            color: white;
+        }
+        
+        .consent-accept:hover {
+            background-color: #2b6ed9;
+        }
+        
+        .consent-decline {
+            background-color: #5f6368;
+            color: white;
+        }
+        
+        .consent-decline:hover {
+            background-color: #4a4d51;
+        }
+        
+        .consent-manage {
+            background-color: transparent;
+            border: 1px solid #dadce0;
+            color: #dadce0;
+        }
+        
+        .consent-manage:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .site-layout {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                min-width: 100%;
+                height: auto;
+                position: static;
+                order: 2; /* Move sidebar below main content on mobile */
+            }
+            
+            .main-content {
+                order: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Top right butterfly - Blue, Pink, White style (trans colors) -->
-    <div class="ascii-butterfly butterfly-top-right">
-<span class="color-blue">                                                                  _______</span>
-<span class="color-blue">                                                                LLLLLLLLLLL</span>
-<span class="color-blue">                                                            __LLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                           LLLLLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                         _LLLLLLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                        LLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                      _LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-white">                                                      LLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-white">                                              L     _LLLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-white">                                             LL     LLLLLL~~~LLLLLLLLLLLLLL</span>
-<span class="color-white">                                            _L    _LLLLL      LLLLLLLLLLLLL</span>
-<span class="color-white">                                            L~    LLL~        LLLLLLLLLLLLL</span>
-<span class="color-white">                                           LL   _LLL        _LL   LLLLLLLL</span>
-<span class="color-pink">                                          LL    LL~         ~~     ~LLLLLL</span>
-<span class="color-pink">                                          L   _LLL_LLLL___         _LLLLLL</span>
-<span class="color-pink">                                         LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
-<span class="color-pink">                                         L  LLLLLLLLLLLLLLL        LLLLLL</span>
-<span class="color-blue">                                        LL LLLLLLLLLLLLLLLL        LLLLL~</span>
-<span class="color-blue">                  LLLLLLLL_______       L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
-<span class="color-blue">                         ~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL</span>
-<span class="color-blue">                       ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
-<span class="color-pink">                   LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
-<span class="color-pink">             ___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_</span>
-<span class="color-pink">          LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
-<span class="color-pink">      __LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL</span>
-<span class="color-white">     LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
-<span class="color-white">   _LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL</span>
-<span class="color-white">  LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL</span>
-<span class="color-white"> LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL</span>
-<span class="color-white">LLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~</span>
-<span class="color-pink">LLLLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL</span>
-<span class="color-pink">LLLLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~</span>
-<span class="color-pink">LLLLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-pink"> LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~</span>
-<span class="color-blue">  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL</span>
-<span class="color-blue">   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~</span>
-<span class="color-blue">           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL</span>
-<span class="color-blue">               ~~~~~~LLLLLLLLLL~             LLLLLL</span>
-<span class="color-blue">                         LLLLL              _LLLLLL</span>
-<span class="color-blue">                         LLLLL    L     L   LLLLLLL</span>
-<span class="color-blue">                          LLLLL__LL    _L__LLLLLLLL</span>
-<span class="color-blue">                          LLLLLLLLLL  LLLLLLLLLLLL</span>
-<span class="color-blue">                           LLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-blue">                            ~LLLLLLLLLLLLLLLLL~~</span>
-<span class="color-blue">                               LLLLLLLLLLLLL</span>
-<span class="color-blue">                                 ~~~~~~~~~</span>
-    </div>
-
-    <!-- Bottom left butterfly - Pink, White, Blue style (trans colors) -->
-    <div class="ascii-butterfly butterfly-bottom-left">
-<span class="color-blue">                                                                  _______</span>
-<span class="color-blue">                                                                LLLLLLLLLLL</span>
-<span class="color-blue">                                                            __LLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                           LLLLLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                         _LLLLLLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                        LLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                      _LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-white">                                                      LLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-white">                                              L     _LLLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-white">                                             LL     LLLLLL~~~LLLLLLLLLLLLLL</span>
-<span class="color-white">                                            _L    _LLLLL      LLLLLLLLLLLLL</span>
-<span class="color-white">                                            L~    LLL~        LLLLLLLLLLLLL</span>
-<span class="color-white">                                           LL   _LLL        _LL   LLLLLLLL</span>
-<span class="color-pink">                                          LL    LL~         ~~     ~LLLLLL</span>
-<span class="color-pink">                                          L   _LLL_LLLL___         _LLLLLL</span>
-<span class="color-pink">                                         LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
-<span class="color-pink">                                         L  LLLLLLLLLLLLLLL        LLLLLL</span>
-<span class="color-blue">                                        LL LLLLLLLLLLLLLLLL        LLLLL~</span>
-<span class="color-blue">                  LLLLLLLL_______       L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
-<span class="color-blue">                         ~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL</span>
-<span class="color-blue">                       ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
-<span class="color-pink">                   LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
-<span class="color-pink">             ___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_</span>
-<span class="color-pink">          LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
-<span class="color-pink">      __LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL</span>
-<span class="color-white">     LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
-<span class="color-white">   _LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL</span>
-<span class="color-white">  LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL</span>
-<span class="color-white"> LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL</span>
-<span class="color-white">LLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~</span>
-<span class="color-pink">LLLLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL</span>
-<span class="color-pink">LLLLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~</span>
-<span class="color-pink">LLLLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-pink"> LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~</span>
-<span class="color-blue">  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL</span>
-<span class="color-blue">   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~</span>
-<span class="color-blue">           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL</span>
-<span class="color-blue">               ~~~~~~LLLLLLLLLL~             LLLLLL</span>
-<span class="color-blue">                         LLLLL              _LLLLLL</span>
-<span class="color-blue">                         LLLLL    L     L   LLLLLLL</span>
-<span class="color-blue">                          LLLLL__LL    _L__LLLLLLLL</span>
-<span class="color-blue">                          LLLLLLLLLL  LLLLLLLLLLLL</span>
-<span class="color-blue">                           LLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-blue">                            ~LLLLLLLLLLLLLLLLL~~</span>
-<span class="color-blue">                               LLLLLLLLLLLLL</span>
-<span class="color-blue">                                 ~~~~~~~~~</span>
-    </div>
-
-    <!-- Footer area butterfly - Blue, Pink, White, Pink, Blue (trans flag colors) -->
-    <div class="ascii-butterfly butterfly-footer">
-<span class="color-blue">                                                                  _______</span>
-<span class="color-blue">                                                                LLLLLLLLLLL</span>
-<span class="color-blue">                                                            __LLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                           LLLLLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                         _LLLLLLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                        LLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-pink">                                                      _LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-white">                                                      LLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-white">                                              L     _LLLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-white">                                             LL     LLLLLL~~~LLLLLLLLLLLLLL</span>
-<span class="color-white">                                            _L    _LLLLL      LLLLLLLLLLLLL</span>
-<span class="color-white">                                            L~    LLL~        LLLLLLLLLLLLL</span>
-<span class="color-white">                                           LL   _LLL        _LL   LLLLLLLL</span>
-<span class="color-pink">                                          LL    LL~         ~~     ~LLLLLL</span>
-<span class="color-pink">                                          L   _LLL_LLLL___         _LLLLLL</span>
-<span class="color-pink">                                         LL  LLLLLLLLLLLLLL      LLLLLLLL</span>
-<span class="color-pink">                                         L  LLLLLLLLLLLLLLL        LLLLLL</span>
-<span class="color-blue">                                        LL LLLLLLLLLLLLLLLL        LLLLL~</span>
-<span class="color-blue">                  LLLLLLLL_______       L _LLLLLLLLLLLLLLLL     LLLLLLLL</span>
-<span class="color-blue">                         ~~~~~~~LLLLLLLLLLLLLLLLLLLLLLLLL~       LLLLLL</span>
-<span class="color-blue">                       ______________LLL  LLLLLLLLLLLLLL ______LLLLLLLLL_</span>
-<span class="color-pink">                   LLLLLLLLLLLLLLLLLLLL  LLLLLLLL~~LLLLLLL~~~~~~   ~LLLLLL</span>
-<span class="color-pink">             ___LLLLLLLLLL __LLLLLLLLLLLLL LLLLLLLLLLLLL____       _LLLLLL_</span>
-<span class="color-pink">          LLLLLLLLLLL~~   LLLLLLLLLLLLLLL   LLLLLLLLLLLLLLLLLL     ~~~LLLLL</span>
-<span class="color-pink">      __LLLLLLLLLLL     _LLLLLLLLLLLLLLLLL_  LLLLLLLLLLLLLLLLLL_       LLLLL</span>
-<span class="color-white">     LLLLLLLLLLL~       LLLLLLLLLLLLLLLLLLL   ~L ~~LLLLLLLLLLLLL      LLLLLL</span>
-<span class="color-white">   _LLLLLLLLLLLL       LLLLLLLLLLLLLLLLLLLLL_  LL      LLLLLLLLL   LLLLLLLLL</span>
-<span class="color-white">  LLLLLLLLLLLLL        LLLLLLLLLLLLL~LLLLLL~L   LL       ~~~~~       ~LLLLLL</span>
-<span class="color-white"> LLLLLLLLLLLLLLL__L    LLLLLLLLLLLL_LLLLLLL LL_  LL_            _     LLLLLL</span>
-<span class="color-white">LLLLLLLLLLLLLLLL~     ~LLLLLLLL~~LLLLLLLL   ~L  ~LLLL          ~L   LLLLLL~</span>
-<span class="color-pink">LLLLLLLLLLLLLLLL               _LLLLLLLLLL    LL  LLLLLLL___     LLLLLLLLLL</span>
-<span class="color-pink">LLLLLLLLLLLLLLLL              LL~LLLLLLLL~     LL  LLLLLLLLLLLL   LLLLLLL~</span>
-<span class="color-pink">LLLLLLLLLLLLLLLL_  __L       _L  LLLLLLLL      LLL_ LLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-pink"> LLLLLLLLLLLLLLLLLLLL        L~  LLLLLLLL      LLLLLLL~LLLLLLLLLLLLLLLL~</span>
-<span class="color-blue">  LLLLLLLLLLLLLLLLLLLL___L_ LL   LLLLLLL       LLLL     LLLLLLLLLLLLLL</span>
-<span class="color-blue">   ~~LLLLLLLLLLLLLLLLLLLLLLLL     LLLLL~      LLLLL        ~~~~~~~~~</span>
-<span class="color-blue">           LLLLLLLLLLLLLLLLLL_ _   LLL       _LLLLL</span>
-<span class="color-blue">               ~~~~~~LLLLLLLLLL~             LLLLLL</span>
-<span class="color-blue">                         LLLLL              _LLLLLL</span>
-<span class="color-blue">                         LLLLL    L     L   LLLLLLL</span>
-<span class="color-blue">                          LLLLL__LL    _L__LLLLLLLL</span>
-<span class="color-blue">                          LLLLLLLLLL  LLLLLLLLLLLL</span>
-<span class="color-blue">                           LLLLLLLLLLLLLLLLLLLLLL</span>
-<span class="color-blue">                            ~LLLLLLLLLLLLLLLLL~~</span>
-<span class="color-blue">                               LLLLLLLLLLLLL</span>
-<span class="color-blue">                                 ~~~~~~~~~</span>
-    </div>
-
+    <!-- Header -->
     <header>
         <div class="container">
             <h1>Clove Twilight</h1>
@@ -337,9 +193,7 @@
                 <ul>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#stats">Stats</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#online-presence">Online Presence</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="/resume.pdf" class="resume-btn" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a></li>
                 </ul>
@@ -347,16 +201,13 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h2>👋 Hi, I'm <span class="highlight">Clove Twilight</span></h2>
                     <h3 class="subtitle">Developer • Linux Enthusiast • Minecraft Modder</h3>
-                    <div class="pronouns-badge">
-                        <a href="https://en.pronouns.page/@clovetwilight3" target="_blank">She/Her/Fae/Faer</a>
-                        <span class="identity-badge">Lesbian Trans Woman</span>
-                    </div>
                     <p class="hero-description">Building creative solutions with code, from Discord bots to Minecraft plugins. I'm a passionate developer with a focus on useful, quality software.</p>
                     <div class="hero-cta">
                         <a href="#projects" class="cta-btn primary"><i class="fas fa-code"></i> View My Work</a>
@@ -375,271 +226,89 @@
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <!-- Main Content with Sidebar Layout -->
     <div class="container">
-        <h2>🔗 Featured Projects</h2>
-        <p class="subtitle">A collection of my work - from personal repositories and UnifiedGaming Systems Ltd</p>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="personal">Personal</button>
-                <button class="filter-btn" data-filter="organization">UnifiedGaming Systems</button>
-                <button class="filter-btn" data-filter="java">Java</button>
-                <button class="filter-btn" data-filter="typescript">TypeScript</button>
-                <button class="filter-btn" data-filter="javascript">JavaScript</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="minecraft">Minecraft</button>
-                <button class="filter-btn" data-filter="discord">Discord</button>
-                <button class="filter-btn" data-filter="archive">Archives</button>
-            </div>
-        <div id="projects-container">
-            <!-- Projects will be loaded here via JavaScript -->
-            <div class="loading">Loading projects...</div>
+        <div class="site-layout">
+            <!-- Left Sidebar with Ad -->
+            <aside class="sidebar">
+                <!-- AdSense ad unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-2820378422214826"
+                     data-ad-slot="1234567890"
+                     data-ad-format="vertical"
+                     data-full-width-responsive="false"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </aside>
+            
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Projects Section -->
+                <section id="projects" class="projects">
+                    <h2>🔗 Featured Projects</h2>
+                    <p class="subtitle">A collection of my work - from personal repositories and UnifiedGaming Systems Ltd</p>
+                    
+                    <div class="project-filters">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="personal">Personal</button>
+                        <button class="filter-btn" data-filter="organization">UnifiedGaming Systems</button>
+                        <button class="filter-btn" data-filter="java">Java</button>
+                        <button class="filter-btn" data-filter="typescript">TypeScript</button>
+                        <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                        <button class="filter-btn" data-filter="python">Python</button>
+                        <button class="filter-btn" data-filter="minecraft">Minecraft</button>
+                        <button class="filter-btn" data-filter="discord">Discord</button>
+                        <button class="filter-btn" data-filter="archive">Archives</button>
+                    </div>
+                    
+                    <div id="projects-container">
+                        <!-- Projects will be loaded here via JavaScript -->
+                        <div class="loading">Loading projects...</div>
+                    </div>
+                </section>
+                
+                <!-- Skills Section -->
+                <section id="skills" class="skills-section">
+                    <h2>🧠 Skills & Technologies</h2>
+                    <p class="subtitle">My technical toolkit for solving problems</p>
+                    
+                    <div class="skills-categories">
+                        <!-- Skills content goes here -->
+                    </div>
+                </section>
+                
+                <!-- About Section -->
+                <section id="about" class="about">
+                    <h2>About Me</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>I am Clove Twilight (She/Her/Fae/Faer), a passionate developer focusing on creating useful applications, from Discord bots to Minecraft plugins and web applications.</p>
+                            <p>As a lesbian transgender woman, I bring my unique perspective to the development world, creating inclusive and accessible software solutions.</p>
+                            <p>I am also a plural system, so see <a href="https://friends.clovetwilight3.co.uk/" target="_blank">friends.clovetwilight3.co.uk</a> (In dev)</p>
+                            <p>With a background in both frontend and backend technologies, I enjoy solving complex problems and building tools that help others. I'm particularly interested in gaming-related development and automation.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Contact Section -->
+                <section id="contact" class="contact">
+                    <h2>🌐 Get In Touch</h2>
+                    <p class="subtitle">Interested in working together? Reach out through any of these platforms</p>
+                    
+                    <div class="contact-links">
+                        <a href="https://github.com/clovetwilight3" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://clovetwilight3.co.uk" target="_blank"><i class="fas fa-globe"></i> Website</a>
+                        <a href="mailto:admin@clovetwilight3.co.uk"><i class="fas fa-envelope"></i> Email Me</a>
+                        <a href="https://discord.gg/ZPDjhfcvQe" target="_blank"><i class="fab fa-discord"></i> Discord: CloveTwilight3</a>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
-</section>
 
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2>🧠 Skills & Technologies</h2>
-            <p class="subtitle">My technical toolkit for solving problems</p>
-            
-            <div class="skills-categories">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Languages</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">JavaScript</div>
-                        <div class="skill-item">TypeScript</div>
-                        <div class="skill-item">Java</div>
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">Kotlin</div>
-                        <div class="skill-item">Rust</div>
-                        <div class="skill-item">Bash</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Node.js</div>
-                        <div class="skill-item">Express</div>
-                        <div class="skill-item">Flask</div>
-                        <div class="skill-item">REST APIs</div>
-                        <div class="skill-item">MongoDB</div>
-                        <div class="skill-item">SQL</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-desktop"></i> Frontend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">HTML5</div>
-                        <div class="skill-item">CSS3</div>
-                        <div class="skill-item">React</div>
-                        <div class="skill-item">Vue.js</div>
-                        <div class="skill-item">Responsive Design</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fab fa-discord"></i> Discord</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Discord.js</div>
-                        <div class="skill-item">Bot Development</div>
-                        <div class="skill-item">Slash Commands</div>
-                        <div class="skill-item">API Integration</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-cubes"></i> Minecraft</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Spigot/Bukkit</div>
-                        <div class="skill-item">Plugin Development</div>
-                        <div class="skill-item">Forge Modding</div>
-                        <div class="skill-item">Resource Packs</div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> DevOps</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">Git/GitHub</div>
-                        <div class="skill-item">CI/CD</div>
-                        <div class="skill-item">Docker</div>
-                        <div class="skill-item">Linux Administration</div>
-                        <div class="skill-item">Server Management</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Updated GitHub Stats section with custom lesbian/trans colors -->
-    <section id="stats" class="stats">
-        <div class="container">
-            <h2>📊 GitHub Stats</h2>
-            <p class="subtitle">A glimpse into my development work</p>
-            
-            <div class="stats-cards">
-                <div class="stats-card">
-                    <!-- Custom lesbian flag colored GitHub stats card -->
-                    <img src="https://github-readme-stats.vercel.app/api?username=clovetwilight3&bg_color=2C0E11&title_color=FF9B55&text_color=FFFFFF&icon_color=D461A6&border_color=672235&show_icons=true" alt="CloveTwilight3's GitHub Stats">
-                </div>
-                <div class="stats-card">
-                    <!-- Custom lesbian flag colored top languages card -->
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=clovetwilight3&layout=compact&bg_color=2C0E11&title_color=FF9B55&text_color=FFFFFF&border_color=672235" alt="Top Languages">
-                </div>
-            </div>
-            
-            <!-- Custom colored GitHub contributions calendar - use trans colors -->
-            <div class="github-calendar">
-                <div class="trans-border-container">
-                    <img src="https://ghchart.rshah.org/clovetwilight3" alt="GitHub Contributions" class="contributions-chart">
-                </div>
-            </div>
-            
-            <div class="profile-views">
-                <img src="https://komarev.com/ghpvc/?username=clovetwilight3&label=Profile%20views&color=D62900&style=flat" alt="clovetwilight3">
-            </div>
-            
-            <div class="languages">
-                <h3>🖥️ Languages Known</h3>
-                <div class="language-badges">
-                    <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?logo=javascript&logoColor=black" alt="JavaScript">
-                    <img src="https://img.shields.io/badge/Python-31A8FF.svg?logo=python&logoColor=white" alt="Python">
-                    <img src="https://img.shields.io/badge/Java-%23ED8B00.svg?logo=openjdk&logoColor=white" alt="Java">
-                    <img src="https://img.shields.io/badge/YAML-CB171E?logo=yaml&logoColor=fff" alt="YAML">
-                    <img src="https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff" alt="CSS">
-                    <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff" alt="TypeScript">
-                    <img src="https://img.shields.io/badge/Rust-%23000000.svg?e&logo=rust&logoColor=white" alt="Rust">
-                    <img src="https://img.shields.io/badge/XML-767C52?logo=xml&logoColor=fff" alt="XML">
-                    <img src="https://img.shields.io/badge/Kotlin-%237F52FF.svg?logo=kotlin&logoColor=white" alt="Kotlin">
-                    <img src="https://img.shields.io/badge/Markdown-%23000000.svg?logo=markdown&logoColor=white" alt="Markdown">
-                    <img src="https://img.shields.io/badge/JSON-000?logo=json&logoColor=fff" alt="JSON">
-                    <img src="https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=fff" alt="Bash">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Updated Spotify Section with trans border -->
-    <section id="spotify" class="spotify">
-    <div class="container">
-        <h2>🎵 Spotify Currently Playing</h2>
-        <p class="subtitle">See what I'm listening to right now</p>
-        
-        <!-- Custom Spotify player will be rendered here -->
-        <div id="spotify-player"></div>
-    </div>
-</section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am Clove Twilight (She/Her/Fae/Faer), a passionate developer focusing on creating useful applications, from Discord bots to Minecraft plugins and web applications.</p>
-                    <p>As a lesbian transgender woman, I bring my unique perspective to the development world, creating inclusive and accessible software solutions.</p>
-                    <p>I am also a plural system, so see <a href="https://friends.clovetwilight3.co.uk/" target="_blank">friends.clovetwilight3.co.uk</a> (In dev)</p>
-                    <p>With a background in both frontend and backend technologies, I enjoy solving complex problems and building tools that help others. I'm particularly interested in gaming-related development and automation.</p>
-                    <div class="identity-section">
-                        <p>My identity as a trans woman and a lesbian informs my approach to development, with a focus on creating software that works for everyone, regardless of background or identity. I believe strongly in creating spaces where all can feel welcome and represented.</p>
-                    </div>
-                    <p>When I'm not coding, you can find me exploring Linux systems, contributing to open-source projects, or experimenting with new programming languages and frameworks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Online Presence Section -->
-    <section id="online-presence" class="online-presence">
-        <div class="container">
-            <h2>🌐 My Online Presence</h2>
-            <p class="subtitle">Connect with me across my various professional platforms</p>
-            
-            <div class="presence-grid">
-                <!-- Pronouns Page -->
-                <div class="presence-card">
-                    <div class="presence-icon">
-                        <i class="fas fa-tag"></i>
-                    </div>
-                    <div class="presence-content">
-                        <h3>Pronouns Page</h3>
-                        <p>Learn more about my pronouns preferences and identity</p>
-                        <a href="https://en.pronouns.page/@clovetwilight3" class="presence-link" target="_blank">
-                            <span>en.pronouns.page/@clovetwilight3</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Website -->
-                <div class="presence-card">
-                    <div class="presence-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="presence-content">
-                        <h3>Portfolio Website</h3>
-                        <p>My professional portfolio showcasing projects and skills</p>
-                        <a href="https://clovetwilight3.co.uk" class="presence-link" target="_blank">
-                            <span>clovetwilight3.co.uk</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- System Website -->
-                <div class="presence-card">
-                    <div class="presence-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="presence-content">
-                        <h3>System Website</h3>
-                        <p>Information about my plural system and headmates</p>
-                        <a href="https://friends.clovetwilight3.co.uk" class="presence-link" target="_blank">
-                            <span>friends.clovetwilight3.co.uk</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- GitHub Profile -->
-                <div class="presence-card">
-                    <div class="presence-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <div class="presence-content">
-                        <h3>GitHub Profile</h3>
-                        <p>Browse my code repositories and contributions</p>
-                        <a href="https://github.com/clovetwilight3" class="presence-link" target="_blank">
-                            <span>github.com/clovetwilight3</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>🌐 Get In Touch</h2>
-            <p class="subtitle">Interested in working together? Reach out through any of these platforms</p>
-            <div class="contact-links">
-                <a href="https://github.com/clovetwilight3" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://clovetwilight3.co.uk" target="_blank"><i class="fas fa-globe"></i> Website</a>
-                <a href="mailto:admin@clovetwilight3.co.uk"><i class="fas fa-envelope"></i> Email Me</a>
-                <a href="https://discord.gg/ZPDjhfcvQe" target="_blank"><i class="fab fa-discord"></i> Discord: CloveTwilight3</a>
-            </div>
-            
-            <div class="hire-me">
-                <h3>Looking to hire?</h3>
-                <p>I'm currently available for freelance work and open to job opportunities in software development.</p>
-                <a href="mailto:admin@clovetwilight3.co.uk?subject=Job Opportunity" class="cta-btn primary">Let's Talk <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -662,6 +331,34 @@
         </div>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div id="consent-banner">
+        <div class="consent-message">
+            <h3>Cookie Consent</h3>
+            <p>This website uses cookies and similar technologies to improve your online experience and show personalized ads. Choose how you want your data to be used.</p>
+        </div>
+        <div class="consent-buttons">
+            <button class="consent-btn consent-accept" onclick="updateConsentState(true)">Accept All</button>
+            <button class="consent-btn consent-decline" onclick="updateConsentState(false)">Reject All</button>
+            <button class="consent-btn consent-manage" onclick="showDetailedOptions()">Manage Options</button>
+        </div>
+    </div>
+
+    <!-- Cookie Detailed Options Modal (hidden by default) -->
+    <div id="detailed-options" style="display: none;">
+        <!-- This would be populated with more granular cookie options -->
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to show detailed cookie options
+        function showDetailedOptions() {
+            // This would show a modal with more detailed cookie options
+            alert("Detailed cookie options would appear here in a production environment.");
+        }
+    </script>
+    
+    <!-- Your website scripts -->
     <script src="scripts.js"></script>
 </body>
 </html>
