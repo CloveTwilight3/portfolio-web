@@ -18,15 +18,15 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [RoomMates-Helper](https://github.com/CloveTwilight3/RoomMates-Helper)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-RoomMates Verification System and More!
+My GitHub profile repository with custom README and configuration.
 
-**Language:** TypeScript
+**Language:** Markdown
 
 ⭐ 2 | 🍴 0
 
-Last updated: 14:07 1 May, 2025 (UTC)
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -42,15 +42,15 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [RoomMates-Helper](https://github.com/CloveTwilight3/RoomMates-Helper)
 
-My GitHub profile repository with custom README and configuration.
+RoomMates Verification System and More!
 
-**Language:** Markdown
+**Language:** TypeScript
 
 ⭐ 2 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 14:07 1 May, 2025 (UTC)
 
 ---
 
