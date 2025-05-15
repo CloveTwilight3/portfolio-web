@@ -4,15 +4,15 @@
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [RoomMates-Helper](https://github.com/CloveTwilight3/RoomMates-Helper)
 
-My GitHub profile repository with custom README and configuration.
+RoomMates Verification System and More!
 
-**Language:** Markdown
+**Language:** TypeScript
 
 ⭐ 2 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 14:07 1 May, 2025 (UTC)
 
 ---
 
@@ -25,6 +25,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -247,18 +259,6 @@ Public Beta files for RoomMates Helper
 ⭐ 2 | 🍴 0
 
 Last updated: 15:02 30 April, 2025 (UTC)
-
----
-
-#### [RoomMates-Helper](https://github.com/CloveTwilight3/RoomMates-Helper)
-
-RoomMates Verification System and More!
-
-**Language:** TypeScript
-
-⭐ 2 | 🍴 0
-
-Last updated: 14:07 1 May, 2025 (UTC)
 
 ---
 
