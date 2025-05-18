@@ -4,13 +4,15 @@
 
 ### Personal Projects
 
-#### [Plural-Social](https://github.com/CloveTwilight3/Plural-Social)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-No description provided.
+My GitHub profile repository with custom README and configuration.
 
-⭐ 0 | 🍴 0
+**Language:** Markdown
 
-Last updated: 14:37 18 May, 2025 (UTC)
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -26,15 +28,13 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [Plural-Social](https://github.com/CloveTwilight3/Plural-Social)
 
-My GitHub profile repository with custom README and configuration.
+No description provided.
 
-**Language:** Markdown
+⭐ 0 | 🍴 0
 
-⭐ 2 | 🍴 0
-
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 14:37 18 May, 2025 (UTC)
 
 ---
 
