@@ -4,6 +4,16 @@
 
 ### Personal Projects
 
+#### [Plural-Social](https://github.com/CloveTwilight3/Plural-Social)
+
+No description provided.
+
+⭐ 0 | 🍴 0
+
+Last updated: 14:37 18 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -166,11 +176,11 @@ Last updated: 03:22 3 May, 2025 (UTC)
 
 ---
 
-#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
-A simple Paper plugin that adds functionality for sponges to absorb lava.
+My personal 1.21.4 Resource Pack 
 
-**Language:** Java
+**Language:** Python
 
 ⭐ 2 | 🍴 0
 
@@ -178,11 +188,11 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
+#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
 
-My personal 1.21.4 Resource Pack 
+A simple Paper plugin that adds functionality for sponges to absorb lava.
 
-**Language:** Python
+**Language:** Java
 
 ⭐ 2 | 🍴 0
 
@@ -226,6 +236,16 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
+#### [CloveLib](https://github.com/CloveTwilight3/CloveLib)
+
+A basic Library Plugin for Plugins
+
+⭐ 2 | 🍴 0
+
+Last updated: 17:44 28 April, 2025 (UTC)
+
+---
+
 #### [JailPlugin](https://github.com/CloveTwilight3/JailPlugin)
 
 A simple jail plugin
@@ -233,16 +253,6 @@ A simple jail plugin
 **Language:** Java
 
 ⭐ 2 | 🍴 1
-
-Last updated: 17:44 28 April, 2025 (UTC)
-
----
-
-#### [CloveLib](https://github.com/CloveTwilight3/CloveLib)
-
-A basic Library Plugin for Plugins
-
-⭐ 2 | 🍴 0
 
 Last updated: 17:44 28 April, 2025 (UTC)
 
@@ -286,6 +296,16 @@ Last updated: 23:58 30 April, 2025 (UTC)
 
 ### UnifiedGaming Systems Ltd Projects
 
+#### [.github](https://github.com/UnifiedGaming-Systems/.github)
+
+Profile README.md
+
+⭐ 1 | 🍴 0
+
+Last updated: 19:25 24 February, 2025 (UTC)
+
+---
+
 #### [SpectrumOS](https://github.com/UnifiedGaming-Systems/SpectrumOS)
 
 SpectrumOS: Transitioning Beyond Boundaries
@@ -317,16 +337,6 @@ This repo is all the code used for UnifiedGaming System's Website
 ⭐ 1 | 🍴 0
 
 Last updated: 19:03 3 May, 2025 (UTC)
-
----
-
-#### [.github](https://github.com/UnifiedGaming-Systems/.github)
-
-Profile README.md
-
-⭐ 1 | 🍴 0
-
-Last updated: 19:25 24 February, 2025 (UTC)
 
 ---
 
