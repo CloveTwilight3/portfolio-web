@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [RoomMates-Beta](https://github.com/CloveTwilight3/RoomMates-Beta)
+
+Public Beta files for RoomMates Helper
+
+**Language:** TypeScript
+
+⭐ 2 | 🍴 0
+
+Last updated: 15:02 30 April, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -269,18 +281,6 @@ A fun all-in-1 plugin
 ⭐ 2 | 🍴 0
 
 Last updated: 17:44 28 April, 2025 (UTC)
-
----
-
-#### [RoomMates-Beta](https://github.com/CloveTwilight3/RoomMates-Beta)
-
-Public Beta files for RoomMates Helper
-
-**Language:** TypeScript
-
-⭐ 2 | 🍴 0
-
-Last updated: 15:02 30 April, 2025 (UTC)
 
 ---
 
