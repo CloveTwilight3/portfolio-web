@@ -4,15 +4,15 @@
 
 ### Personal Projects
 
-#### [RoomMates-Beta](https://github.com/CloveTwilight3/RoomMates-Beta)
+#### [plural-web](https://github.com/CloveTwilight3/plural-web)
 
-Public Beta files for RoomMates Helper
+A PluralKit website created for friends to see who's fronting my system https://friends.clovetwilight3.co.uk
 
-**Language:** TypeScript
+**Language:** Python
 
-⭐ 2 | 🍴 0
+⭐ 0 | 🍴 0
 
-Last updated: 15:02 30 April, 2025 (UTC)
+Last updated: 23:15 13 May, 2025 (UTC)
 
 ---
 
@@ -40,6 +40,18 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
+#### [RoomMates-Beta](https://github.com/CloveTwilight3/RoomMates-Beta)
+
+Public Beta files for RoomMates Helper
+
+**Language:** TypeScript
+
+⭐ 2 | 🍴 0
+
+Last updated: 15:02 30 April, 2025 (UTC)
+
+---
+
 #### [Plural-Clove](https://github.com/CloveTwilight3/Plural-Clove)
 
 No description provided.
@@ -59,18 +71,6 @@ No description provided.
 ⭐ 0 | 🍴 0
 
 Last updated: 14:37 18 May, 2025 (UTC)
-
----
-
-#### [plural-web](https://github.com/CloveTwilight3/plural-web)
-
-A PluralKit website created for friends to see who's fronting my system https://friends.clovetwilight3.co.uk
-
-**Language:** Python
-
-⭐ 0 | 🍴 0
-
-Last updated: 23:15 13 May, 2025 (UTC)
 
 ---
 
