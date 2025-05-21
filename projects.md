@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
 #### [simple-discord-ban-bot](https://github.com/CloveTwilight3/simple-discord-ban-bot)
 
 A basic easy typescript discord bot to ban people based off their role.
@@ -25,18 +37,6 @@ My GitHub profile repository with custom README and configuration.
 ⭐ 2 | 🍴 0
 
 Last updated: 14:38 2 May, 2025 (UTC)
-
----
-
-#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
