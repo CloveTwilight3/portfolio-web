@@ -18,15 +18,15 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+#### [simple-discord-ban-bot](https://github.com/CloveTwilight3/simple-discord-ban-bot)
 
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+A basic easy typescript discord bot to ban people based off their role.
 
-**Language:** JavaScript
+**Language:** TypeScript
 
-⭐ 3 | 🍴 0
+⭐ 1 | 🍴 0
 
-Last updated: 14:46 2 May, 2025 (UTC)
+Last updated: 21:43 21 May, 2025 (UTC)
 
 ---
 
@@ -42,15 +42,15 @@ Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
-#### [simple-discord-ban-bot](https://github.com/CloveTwilight3/simple-discord-ban-bot)
+#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
-A basic easy typescript discord bot to ban people based off their role.
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
 
-**Language:** TypeScript
+**Language:** JavaScript
 
-⭐ 1 | 🍴 0
+⭐ 3 | 🍴 0
 
-Last updated: 21:43 21 May, 2025 (UTC)
+Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
