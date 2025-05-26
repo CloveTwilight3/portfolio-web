@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [plural-web](https://github.com/CloveTwilight3/plural-web)
+
+A PluralKit website created for friends to see who's fronting my system https://friends.clovetwilight3.co.uk
+
+**Language:** Python
+
+⭐ 0 | 🍴 0
+
+Last updated: 23:15 13 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -51,18 +63,6 @@ My GitHub profile repository with custom README and configuration.
 ⭐ 2 | 🍴 0
 
 Last updated: 14:38 2 May, 2025 (UTC)
-
----
-
-#### [plural-web](https://github.com/CloveTwilight3/plural-web)
-
-A PluralKit website created for friends to see who's fronting my system https://friends.clovetwilight3.co.uk
-
-**Language:** Python
-
-⭐ 0 | 🍴 0
-
-Last updated: 23:15 13 May, 2025 (UTC)
 
 ---
 
