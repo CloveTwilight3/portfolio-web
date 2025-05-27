@@ -4,18 +4,6 @@
 
 ### Personal Projects
 
-#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 14:46 2 May, 2025 (UTC)
-
----
-
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -34,9 +22,91 @@ A PluralKit website created for friends to see who's fronting my system https://
 
 **Language:** Python
 
-⭐ 0 | 🍴 0
+⭐ 1 | 🍴 0
 
 Last updated: 23:15 13 May, 2025 (UTC)
+
+---
+
+#### [Plural-Social](https://github.com/CloveTwilight3/Plural-Social)
+
+No description provided.
+
+⭐ 1 | 🍴 0
+
+Last updated: 14:37 18 May, 2025 (UTC)
+
+---
+
+#### [Plural-Clove](https://github.com/CloveTwilight3/Plural-Clove)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 14:55 17 May, 2025 (UTC)
+
+---
+
+#### [-socialminecraft-discord-manager](https://github.com/CloveTwilight3/-socialminecraft-discord-manager)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 23:18 13 May, 2025 (UTC)
+
+---
+
+#### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 23:16 13 May, 2025 (UTC)
+
+---
+
+#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 23:13 13 May, 2025 (UTC)
+
+---
+
+#### [EMIS](https://github.com/CloveTwilight3/EMIS)
+
+This is a JARVIS like assistant for your desktop, working on Most Linux Distros and Windows
+
+**Language:** JavaScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 02:47 2 May, 2025 (UTC)
+
+---
+
+#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
@@ -86,28 +156,6 @@ Last updated: 15:02 30 April, 2025 (UTC)
 
 ---
 
-#### [Plural-Clove](https://github.com/CloveTwilight3/Plural-Clove)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 14:55 17 May, 2025 (UTC)
-
----
-
-#### [Plural-Social](https://github.com/CloveTwilight3/Plural-Social)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: 14:37 18 May, 2025 (UTC)
-
----
-
 #### [spotify-player](https://github.com/CloveTwilight3/spotify-player)
 
 Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, Trans, Lesbian, etc.) for displaying your current tracks
@@ -117,54 +165,6 @@ Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, 
 ⭐ 2 | 🍴 0
 
 Last updated: 02:11 2 May, 2025 (UTC)
-
----
-
-#### [-socialminecraft-discord-manager](https://github.com/CloveTwilight3/-socialminecraft-discord-manager)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 23:18 13 May, 2025 (UTC)
-
----
-
-#### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 23:16 13 May, 2025 (UTC)
-
----
-
-#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 23:13 13 May, 2025 (UTC)
-
----
-
-#### [EMIS](https://github.com/CloveTwilight3/EMIS)
-
-This is a JARVIS like assistant for your desktop, working on Most Linux Distros and Windows
-
-**Language:** JavaScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 02:47 2 May, 2025 (UTC)
 
 ---
 
@@ -202,11 +202,11 @@ Last updated: 03:22 3 May, 2025 (UTC)
 
 ---
 
-#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
+#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
 
-My personal 1.21.4 Resource Pack 
+A simple Paper plugin that adds functionality for sponges to absorb lava.
 
-**Language:** Python
+**Language:** Java
 
 ⭐ 2 | 🍴 0
 
@@ -214,11 +214,11 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
-A simple Paper plugin that adds functionality for sponges to absorb lava.
+My personal 1.21.4 Resource Pack 
 
-**Language:** Java
+**Language:** Python
 
 ⭐ 2 | 🍴 0
 
