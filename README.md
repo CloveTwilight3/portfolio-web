@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -39,18 +51,6 @@ RoomMates Verification System and More!
 ⭐ 2 | 🍴 0
 
 Last updated: 14:07 1 May, 2025 (UTC)
-
----
-
-#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
