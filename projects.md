@@ -4,18 +4,6 @@
 
 ### Personal Projects
 
-#### [clove-mailbox-custom](https://github.com/CloveTwilight3/clove-mailbox-custom)
-
-No description provided.
-
-**Language:** Python
-
-⭐ 0 | 🍴 0
-
-Last updated: 08:50 28 May, 2025 (UTC)
-
----
-
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -25,6 +13,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
+#### [clove-mailbox-custom](https://github.com/CloveTwilight3/clove-mailbox-custom)
+
+No description provided.
+
+**Language:** Python
+
+⭐ 0 | 🍴 0
+
+Last updated: 08:50 28 May, 2025 (UTC)
 
 ---
 
