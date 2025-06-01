@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [simple-discord-ban-bot](https://github.com/CloveTwilight3/simple-discord-ban-bot)
+
+A basic easy typescript discord bot to ban people based off their role.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 21:43 21 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -143,18 +155,6 @@ This is a JARVIS like assistant for your desktop, working on Most Linux Distros 
 ⭐ 1 | 🍴 0
 
 Last updated: 02:47 2 May, 2025 (UTC)
-
----
-
-#### [simple-discord-ban-bot](https://github.com/CloveTwilight3/simple-discord-ban-bot)
-
-A basic easy typescript discord bot to ban people based off their role.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 21:43 21 May, 2025 (UTC)
 
 ---
 
