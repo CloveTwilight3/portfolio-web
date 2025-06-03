@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [simple-discord-ban-bot](https://github.com/CloveTwilight3/simple-discord-ban-bot)
+
+A basic easy typescript discord bot to ban people based off their role.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 21:43 21 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -75,18 +87,6 @@ A custom discord bot that communicates with APIs
 ⭐ 2 | 🍴 0
 
 Last updated: 03:22 3 May, 2025 (UTC)
-
----
-
-#### [simple-discord-ban-bot](https://github.com/CloveTwilight3/simple-discord-ban-bot)
-
-A basic easy typescript discord bot to ban people based off their role.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 21:43 21 May, 2025 (UTC)
 
 ---
 
