@@ -18,18 +18,6 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 14:46 2 May, 2025 (UTC)
-
----
-
 #### [SpectraNet](https://github.com/CloveTwilight3/SpectraNet)
 
 A basic easy typescript discord bot to ban people based off their role.
@@ -39,6 +27,18 @@ A basic easy typescript discord bot to ban people based off their role.
 ⭐ 1 | 🍴 0
 
 Last updated: 17:23 3 June, 2025 (UTC)
+
+---
+
+#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
