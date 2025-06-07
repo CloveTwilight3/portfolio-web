@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [RoomMates-Beta](https://github.com/CloveTwilight3/RoomMates-Beta)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 15:02 30 April, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -51,18 +63,6 @@ A basic easy typescript discord bot to ban people based off their role.
 ⭐ 1 | 🍴 0
 
 Last updated: 17:23 3 June, 2025 (UTC)
-
----
-
-#### [RoomMates-Beta](https://github.com/CloveTwilight3/RoomMates-Beta)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 15:02 30 April, 2025 (UTC)
 
 ---
 
