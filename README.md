@@ -18,15 +18,15 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [myluminarasystem.pro](https://github.com/CloveTwilight3/myluminarasystem.pro)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-No description provided.
+My GitHub profile repository with custom README and configuration.
 
-**Language:** TypeScript
+**Language:** Markdown
 
-⭐ 1 | 🍴 0
+⭐ 2 | 🍴 0
 
-Last updated: 02:20 16 June, 2025 (UTC)
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -42,15 +42,15 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [myluminarasystem.pro](https://github.com/CloveTwilight3/myluminarasystem.pro)
 
-My GitHub profile repository with custom README and configuration.
+No description provided.
 
-**Language:** Markdown
+**Language:** TypeScript
 
-⭐ 2 | 🍴 0
+⭐ 1 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 02:20 16 June, 2025 (UTC)
 
 ---
 
@@ -337,16 +337,6 @@ Last updated: 23:58 30 April, 2025 (UTC)
 ---
 
 ### UnifiedGaming Systems Ltd Projects
-
-#### [SpectrumOS](https://github.com/UnifiedGaming-Systems/SpectrumOS)
-
-SpectrumOS: Transitioning Beyond Boundaries
-
-⭐ 2 | 🍴 0
-
-Last updated: 18:23 2 May, 2025 (UTC)
-
----
 
 #### [.github](https://github.com/UnifiedGaming-Systems/.github)
 
