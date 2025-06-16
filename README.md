@@ -338,16 +338,6 @@ Last updated: 23:58 30 April, 2025 (UTC)
 
 ### UnifiedGaming Systems Ltd Projects
 
-#### [.github](https://github.com/UnifiedGaming-Systems/.github)
-
-Profile README.md
-
-⭐ 1 | 🍴 0
-
-Last updated: 19:25 24 February, 2025 (UTC)
-
----
-
 #### [SpectrumOS](https://github.com/UnifiedGaming-Systems/SpectrumOS)
 
 SpectrumOS: Transitioning Beyond Boundaries
@@ -355,6 +345,16 @@ SpectrumOS: Transitioning Beyond Boundaries
 ⭐ 2 | 🍴 0
 
 Last updated: 18:23 2 May, 2025 (UTC)
+
+---
+
+#### [.github](https://github.com/UnifiedGaming-Systems/.github)
+
+Profile README.md
+
+⭐ 1 | 🍴 0
+
+Last updated: 19:25 24 February, 2025 (UTC)
 
 ---
 
