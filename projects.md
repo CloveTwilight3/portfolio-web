@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [Clove-Bot](https://github.com/CloveTwilight3/Clove-Bot)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 0 | 🍴 0
+
+Last updated: 03:04 18 June, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
