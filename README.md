@@ -18,15 +18,15 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [Clove-Bot](https://github.com/CloveTwilight3/Clove-Bot)
 
-My GitHub profile repository with custom README and configuration.
+No description provided.
 
-**Language:** Markdown
+**Language:** TypeScript
 
-⭐ 2 | 🍴 0
+⭐ 0 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 03:04 18 June, 2025 (UTC)
 
 ---
 
@@ -42,15 +42,15 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
-#### [Clove-Bot](https://github.com/CloveTwilight3/Clove-Bot)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-No description provided.
+My GitHub profile repository with custom README and configuration.
 
-**Language:** TypeScript
+**Language:** Markdown
 
-⭐ 0 | 🍴 0
+⭐ 2 | 🍴 0
 
-Last updated: 03:04 18 June, 2025 (UTC)
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
