@@ -304,7 +304,7 @@ A simple jail plugin
 
 **Language:** Java
 
-⭐ 2 | 🍴 1
+⭐ 2 | 🍴 0
 
 Last updated: 17:44 28 April, 2025 (UTC)
 
