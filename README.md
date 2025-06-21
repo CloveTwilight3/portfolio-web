@@ -18,15 +18,15 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [Clove-Pride-Reminders](https://github.com/CloveTwilight3/Clove-Pride-Reminders)
 
-My GitHub profile repository with custom README and configuration.
+No description provided.
 
-**Language:** Markdown
+**Language:** TypeScript
 
-⭐ 2 | 🍴 0
+⭐ 0 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 18:32 21 June, 2025 (UTC)
 
 ---
 
@@ -39,6 +39,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -302,9 +314,11 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [CloveLib](https://github.com/CloveTwilight3/CloveLib)
+#### [JailPlugin](https://github.com/CloveTwilight3/JailPlugin)
 
-A basic Library Plugin for Plugins
+A simple jail plugin
+
+**Language:** Java
 
 ⭐ 2 | 🍴 0
 
@@ -312,11 +326,9 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [JailPlugin](https://github.com/CloveTwilight3/JailPlugin)
+#### [CloveLib](https://github.com/CloveTwilight3/CloveLib)
 
-A simple jail plugin
-
-**Language:** Java
+A basic Library Plugin for Plugins
 
 ⭐ 2 | 🍴 0
 
