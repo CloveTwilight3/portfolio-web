@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [SpectraNet](https://github.com/CloveTwilight3/SpectraNet)
+
+A basic easy typescript discord bot to ban people based off their role.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 17:23 3 June, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -87,18 +99,6 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 02:20 16 June, 2025 (UTC)
-
----
-
-#### [SpectraNet](https://github.com/CloveTwilight3/SpectraNet)
-
-A basic easy typescript discord bot to ban people based off their role.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 17:23 3 June, 2025 (UTC)
 
 ---
 
@@ -254,11 +254,11 @@ Last updated: 17:47 11 May, 2025 (UTC)
 
 ---
 
-#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
-A simple Paper plugin that adds functionality for sponges to absorb lava.
+My personal 1.21.4 Resource Pack 
 
-**Language:** Java
+**Language:** Python
 
 ⭐ 2 | 🍴 0
 
@@ -266,11 +266,11 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
+#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
 
-My personal 1.21.4 Resource Pack 
+A simple Paper plugin that adds functionality for sponges to absorb lava.
 
-**Language:** Python
+**Language:** Java
 
 ⭐ 2 | 🍴 0
 
