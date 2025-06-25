@@ -322,18 +322,6 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [EstrocordPlugin](https://github.com/CloveTwilight3/EstrocordPlugin)
-
-A fun all-in-1 plugin
-
-**Language:** Java
-
-⭐ 2 | 🍴 0
-
-Last updated: 17:44 28 April, 2025 (UTC)
-
----
-
 ### UnifiedGaming Systems Ltd Projects
 
 #### [.github](https://github.com/UnifiedGaming-Systems/.github)
