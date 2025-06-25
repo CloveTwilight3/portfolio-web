@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [Minecraft-Whitelist-Discord-Bot](https://github.com/CloveTwilight3/Minecraft-Whitelist-Discord-Bot)
+
+a simple and efficient plugin for a Discord bot for managing the Minecraft server whitelist
+
+**Language:** Java
+
+⭐ 2 | 🍴 0
+
+Last updated: 17:44 28 April, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -87,18 +99,6 @@ No description provided.
 ⭐ 0 | 🍴 0
 
 Last updated: 03:04 18 June, 2025 (UTC)
-
----
-
-#### [Minecraft-Whitelist-Discord-Bot](https://github.com/CloveTwilight3/Minecraft-Whitelist-Discord-Bot)
-
-a simple and efficient plugin for a Discord bot for managing the Minecraft server whitelist
-
-**Language:** Java
-
-⭐ 2 | 🍴 0
-
-Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
