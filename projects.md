@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [EstrocordPlugin](https://github.com/CloveTwilight3/EstrocordPlugin)
+
+A fun all-in-1 plugin
+
+**Language:** Java
+
+⭐ 2 | 🍴 0
+
+Last updated: 23:22 30 June, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -305,18 +317,6 @@ Last updated: 17:44 28 April, 2025 (UTC)
 A basic Library Plugin for Plugins
 
 ⭐ 2 | 🍴 0
-
-Last updated: 17:44 28 April, 2025 (UTC)
-
----
-
-#### [JailPlugin](https://github.com/CloveTwilight3/JailPlugin)
-
-A simple jail plugin
-
-**Language:** Java
-
-⭐ 2 | 🍴 1
 
 Last updated: 17:44 28 April, 2025 (UTC)
 
