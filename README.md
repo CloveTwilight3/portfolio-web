@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [JailPlugin](https://github.com/CloveTwilight3/JailPlugin)
+
+A simple jail plugin
+
+**Language:** Java
+
+⭐ 2 | 🍴 1
+
+Last updated: 10:22 1 July, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -319,16 +331,6 @@ Last updated: 17:44 28 April, 2025 (UTC)
 A Fabric Mod for Systems
 
 **Language:** Java
-
-⭐ 2 | 🍴 0
-
-Last updated: 17:44 28 April, 2025 (UTC)
-
----
-
-#### [CloveLib](https://github.com/CloveTwilight3/CloveLib)
-
-A basic Library Plugin for Plugins
 
 ⭐ 2 | 🍴 0
 
