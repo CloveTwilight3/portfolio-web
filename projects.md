@@ -4,6 +4,16 @@
 
 ### Personal Projects
 
+#### [localhost-server](https://github.com/CloveTwilight3/localhost-server)
+
+No description provided.
+
+⭐ 0 | 🍴 0
+
+Last updated: 20:47 1 July, 2025 (UTC)
+
+---
+
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -303,18 +313,6 @@ Last updated: 17:44 28 April, 2025 (UTC)
 #### [Cloves-PluralCraft-Spigot](https://github.com/CloveTwilight3/Cloves-PluralCraft-Spigot)
 
 A Simple Plugin for Plural Systems
-
-**Language:** Java
-
-⭐ 2 | 🍴 0
-
-Last updated: 17:44 28 April, 2025 (UTC)
-
----
-
-#### [Cloves-PluralCraft](https://github.com/CloveTwilight3/Cloves-PluralCraft)
-
-A Fabric Mod for Systems
 
 **Language:** Java
 
