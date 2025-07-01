@@ -4,15 +4,15 @@
 
 ### Personal Projects
 
-#### [EstrocordPlugin](https://github.com/CloveTwilight3/EstrocordPlugin)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-A fun all-in-1 plugin
+My GitHub profile repository with custom README and configuration.
 
-**Language:** Java
+**Language:** Markdown
 
 ⭐ 2 | 🍴 0
 
-Last updated: 23:22 30 June, 2025 (UTC)
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -28,15 +28,15 @@ Last updated: 14:46 2 May, 2025 (UTC)
 
 ---
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [EstrocordPlugin](https://github.com/CloveTwilight3/EstrocordPlugin)
 
-My GitHub profile repository with custom README and configuration.
+A fun all-in-1 plugin
 
-**Language:** Markdown
+**Language:** Java
 
 ⭐ 2 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 23:22 30 June, 2025 (UTC)
 
 ---
 
