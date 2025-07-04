@@ -310,18 +310,6 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [Cloves-PluralCraft-Spigot](https://github.com/CloveTwilight3/Cloves-PluralCraft-Spigot)
-
-A Simple Plugin for Plural Systems
-
-**Language:** Java
-
-⭐ 2 | 🍴 0
-
-Last updated: 17:44 28 April, 2025 (UTC)
-
----
-
 ### UnifiedGaming Systems Ltd Projects
 
 #### [.github](https://github.com/UnifiedGaming-Systems/.github)
