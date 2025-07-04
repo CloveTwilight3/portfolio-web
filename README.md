@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [plural-web](https://github.com/CloveTwilight3/plural-web)
+
+A PluralKit website created for friends to see who's fronting my system https://friends.clovetwilight3.co.uk
+
+**Language:** JavaScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 08:57 4 July, 2025 (UTC)
+
+---
+
 #### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -288,18 +300,6 @@ Last updated: 17:47 11 May, 2025 (UTC)
 
 ---
 
-#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
-
-My personal 1.21.4 Resource Pack 
-
-**Language:** Python
-
-⭐ 2 | 🍴 0
-
-Last updated: 17:44 28 April, 2025 (UTC)
-
----
-
 #### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
 
 A simple Paper plugin that adds functionality for sponges to absorb lava.
@@ -312,13 +312,13 @@ Last updated: 17:44 28 April, 2025 (UTC)
 
 ---
 
-#### [ValoPeaks](https://github.com/CloveTwilight3/ValoPeaks)
+#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
-A Valorant Info Bot (Basic)
+My personal 1.21.4 Resource Pack 
 
-**Language:** TypeScript
+**Language:** Python
 
-⭐ 3 | 🍴 0
+⭐ 2 | 🍴 0
 
 Last updated: 17:44 28 April, 2025 (UTC)
 
