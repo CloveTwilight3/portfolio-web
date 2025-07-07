@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [tgmc-web](https://github.com/CloveTwilight3/tgmc-web)
+
+Website for r/TransGamers Minecraft SMP
+
+**Language:** PHP
+
+⭐ 0 | 🍴 0
+
+Last updated: 16:12 6 July, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -25,18 +37,6 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 14:46 2 May, 2025 (UTC)
-
----
-
-#### [tgmc-web](https://github.com/CloveTwilight3/tgmc-web)
-
-Website for r/TransGamers Minecraft SMP
-
-**Language:** HTML
-
-⭐ 0 | 🍴 0
-
-Last updated: 16:12 6 July, 2025 (UTC)
 
 ---
 
@@ -298,15 +298,15 @@ Last updated: 17:47 11 May, 2025 (UTC)
 
 ---
 
-#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
+#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
 
-My personal 1.21.4 Resource Pack 
+A simple Paper plugin that adds functionality for sponges to absorb lava.
 
-**Language:** Python
+**Language:** Java
 
 ⭐ 2 | 🍴 0
 
-Last updated: 17:44 28 April, 2025 (UTC)
+Last updated: 03:20 3 May, 2025 (UTC)
 
 ---
 
