@@ -4,18 +4,6 @@
 
 ### Personal Projects
 
-#### [tgmc-web](https://github.com/CloveTwilight3/tgmc-web)
-
-Website for r/TransGamers Minecraft SMP
-
-**Language:** PHP
-
-⭐ 0 | 🍴 0
-
-Last updated: 16:12 6 July, 2025 (UTC)
-
----
-
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -37,6 +25,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 14:46 2 May, 2025 (UTC)
+
+---
+
+#### [tgmc-web](https://github.com/CloveTwilight3/tgmc-web)
+
+Website for r/TransGamers Minecraft SMP
+
+**Language:** PHP
+
+⭐ 0 | 🍴 0
+
+Last updated: 16:12 6 July, 2025 (UTC)
 
 ---
 
