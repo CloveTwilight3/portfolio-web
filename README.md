@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [RoomMates-Helper-Stable](https://github.com/CloveTwilight3/RoomMates-Helper-Stable)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 03:58 9 July, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -172,18 +184,6 @@ Last updated: 08:50 28 May, 2025 (UTC)
 
 ---
 
-#### [RoomMates-Beta](https://github.com/CloveTwilight3/RoomMates-Beta)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 15:02 30 April, 2025 (UTC)
-
----
-
 #### [RoomMates-Helper](https://github.com/CloveTwilight3/RoomMates-Helper)
 
 RoomMates Verification System and More!
@@ -312,11 +312,11 @@ Last updated: 17:47 11 May, 2025 (UTC)
 
 ---
 
-#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
+#### [Cloves-1.21.4-resource-pack](https://github.com/CloveTwilight3/Cloves-1.21.4-resource-pack)
 
-A simple Paper plugin that adds functionality for sponges to absorb lava.
+My personal 1.21.4 Resource Pack 
 
-**Language:** Java
+**Language:** Python
 
 ⭐ 2 | 🍴 0
 
