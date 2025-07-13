@@ -114,7 +114,7 @@ async function fetchUserRepositories(octokit) {
       console.log('Including all non-fork user repositories (including profile and portfolio)');
       filteredRepos = repos.filter(repo => !repo.fork);
     } else {
-      const reposToIgnore = ['clovetwilight3', 'clovetwilight3.github.io'];
+      const reposToIgnore = ['clovetwilight3', 'clovetwilight3.github.io', 'portfolio-web'];
       filteredRepos = repos.filter(repo => !repo.fork && !reposToIgnore.includes(repo.name));
       console.log(`Filtering out [${reposToIgnore.join(', ')}] repositories`);
     }
