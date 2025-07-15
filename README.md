@@ -18,6 +18,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [plural-web](https://github.com/CloveTwilight3/plural-web)
+
+A PluralKit website created for friends to see who's fronting my system https://friends.clovetwilight3.co.uk
+
+**Language:** JavaScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 08:57 4 July, 2025 (UTC)
+
+---
+
 #### [portfolio-web](https://github.com/CloveTwilight3/portfolio-web)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -87,18 +99,6 @@ Website for r/TransGamers Minecraft SMP
 ⭐ 0 | 🍴 0
 
 Last updated: 16:12 6 July, 2025 (UTC)
-
----
-
-#### [plural-web](https://github.com/CloveTwilight3/plural-web)
-
-A PluralKit website created for friends to see who's fronting my system https://friends.clovetwilight3.co.uk
-
-**Language:** JavaScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 08:57 4 July, 2025 (UTC)
 
 ---
 
