@@ -4,18 +4,6 @@
 
 ### Personal Projects
 
-#### [SpectraNet](https://github.com/CloveTwilight3/SpectraNet)
-
-A basic easy typescript discord bot to ban people based off their role.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 17:23 3 June, 2025 (UTC)
-
----
-
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -25,6 +13,18 @@ My GitHub profile repository with custom README and configuration.
 ⭐ 2 | 🍴 0
 
 Last updated: 14:38 2 May, 2025 (UTC)
+
+---
+
+#### [SpectraNet](https://github.com/CloveTwilight3/SpectraNet)
+
+A basic easy typescript discord bot to ban people based off their role.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 17:23 3 June, 2025 (UTC)
 
 ---
 
