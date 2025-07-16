@@ -18,18 +18,6 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [portfolio-web](https://github.com/CloveTwilight3/portfolio-web)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 12:29 13 July, 2025 (UTC)
-
----
-
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -39,6 +27,18 @@ My GitHub profile repository with custom README and configuration.
 ⭐ 2 | 🍴 0
 
 Last updated: 14:38 2 May, 2025 (UTC)
+
+---
+
+#### [portfolio-web](https://github.com/CloveTwilight3/portfolio-web)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 12:29 13 July, 2025 (UTC)
 
 ---
 
@@ -309,18 +309,6 @@ This is a fork of the Discord Manager I have helped contribute to. This is for a
 ⭐ 0 | 🍴 0
 
 Last updated: 17:47 11 May, 2025 (UTC)
-
----
-
-#### [SimonsLavaSponges](https://github.com/CloveTwilight3/SimonsLavaSponges)
-
-A simple Paper plugin that adds functionality for sponges to absorb lava.
-
-**Language:** Java
-
-⭐ 2 | 🍴 0
-
-Last updated: 03:20 3 May, 2025 (UTC)
 
 ---
 
