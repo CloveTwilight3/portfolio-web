@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
+
+No description provided.
+
+**Language:** CSS
+
+⭐ 1 | 🍴 0
+
+Last updated: 15:03 10 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -191,18 +203,6 @@ A custom discord bot that communicates with APIs
 ⭐ 2 | 🍴 0
 
 Last updated: 03:22 3 May, 2025 (UTC)
-
----
-
-#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
-
-No description provided.
-
-**Language:** CSS
-
-⭐ 1 | 🍴 0
-
-Last updated: 15:03 10 May, 2025 (UTC)
 
 ---
 
