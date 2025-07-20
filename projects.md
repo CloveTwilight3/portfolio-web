@@ -4,15 +4,15 @@
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [Medication-Bot](https://github.com/CloveTwilight3/Medication-Bot)
 
-My GitHub profile repository with custom README and configuration.
+No description provided.
 
-**Language:** Markdown
+**Language:** TypeScript
 
-⭐ 2 | 🍴 0
+⭐ 0 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 21:29 20 July, 2025 (UTC)
 
 ---
 
@@ -25,6 +25,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 12:29 13 July, 2025 (UTC)
+
+---
+
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -285,16 +297,6 @@ Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, 
 ⭐ 2 | 🍴 0
 
 Last updated: 02:11 2 May, 2025 (UTC)
-
----
-
-#### [socialminecraft-discord-manager](https://github.com/CloveTwilight3/socialminecraft-discord-manager) [ARCHIVE]
-
-This is a fork of the Discord Manager I have helped contribute to. This is for archive reasons only!
-
-⭐ 0 | 🍴 0
-
-Last updated: 17:47 11 May, 2025 (UTC)
 
 ---
 
