@@ -4,18 +4,6 @@
 
 ### Personal Projects
 
-#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
-
-No description provided.
-
-**Language:** CSS
-
-⭐ 1 | 🍴 0
-
-Last updated: 15:03 10 May, 2025 (UTC)
-
----
-
 #### [portfolio-web](https://github.com/CloveTwilight3/portfolio-web)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -25,6 +13,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 12:29 13 July, 2025 (UTC)
+
+---
+
+#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
+
+No description provided.
+
+**Language:** CSS
+
+⭐ 1 | 🍴 0
+
+Last updated: 15:03 10 May, 2025 (UTC)
 
 ---
 
