@@ -4,6 +4,86 @@
 
 ### Personal Projects
 
+#### [socialminecraft-discord-manager](https://github.com/CloveTwilight3/socialminecraft-discord-manager) [ARCHIVE]
+
+This is a fork of the Discord Manager I have helped contribute to. This is for archive reasons only!
+
+⭐ 1 | 🍴 0
+
+Last updated: 11:36 24 July, 2025 (UTC)
+
+---
+
+#### [Clove-Bot](https://github.com/CloveTwilight3/Clove-Bot)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 03:04 18 June, 2025 (UTC)
+
+---
+
+#### [Clove-Pride-Reminders](https://github.com/CloveTwilight3/Clove-Pride-Reminders)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 18:32 21 June, 2025 (UTC)
+
+---
+
+#### [localhost-server](https://github.com/CloveTwilight3/localhost-server)
+
+No description provided.
+
+⭐ 1 | 🍴 0
+
+Last updated: 20:47 1 July, 2025 (UTC)
+
+---
+
+#### [Medication-Bot](https://github.com/CloveTwilight3/Medication-Bot)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 21:29 20 July, 2025 (UTC)
+
+---
+
+#### [tgmc-web](https://github.com/CloveTwilight3/tgmc-web)
+
+Website for r/TransGamers Minecraft SMP
+
+**Language:** PHP
+
+⭐ 1 | 🍴 0
+
+Last updated: 16:12 6 July, 2025 (UTC)
+
+---
+
+#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
+
+No description provided.
+
+**Language:** CSS
+
+⭐ 1 | 🍴 1
+
+Last updated: 15:03 10 May, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -37,30 +117,6 @@ A basic easy typescript discord bot to ban people based off their role.
 ⭐ 1 | 🍴 0
 
 Last updated: 17:23 3 June, 2025 (UTC)
-
----
-
-#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
-
-No description provided.
-
-**Language:** CSS
-
-⭐ 1 | 🍴 1
-
-Last updated: 15:03 10 May, 2025 (UTC)
-
----
-
-#### [Medication-Bot](https://github.com/CloveTwilight3/Medication-Bot)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 21:29 20 July, 2025 (UTC)
 
 ---
 
@@ -100,28 +156,6 @@ Last updated: 03:58 9 July, 2025 (UTC)
 
 ---
 
-#### [tgmc-web](https://github.com/CloveTwilight3/tgmc-web)
-
-Website for r/TransGamers Minecraft SMP
-
-**Language:** PHP
-
-⭐ 0 | 🍴 0
-
-Last updated: 16:12 6 July, 2025 (UTC)
-
----
-
-#### [localhost-server](https://github.com/CloveTwilight3/localhost-server)
-
-No description provided.
-
-⭐ 0 | 🍴 0
-
-Last updated: 20:47 1 July, 2025 (UTC)
-
----
-
 #### [JailPlugin](https://github.com/CloveTwilight3/JailPlugin)
 
 A simple jail plugin
@@ -155,30 +189,6 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 02:20 16 June, 2025 (UTC)
-
----
-
-#### [Clove-Pride-Reminders](https://github.com/CloveTwilight3/Clove-Pride-Reminders)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 18:32 21 June, 2025 (UTC)
-
----
-
-#### [Clove-Bot](https://github.com/CloveTwilight3/Clove-Bot)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 03:04 18 June, 2025 (UTC)
 
 ---
 
@@ -285,18 +295,6 @@ This is a JARVIS like assistant for your desktop, working on Most Linux Distros 
 ⭐ 1 | 🍴 0
 
 Last updated: 02:47 2 May, 2025 (UTC)
-
----
-
-#### [spotify-player](https://github.com/CloveTwilight3/spotify-player)
-
-Customizable Spotify Now Playing widget with multiple pride flag themes (Pride, Trans, Lesbian, etc.) for displaying your current tracks
-
-**Language:** JavaScript
-
-⭐ 2 | 🍴 0
-
-Last updated: 02:11 2 May, 2025 (UTC)
 
 ---
 
