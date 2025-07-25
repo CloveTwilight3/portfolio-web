@@ -4,18 +4,6 @@
 
 ### Personal Projects
 
-#### [plu-ral-inviter](https://github.com/CloveTwilight3/plu-ral-inviter)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 19:19 25 July, 2025 (UTC)
-
----
-
 #### [portfolio-web](https://github.com/CloveTwilight3/portfolio-web)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -25,6 +13,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 12:29 13 July, 2025 (UTC)
+
+---
+
+#### [plu-ral-inviter](https://github.com/CloveTwilight3/plu-ral-inviter)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 0 | 🍴 0
+
+Last updated: 19:19 25 July, 2025 (UTC)
 
 ---
 
