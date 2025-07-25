@@ -4,15 +4,15 @@
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [plu-ral-inviter](https://github.com/CloveTwilight3/plu-ral-inviter)
 
-My GitHub profile repository with custom README and configuration.
+No description provided.
 
-**Language:** Markdown
+**Language:** TypeScript
 
-⭐ 2 | 🍴 0
+⭐ 0 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 19:19 25 July, 2025 (UTC)
 
 ---
 
@@ -28,15 +28,15 @@ Last updated: 12:29 13 July, 2025 (UTC)
 
 ---
 
-#### [plu-ral-inviter](https://github.com/CloveTwilight3/plu-ral-inviter)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-No description provided.
+My GitHub profile repository with custom README and configuration.
 
-**Language:** TypeScript
+**Language:** Markdown
 
-⭐ 0 | 🍴 0
+⭐ 2 | 🍴 0
 
-Last updated: 19:19 25 July, 2025 (UTC)
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
