@@ -18,15 +18,15 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [plu-ral-inviter](https://github.com/CloveTwilight3/plu-ral-inviter)
 
-My GitHub profile repository with custom README and configuration.
+No description provided.
 
-**Language:** Markdown
+**Language:** TypeScript
 
-⭐ 2 | 🍴 0
+⭐ 0 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 19:19 25 July, 2025 (UTC)
 
 ---
 
@@ -39,6 +39,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 12:29 13 July, 2025 (UTC)
+
+---
+
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -297,18 +309,6 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 23:16 13 May, 2025 (UTC)
-
----
-
-#### [Custom-DiscordRPC](https://github.com/CloveTwilight3/Custom-DiscordRPC)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 23:13 13 May, 2025 (UTC)
 
 ---
 
