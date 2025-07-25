@@ -4,6 +4,18 @@
 
 ### Personal Projects
 
+#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** CSS
+
+⭐ 0 | 🍴 0
+
+Last updated: 14:38 25 July, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -283,18 +295,6 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 23:13 13 May, 2025 (UTC)
-
----
-
-#### [EMIS](https://github.com/CloveTwilight3/EMIS)
-
-This is a JARVIS like assistant for your desktop, working on Most Linux Distros and Windows
-
-**Language:** JavaScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 02:47 2 May, 2025 (UTC)
 
 ---
 
