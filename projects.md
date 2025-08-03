@@ -4,15 +4,13 @@
 
 ### Personal Projects
 
-#### [portfolio-web](https://github.com/CloveTwilight3/portfolio-web)
+#### [gaming-website](https://github.com/CloveTwilight3/gaming-website)
 
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+No description provided.
 
-**Language:** JavaScript
+⭐ 0 | 🍴 0
 
-⭐ 3 | 🍴 0
-
-Last updated: 12:29 13 July, 2025 (UTC)
+Last updated: 20:16 3 August, 2025 (UTC)
 
 ---
 
@@ -25,6 +23,18 @@ My GitHub profile repository with custom README and configuration.
 ⭐ 2 | 🍴 0
 
 Last updated: 14:38 2 May, 2025 (UTC)
+
+---
+
+#### [portfolio-web](https://github.com/CloveTwilight3/portfolio-web)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 12:29 13 July, 2025 (UTC)
 
 ---
 
@@ -283,18 +293,6 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 23:18 13 May, 2025 (UTC)
-
----
-
-#### [pluralkit-discord-overlay](https://github.com/CloveTwilight3/pluralkit-discord-overlay)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 23:16 13 May, 2025 (UTC)
 
 ---
 
