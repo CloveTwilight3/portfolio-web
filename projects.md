@@ -286,18 +286,6 @@ Last updated: 14:55 17 May, 2025 (UTC)
 
 ---
 
-#### [-socialminecraft-discord-manager](https://github.com/CloveTwilight3/-socialminecraft-discord-manager)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 23:18 13 May, 2025 (UTC)
-
----
-
 ### UnifiedGaming Systems Ltd Projects
 
 #### [.github](https://github.com/UnifiedGaming-Systems/.github)
