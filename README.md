@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/clovetwilight3/clovetwilight3.github.io/update-portfolio.yml?branch=main)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/clovetwilight3/portfolio-web/update-portfolio.yml?branch=main)
 ![License](https://img.shields.io/github/license/clovetwilight3/clovetwilight3.github.io)
 ![GitHub last commit](https://img.shields.io/github/last-commit/clovetwilight3/clovetwilight3.github.io)
 
