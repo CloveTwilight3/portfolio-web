@@ -16,6 +16,16 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [r-plural-bot](https://github.com/CloveTwilight3/r-plural-bot)
+
+The official bot code for r/Plural bot
+
+⭐ 0 | 🍴 0
+
+Last updated: 19:33 8 August, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -283,18 +293,6 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 14:37 18 May, 2025 (UTC)
-
----
-
-#### [Plural-Clove](https://github.com/CloveTwilight3/Plural-Clove)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 14:55 17 May, 2025 (UTC)
 
 ---
 
