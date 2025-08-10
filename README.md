@@ -1,12 +1,12 @@
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/clovetwilight3/portfolio-web/update-portfolio.yml?branch=main)
-![License](https://img.shields.io/github/license/clovetwilight3/portfolio-web)
-![GitHub last commit](https://img.shields.io/github/last-commit/clovetwilight3/portfolio-web)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/clovetwilight3/portfolio.clovetwilight3.co.uk/update-portfolio.yml?branch=main)
+![License](https://img.shields.io/github/license/clovetwilight3/portfolio.clovetwilight3.co.uk)
+![GitHub last commit](https://img.shields.io/github/last-commit/clovetwilight3/portfolio.clovetwilight3.co.uk)
 
 # 👋 Hi, I'm Clove Twilight!
 ![My Discord](https://discord-readme-badge.vercel.app/api?id=1025770042245251122)
 
 ### 🧠 Developer • Linux Nerd • Minecraft Modder
-I am also a plural system, so see [https://friends.clovetwilight3.co.uk/](https://friends.clovetwilight3.co.uk/) (In dev)
+I am also a plural system, so see [https://plural.clovetwilight3.co.uk/](https://plural.clovetwilight3.co.uk/) (In dev)
 
 This is my project portfolio that automatically syncs with my GitHub repositories (excluding forks).
 
