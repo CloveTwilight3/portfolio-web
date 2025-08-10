@@ -4,18 +4,6 @@
 
 ### Personal Projects
 
-#### [nl.clovetwilight3.co.uk](https://github.com/CloveTwilight3/nl.clovetwilight3.co.uk)
-
-No description provided.
-
-**Language:** CSS
-
-⭐ 0 | 🍴 0
-
-Last updated: 02:34 10 August, 2025 (UTC)
-
----
-
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -37,6 +25,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 02:48 10 August, 2025 (UTC)
+
+---
+
+#### [nl.clovetwilight3.co.uk](https://github.com/CloveTwilight3/nl.clovetwilight3.co.uk)
+
+No description provided.
+
+**Language:** CSS
+
+⭐ 0 | 🍴 0
+
+Last updated: 02:34 10 August, 2025 (UTC)
 
 ---
 
