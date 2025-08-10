@@ -16,7 +16,19 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [gaming-website](https://github.com/CloveTwilight3/gaming-website)
+#### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 02:48 10 August, 2025 (UTC)
+
+---
+
+#### [clovetwilight3.co.uk](https://github.com/CloveTwilight3/clovetwilight3.co.uk)
 
 No description provided.
 
@@ -24,7 +36,31 @@ No description provided.
 
 ⭐ 0 | 🍴 0
 
-Last updated: 20:16 3 August, 2025 (UTC)
+Last updated: 02:46 10 August, 2025 (UTC)
+
+---
+
+#### [nl.clovetwilight3.co.uk](https://github.com/CloveTwilight3/nl.clovetwilight3.co.uk)
+
+No description provided.
+
+**Language:** CSS
+
+⭐ 0 | 🍴 0
+
+Last updated: 02:34 10 August, 2025 (UTC)
+
+---
+
+#### [gaming.clovetwilight3.co.uk](https://github.com/CloveTwilight3/gaming.clovetwilight3.co.uk)
+
+No description provided.
+
+**Language:** HTML
+
+⭐ 0 | 🍴 0
+
+Last updated: 02:27 10 August, 2025 (UTC)
 
 ---
 
@@ -37,30 +73,6 @@ My GitHub profile repository with custom README and configuration.
 ⭐ 2 | 🍴 0
 
 Last updated: 14:38 2 May, 2025 (UTC)
-
----
-
-#### [clovetwilight3.github.io](https://github.com/CloveTwilight3/clovetwilight3.github.io)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** HTML
-
-⭐ 0 | 🍴 0
-
-Last updated: 14:38 25 July, 2025 (UTC)
-
----
-
-#### [portfolio-web](https://github.com/CloveTwilight3/portfolio-web)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 12:29 13 July, 2025 (UTC)
 
 ---
 
@@ -285,16 +297,6 @@ A custom discord bot that communicates with APIs
 ⭐ 2 | 🍴 0
 
 Last updated: 03:22 3 May, 2025 (UTC)
-
----
-
-#### [Plural-Social](https://github.com/CloveTwilight3/Plural-Social)
-
-No description provided.
-
-⭐ 1 | 🍴 0
-
-Last updated: 14:37 18 May, 2025 (UTC)
 
 ---
 
