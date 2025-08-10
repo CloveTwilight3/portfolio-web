@@ -16,15 +16,15 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
+#### [nl.clovetwilight3.co.uk](https://github.com/CloveTwilight3/nl.clovetwilight3.co.uk)
 
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+No description provided.
 
-**Language:** JavaScript
+**Language:** CSS
 
-⭐ 3 | 🍴 0
+⭐ 0 | 🍴 0
 
-Last updated: 02:48 10 August, 2025 (UTC)
+Last updated: 02:34 10 August, 2025 (UTC)
 
 ---
 
@@ -40,15 +40,15 @@ Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
-#### [nl.clovetwilight3.co.uk](https://github.com/CloveTwilight3/nl.clovetwilight3.co.uk)
+#### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
 
-No description provided.
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
 
-**Language:** CSS
+**Language:** JavaScript
 
-⭐ 0 | 🍴 0
+⭐ 3 | 🍴 0
 
-Last updated: 02:34 10 August, 2025 (UTC)
+Last updated: 02:48 10 August, 2025 (UTC)
 
 ---
 
