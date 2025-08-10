@@ -16,15 +16,15 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
+#### [plu-ral-invite-bot](https://github.com/CloveTwilight3/plu-ral-invite-bot)
 
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+No description provided.
 
-**Language:** JavaScript
+**Language:** TypeScript
 
-⭐ 3 | 🍴 0
+⭐ 0 | 🍴 0
 
-Last updated: 02:48 10 August, 2025 (UTC)
+Last updated: 02:41 27 July, 2025 (UTC)
 
 ---
 
@@ -37,6 +37,18 @@ My GitHub profile repository with custom README and configuration.
 ⭐ 2 | 🍴 0
 
 Last updated: 14:38 2 May, 2025 (UTC)
+
+---
+
+#### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 02:48 10 August, 2025 (UTC)
 
 ---
 
@@ -121,18 +133,6 @@ A basic easy typescript discord bot to ban people based off their role.
 ⭐ 1 | 🍴 0
 
 Last updated: 17:23 3 June, 2025 (UTC)
-
----
-
-#### [plu-ral-invite-bot](https://github.com/CloveTwilight3/plu-ral-invite-bot)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 02:41 27 July, 2025 (UTC)
 
 ---
 
