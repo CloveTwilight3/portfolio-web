@@ -40,18 +40,6 @@ Last updated: 02:34 10 August, 2025 (UTC)
 
 ---
 
-#### [plu-ral-invite-bot](https://github.com/CloveTwilight3/plu-ral-invite-bot)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 0 | 🍴 0
-
-Last updated: 02:41 27 July, 2025 (UTC)
-
----
-
 #### [clovetwilight3.co.uk](https://github.com/CloveTwilight3/clovetwilight3.co.uk)
 
 No description provided.
@@ -285,6 +273,16 @@ A custom discord bot that communicates with APIs
 ⭐ 2 | 🍴 0
 
 Last updated: 03:22 3 May, 2025 (UTC)
+
+---
+
+#### [Plural-Social](https://github.com/CloveTwilight3/Plural-Social)
+
+No description provided.
+
+⭐ 1 | 🍴 0
+
+Last updated: 00:35 27 May, 2025 (UTC)
 
 ---
 
