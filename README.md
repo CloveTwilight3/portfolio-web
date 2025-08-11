@@ -16,18 +16,6 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
-
-My GitHub profile repository with custom README and configuration.
-
-**Language:** Markdown
-
-⭐ 2 | 🍴 0
-
-Last updated: 14:38 2 May, 2025 (UTC)
-
----
-
 #### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -37,6 +25,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 02:48 10 August, 2025 (UTC)
+
+---
+
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -112,18 +112,6 @@ Last updated: 08:57 4 July, 2025 (UTC)
 
 ---
 
-#### [SpectraNet](https://github.com/CloveTwilight3/SpectraNet)
-
-A basic easy typescript discord bot to ban people based off their role.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 17:23 3 June, 2025 (UTC)
-
----
-
 #### [socialminecraft-discord-manager](https://github.com/CloveTwilight3/socialminecraft-discord-manager) [ARCHIVE]
 
 This is a fork of the Discord Manager I have helped contribute to. This is for archive reasons only!
@@ -177,18 +165,6 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 21:29 20 July, 2025 (UTC)
-
----
-
-#### [tgmc-web](https://github.com/CloveTwilight3/tgmc-web)
-
-Website for r/TransGamers Minecraft SMP
-
-**Language:** PHP
-
-⭐ 1 | 🍴 0
-
-Last updated: 16:12 6 July, 2025 (UTC)
 
 ---
 
@@ -291,6 +267,30 @@ Last updated: 03:22 3 May, 2025 (UTC)
 #### [Plural-Social](https://github.com/CloveTwilight3/Plural-Social)
 
 No description provided.
+
+⭐ 1 | 🍴 0
+
+Last updated: 00:35 27 May, 2025 (UTC)
+
+---
+
+#### [Plural-Clove](https://github.com/CloveTwilight3/Plural-Clove)
+
+No description provided.
+
+**Language:** TypeScript
+
+⭐ 1 | 🍴 0
+
+Last updated: 00:35 27 May, 2025 (UTC)
+
+---
+
+#### [-socialminecraft-discord-manager](https://github.com/CloveTwilight3/-socialminecraft-discord-manager)
+
+No description provided.
+
+**Language:** TypeScript
 
 ⭐ 1 | 🍴 0
 
