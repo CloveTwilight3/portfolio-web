@@ -16,6 +16,18 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
+#### [clovetwilight3.co.uk](https://github.com/CloveTwilight3/clovetwilight3.co.uk)
+
+No description provided.
+
+**Language:** HTML
+
+⭐ 0 | 🍴 0
+
+Last updated: 02:46 10 August, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -49,18 +61,6 @@ No description provided.
 ⭐ 0 | 🍴 0
 
 Last updated: 02:34 10 August, 2025 (UTC)
-
----
-
-#### [clovetwilight3.co.uk](https://github.com/CloveTwilight3/clovetwilight3.co.uk)
-
-No description provided.
-
-**Language:** HTML
-
-⭐ 0 | 🍴 0
-
-Last updated: 02:46 10 August, 2025 (UTC)
 
 ---
 
