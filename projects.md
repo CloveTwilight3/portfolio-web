@@ -4,15 +4,27 @@
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [Estrocord](https://github.com/CloveTwilight3/Estrocord)
 
-My GitHub profile repository with custom README and configuration.
+A fun all-in-1 plugin
 
-**Language:** Markdown
+**Language:** Java
 
 ⭐ 2 | 🍴 0
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 17:24 13 August, 2025 (UTC)
+
+---
+
+#### [nl.gaming.clovetwilight3.co.uk](https://github.com/CloveTwilight3/nl.gaming.clovetwilight3.co.uk)
+
+No description provided.
+
+**Language:** HTML
+
+⭐ 0 | 🍴 0
+
+Last updated: 16:39 13 August, 2025 (UTC)
 
 ---
 
@@ -28,13 +40,15 @@ Last updated: 02:48 10 August, 2025 (UTC)
 
 ---
 
-#### [nl.gaming.clovetwilight3.co.uk](https://github.com/CloveTwilight3/nl.gaming.clovetwilight3.co.uk)
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
-No description provided.
+My GitHub profile repository with custom README and configuration.
 
-⭐ 0 | 🍴 0
+**Language:** Markdown
 
-Last updated: 16:39 13 August, 2025 (UTC)
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -163,18 +177,6 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 21:29 20 July, 2025 (UTC)
-
----
-
-#### [EstrocordPlugin](https://github.com/CloveTwilight3/EstrocordPlugin)
-
-A fun all-in-1 plugin
-
-**Language:** Java
-
-⭐ 2 | 🍴 0
-
-Last updated: 23:22 30 June, 2025 (UTC)
 
 ---
 
