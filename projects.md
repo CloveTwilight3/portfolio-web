@@ -4,6 +4,16 @@
 
 ### Personal Projects
 
+#### [nl.gaming.clovetwilight3.co.uk](https://github.com/CloveTwilight3/nl.gaming.clovetwilight3.co.uk)
+
+No description provided.
+
+⭐ 0 | 🍴 0
+
+Last updated: 16:39 13 August, 2025 (UTC)
+
+---
+
 #### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
 
 My GitHub profile repository with custom README and configuration.
@@ -263,18 +273,6 @@ Last updated: 00:35 27 May, 2025 (UTC)
 ---
 
 #### [Plural-Clove](https://github.com/CloveTwilight3/Plural-Clove)
-
-No description provided.
-
-**Language:** TypeScript
-
-⭐ 1 | 🍴 0
-
-Last updated: 00:35 27 May, 2025 (UTC)
-
----
-
-#### [-socialminecraft-discord-manager](https://github.com/CloveTwilight3/-socialminecraft-discord-manager)
 
 No description provided.
 
