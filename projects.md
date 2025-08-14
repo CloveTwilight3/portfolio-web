@@ -4,15 +4,15 @@
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
 
-My GitHub profile repository with custom README and configuration.
+No description provided.
 
-**Language:** Markdown
+**Language:** CSS
 
-⭐ 2 | 🍴 0
+⭐ 1 | 🍴 1
 
-Last updated: 14:38 2 May, 2025 (UTC)
+Last updated: 15:03 10 May, 2025 (UTC)
 
 ---
 
@@ -25,6 +25,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 02:48 10 August, 2025 (UTC)
+
+---
+
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -97,18 +109,6 @@ The official bot code for r/Plural bot
 ⭐ 0 | 🍴 0
 
 Last updated: 19:33 8 August, 2025 (UTC)
-
----
-
-#### [CloveTwilight3-Files](https://github.com/CloveTwilight3/CloveTwilight3-Files)
-
-No description provided.
-
-**Language:** CSS
-
-⭐ 1 | 🍴 1
-
-Last updated: 15:03 10 May, 2025 (UTC)
 
 ---
 
