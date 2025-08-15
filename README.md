@@ -16,18 +16,6 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
-
-My GitHub profile repository with custom README and configuration.
-
-**Language:** Markdown
-
-⭐ 2 | 🍴 0
-
-Last updated: 14:38 2 May, 2025 (UTC)
-
----
-
 #### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
 
 My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
@@ -37,6 +25,18 @@ My personal portfolio website with automatic GitHub project synchronization. Bui
 ⭐ 3 | 🍴 0
 
 Last updated: 02:48 10 August, 2025 (UTC)
+
+---
+
+#### [clovetwilight3](https://github.com/CloveTwilight3/clovetwilight3)
+
+My GitHub profile repository with custom README and configuration.
+
+**Language:** Markdown
+
+⭐ 2 | 🍴 0
+
+Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
@@ -295,6 +295,42 @@ No description provided.
 ⭐ 1 | 🍴 0
 
 Last updated: 00:35 27 May, 2025 (UTC)
+
+---
+
+### UnifiedGaming Systems Ltd Projects
+
+#### [.github](https://github.com/UnifiedGaming-Systems/.github)
+
+Profile README.md
+
+⭐ 1 | 🍴 0
+
+Last updated: 14:35 18 May, 2025 (UTC)
+
+---
+
+#### [unifiedgaming-launcher](https://github.com/UnifiedGaming-Systems/unifiedgaming-launcher)
+
+A cross-platform game library manager that unifies your gaming experience across multiple platforms including Steam, Epic Games, PlayStation, Xbox, and GOG.
+
+**Language:** C#
+
+⭐ 1 | 🍴 0
+
+Last updated: 23:47 7 May, 2025 (UTC)
+
+---
+
+#### [UnifiedGaming-Systems.github.io](https://github.com/UnifiedGaming-Systems/UnifiedGaming-Systems.github.io)
+
+This repo is all the code used for UnifiedGaming System's Website
+
+**Language:** HTML
+
+⭐ 1 | 🍴 0
+
+Last updated: 23:47 7 May, 2025 (UTC)
 
 ---
 
