@@ -16,15 +16,13 @@ This is my project portfolio that automatically syncs with my GitHub repositorie
 
 ### Personal Projects
 
-#### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
+#### [Gaming-Themes](https://github.com/CloveTwilight3/Gaming-Themes)
 
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+A few Vencord themes that are based on Popular Video Games
 
-**Language:** JavaScript
+⭐ 0 | 🍴 0
 
-⭐ 3 | 🍴 0
-
-Last updated: 02:48 10 August, 2025 (UTC)
+Last updated: 12:21 15 August, 2025 (UTC)
 
 ---
 
@@ -37,6 +35,18 @@ My GitHub profile repository with custom README and configuration.
 ⭐ 2 | 🍴 0
 
 Last updated: 14:38 2 May, 2025 (UTC)
+
+---
+
+#### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
+
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
+
+**Language:** JavaScript
+
+⭐ 3 | 🍴 0
+
+Last updated: 02:48 10 August, 2025 (UTC)
 
 ---
 
@@ -279,18 +289,6 @@ Last updated: 03:22 3 May, 2025 (UTC)
 #### [Plural-Social](https://github.com/CloveTwilight3/Plural-Social)
 
 No description provided.
-
-⭐ 1 | 🍴 0
-
-Last updated: 00:35 27 May, 2025 (UTC)
-
----
-
-#### [Plural-Clove](https://github.com/CloveTwilight3/Plural-Clove)
-
-No description provided.
-
-**Language:** TypeScript
 
 ⭐ 1 | 🍴 0
 
