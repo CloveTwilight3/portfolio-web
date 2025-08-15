@@ -4,25 +4,15 @@
 
 ### Personal Projects
 
-#### [Gaming-Themes](https://github.com/CloveTwilight3/Gaming-Themes)
+#### [Files](https://github.com/CloveTwilight3/Files)
 
-A few Vencord themes that are based on Popular Video Games
+No description provided.
 
-⭐ 0 | 🍴 0
+**Language:** CSS
 
-Last updated: 12:21 15 August, 2025 (UTC)
+⭐ 1 | 🍴 1
 
----
-
-#### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
-
-My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
-
-**Language:** JavaScript
-
-⭐ 3 | 🍴 0
-
-Last updated: 02:48 10 August, 2025 (UTC)
+Last updated: 20:45 14 August, 2025 (UTC)
 
 ---
 
@@ -38,15 +28,25 @@ Last updated: 14:38 2 May, 2025 (UTC)
 
 ---
 
-#### [Files](https://github.com/CloveTwilight3/Files)
+#### [portfolio.clovetwilight3.co.uk](https://github.com/CloveTwilight3/portfolio.clovetwilight3.co.uk)
 
-No description provided.
+My personal portfolio website with automatic GitHub project synchronization. Built with JavaScript, HTML, and CSS.
 
-**Language:** CSS
+**Language:** JavaScript
 
-⭐ 1 | 🍴 1
+⭐ 3 | 🍴 0
 
-Last updated: 20:45 14 August, 2025 (UTC)
+Last updated: 02:48 10 August, 2025 (UTC)
+
+---
+
+#### [Gaming-Themes](https://github.com/CloveTwilight3/Gaming-Themes)
+
+A few Vencord themes that are based on Popular Video Games
+
+⭐ 0 | 🍴 0
+
+Last updated: 12:21 15 August, 2025 (UTC)
 
 ---
 
